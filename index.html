@@ -3,1102 +3,949 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nông Trại Vui Vẻ - Đọc Song Ngữ & Từ Vựng Học Thuật Nâng Cao</title>
-
+  <title>Lớp Anh thầy Kết - Học Từ vựng qua Bài đọc Song Ngữ</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts: Fredoka for cheerful farm titles & Nunito for comfortable body reading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            farm: {
-              green: '#22c55e',
-              darkgreen: '#15803d',
-              lightgreen: '#dcfce7',
-              yellow: '#eab308',
-              orange: '#f97316',
-              brown: '#854d0e',
-              cream: '#fef3c7',
-              sky: '#38bdf8'
-            }
-          },
           fontFamily: {
-            fredoka: ['Fredoka', 'sans-serif'],
-            nunito: ['Nunito', 'sans-serif']
+            farm: ['Fredoka', 'sans-serif'],
+            sans: ['Nunito', 'sans-serif']
+          },
+          colors: {
+            farmGreen: '#2e7d32',
+            farmLightGreen: '#e8f5e9',
+            farmYellow: '#fbc02d',
+            farmOrange: '#f57c00',
+            farmBrown: '#795548',
+            farmCream: '#fffde7'
           }
         }
       }
     }
   </script>
 
-  <!-- Google Fonts: Fredoka & Nunito -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
+    /* Custom CSS Effects & Animations */
     body {
-      font-family: 'Nunito', sans-serif;
       background-color: #f0fdf4;
-      background-image: radial-gradient(#bbf7d0 1.5px, transparent 1.5px);
-      background-size: 28px 28px;
+      background-image: radial-gradient(#cbd5e1 0.75px, transparent 0.75px), radial-gradient(#cbd5e1 0.75px, #f0fdf4 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
     }
 
-    .font-farm {
-      font-family: 'Fredoka', cursive;
-    }
+    /* Highlight Chunking Background Styles */
+    .chunk-bg-1 { background-color: #fef3c7; border-bottom: 2px solid #f59e0b; border-radius: 6px; padding: 2px 4px; }
+    .chunk-bg-2 { background-color: #e0e7ff; border-bottom: 2px solid #6366f1; border-radius: 6px; padding: 2px 4px; }
+    .chunk-bg-3 { background-color: #fce7f3; border-bottom: 2px solid #ec4899; border-radius: 6px; padding: 2px 4px; }
+    .chunk-bg-4 { background-color: #dcfce7; border-bottom: 2px solid #22c55e; border-radius: 6px; padding: 2px 4px; }
+    .chunk-bg-5 { background-color: #ccfbf1; border-bottom: 2px solid #14b8a6; border-radius: 6px; padding: 2px 4px; }
 
-    /* Floating animations */
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(3deg); }
-    }
-    @keyframes floatReverse {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(8px) rotate(-3deg); }
-    }
-    @keyframes pulseGlow {
-      0%, 100% { transform: scale(1); filter: brightness(1); }
-      50% { transform: scale(1.06); filter: brightness(1.2); }
-    }
-
-    .animate-float-1 { animation: floatSlow 4s ease-in-out infinite; }
-    .animate-float-2 { animation: floatReverse 5s ease-in-out infinite; }
-
-    /* Chunk Background Highlight Styles */
-    .hl-chunk {
-      display: inline;
-      padding: 2px 6px;
-      margin: 1px 2px;
-      border-radius: 6px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.12);
-    }
-    .hl-chunk:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    /* Advanced Vocabulary Text-Color Highlight System */
+    /* Highlight Vocabulary Text Styles (Distinct colors & badge outline) */
     .hl-vocab {
-      font-weight: 900;
       cursor: pointer;
-      display: inline-block;
+      font-weight: 700;
       padding: 1px 5px;
-      margin: 0 2px;
       border-radius: 6px;
-      position: relative;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      border-bottom: 2px dashed currentColor;
+      transition: all 0.2s ease-in-out;
+      display: inline-block;
+      margin: 1px 0;
     }
+    
+    .v-red { color: #dc2626; background-color: #fee2e2; border: 1px solid #fca5a5; }
+    .v-blue { color: #2563eb; background-color: #dbeafe; border: 1px solid #93c5fd; }
+    .v-purple { color: #9333ea; background-color: #f3e8ff; border: 1px solid #d8b4fe; }
+    .v-emerald { color: #059669; background-color: #d1fae5; border: 1px solid #6ee7b7; }
+    .v-amber { color: #d97706; background-color: #fef3c7; border: 1px solid #fde047; }
+    .v-rose { color: #e11d48; background-color: #ffe4e6; border: 1px solid #fda4af; }
+    .v-teal { color: #0d9488; background-color: #ccfbf1; border: 1px solid #5eead4; }
 
-    .hl-vocab:hover, .hl-vocab-active {
-      transform: translateY(-2px) scale(1.08) !important;
-      animation: pulseGlow 1.2s infinite ease-in-out;
+    /* Synchronized Highlight Active State */
+    .sync-active {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(234, 179, 8, 0.8) !important;
+      outline: 2px solid #eab308;
       z-index: 20;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      outline: 2px solid currentColor;
     }
 
-    /* Synchronized Active state for Pair Syncing */
-    .hl-pair-active {
-      box-shadow: 0 0 0 3px #f59e0b, 0 6px 18px rgba(245, 158, 11, 0.5) !important;
-      transform: scale(1.08) translateY(-2px) !important;
-      background-color: #fef08a !important;
-      color: #0f172a !important;
-      z-index: 30 !important;
+    /* Bounce and float animations for Happy Farm theme */
+    @keyframes farmFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
     }
+    .animate-farm-float { animation: farmFloat 4s ease-in-out infinite; }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .animate-pulse-glow { animation: pulseGlow 1.5s infinite; }
 
     /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 8px; }
-    ::-webkit-scrollbar-thumb { background: #86efac; border-radius: 8px; }
-    ::-webkit-scrollbar-thumb:hover { background: #4ade80; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb { background: #86efac; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #22c55e; }
   </style>
 </head>
-<body class="text-slate-800 min-h-screen flex flex-col pb-12">
+<body class="text-slate-800 font-sans min-h-screen flex flex-col justify-between">
 
-  <!-- Header Section -->
-  <header class="bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 text-white shadow-xl relative overflow-hidden border-b-8 border-yellow-400">
-    <!-- Floating Background Decor -->
-    <div class="absolute -top-4 -left-4 text-white/10 text-8xl animate-float-1 pointer-events-none">
-      <i class="fa-solid fa-tractor"></i>
-    </div>
-    <div class="absolute -bottom-6 right-10 text-white/10 text-9xl animate-float-2 pointer-events-none">
+  <!-- TOP HEADER / FARM BANNER -->
+  <header class="bg-gradient-to-r from-emerald-600 via-green-500 to-lime-500 text-white shadow-lg border-b-4 border-amber-400 relative overflow-hidden">
+    <!-- Decorative Farm Elements -->
+    <div class="absolute -right-4 -bottom-6 opacity-20 text-9xl pointer-events-none select-none">
       <i class="fa-solid fa-wheat-awn"></i>
     </div>
+    <div class="absolute left-6 top-2 opacity-15 text-7xl pointer-events-none select-none animate-farm-float">
+      <i class="fa-solid fa-tractor"></i>
+    </div>
 
-    <div class="max-w-6xl mx-auto px-4 py-8 relative z-10 text-center">
-      <div class="inline-flex items-center space-x-2 bg-yellow-400 text-yellow-950 font-bold px-4 py-1.5 rounded-full text-xs md:text-sm shadow-md mb-3">
-        <span><i class="fa-solid fa-sun text-orange-500 mr-1.5"></i> Lớp Anh thầy Kết - Học từ vựng qua bài đọc song ngữ</span>
+    <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-4 text-center md:text-left">
+        <div class="bg-white/20 p-3 rounded-3xl backdrop-blur-sm border-2 border-white/40 shadow-inner animate-farm-float">
+          <span class="text-4xl sm:text-5xl">🌾🐮</span>
+        </div>
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold font-farm tracking-wide drop-shadow-md text-amber-200">
+            HAPPY FARM ENGLISH
+          </h1>
+          <p class="text-xs sm:text-sm font-semibold text-emerald-100 flex items-center justify-center md:justify-start gap-2 mt-1">
+            <span><i class="fa-solid fa-star text-amber-300"></i> Đọc Song Ngữ Anh - Việt Nông Trại Vui Vẻ</span>
+            <span class="bg-amber-400 text-emerald-950 text-xs px-2 py-0.5 rounded-full font-bold">C1/C2 Advanced</span>
+          </p>
+        </div>
       </div>
-      <h1 class="text-3xl md:text-5xl font-extrabold font-farm tracking-wide drop-shadow-md flex items-center justify-center gap-3">
-        <i class="fa-solid fa-cow text-amber-200"></i>
-        <span>NÔNG TRẠI VUI VẺ - ĐỌC SONG NGỮ C1/C2</span>
-        <i class="fa-solid fa-seedling text-emerald-200"></i>
-      </h1>
-      <p class="text-emerald-100 mt-2 text-sm md:text-base max-w-3xl mx-auto font-medium">
-        Tô màu chữ nổi bật (Text Color Highlight) cho từ vựng nâng cao & cụm danh từ (Noun Phrases). Click hoặc Hover vào từ vựng để thấy ngay cặp từ dịch tương ứng trong bản Tiếng Việt! 🌾🌻
-      </p>
 
-      <!-- Color Legend / Guide -->
-      <div class="mt-6 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm font-semibold text-slate-800">
-        <span class="bg-white/95 px-3 py-1.5 rounded-xl shadow border border-emerald-200 flex items-center gap-1.5">
-          <i class="fa-solid fa-palette text-amber-500"></i> Chú thích Tô Màu:
-        </span>
-        <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-xl border border-blue-300 font-bold">Nền Dịu (Chunking Cụm Từ)</span>
-        <span class="bg-rose-500 text-white px-3 py-1 rounded-xl font-extrabold shadow-sm">Màu Chữ Rực Rỡ (Từ Học Thuật C1/C2)</span>
-        <span class="bg-amber-300 text-amber-950 px-3 py-1 rounded-xl font-bold border border-amber-400">Đồng Bộ Nhấp Nháy Nghĩa</span>
+      <!-- Quick Control Bar -->
+      <div class="flex items-center gap-3 bg-emerald-800/40 p-2 rounded-2xl border border-emerald-300/30 backdrop-blur-md">
+        <button onclick="expandAllPassages()" class="bg-amber-400 hover:bg-amber-300 text-emerald-950 font-farm font-bold text-xs sm:text-sm px-3 py-2 rounded-xl shadow-md transition flex items-center gap-1.5 active:scale-95">
+          <i class="fa-solid fa-angles-down"></i> Mở Tất Cả Bài
+        </button>
+        <button onclick="collapseAllPassages()" class="bg-white/20 hover:bg-white/30 text-white font-farm font-bold text-xs sm:text-sm px-3 py-2 rounded-xl transition flex items-center gap-1.5 active:scale-95">
+          <i class="fa-solid fa-angles-up"></i> Thu Gọn
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Main Content Container -->
-  <main class="max-w-6xl mx-auto px-4 mt-8 flex-1 w-full">
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-8">
     
-    <!-- Audio & Guide Notice -->
-    <div class="bg-amber-50 border-2 border-amber-300 rounded-3xl p-4 md:p-5 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
-      <div class="flex items-center space-x-4">
-        <div class="w-12 h-12 rounded-2xl bg-amber-400 text-amber-950 flex items-center justify-center text-2xl shrink-0 shadow-md">
-          <i class="fa-solid fa-graduation-cap"></i>
+    <!-- INSTRUCTION BANNER -->
+    <div class="bg-amber-50 border-2 border-amber-300 rounded-3xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="text-3xl bg-amber-200 p-2.5 rounded-2xl shrink-0">
+          🐥
         </div>
         <div>
-          <h4 class="font-bold text-amber-900 font-farm text-base md:text-lg">Phương Pháp Học Từ Vựng Qua Màu Chữ (Text Color & Pairing)</h4>
-          <p class="text-xs md:text-sm text-amber-800 mt-0.5">Rê chuột (Hover) hoặc Nhấp (Click) vào bất kỳ từ vựng màu rực rỡ nào, từ tiếng Anh và cụm từ Tiếng Việt tương ứng sẽ ngay lập tức phát sáng nổi bật để bạn nhận biết nghĩa tức thì!</p>
+          <h3 class="font-farm font-bold text-amber-900 text-base sm:text-lg flex items-center gap-2">
+            <span>Hướng Dẫn Học Song Ngữ Hiệu Quả</span>
+          </h3>
+          <p class="text-xs sm:text-sm text-amber-800 mt-0.5">
+            1. Rê chuột hoặc ấn vào <strong>Từ vựng nâng cao (tô màu chữ)</strong> hoặc <strong>Cụm Chunking (tô màu nền)</strong> để đối chiếu nghĩa tiếng Việt tương ứng.<br>
+            2. Click vào từ vựng để mở <strong>Từ điển Popup</strong> tra IPA, Nghĩa & Ví dụ.<br>
+            3. Dùng trình phát âm <strong>Audio Text-To-Speech</strong> để luyện nghe chuẩn.
+          </p>
         </div>
+      </div>
+      <div class="flex items-center gap-2 text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-2 rounded-xl border border-emerald-300 shrink-0">
+        <i class="fa-solid fa-mobile-screen"></i> Mobile Friendly (Song Song 2 Cột)
       </div>
     </div>
 
-    <!-- Passages Container -->
-    <div id="passages-container" class="space-y-8">
-      <!-- Injected via JavaScript -->
+    <!-- PASSAGES ACCORDION CONTAINER -->
+    <div id="passages-accordion-container" class="space-y-6">
+      <!-- Dynamic passages rendered via JavaScript -->
     </div>
 
   </main>
 
-  <!-- Interactive Dictionary Modal -->
-  <div id="dict-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl border-4 border-yellow-400 overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="dict-modal-content">
+  <!-- FOOTER -->
+  <footer class="bg-emerald-900 text-emerald-200 border-t-4 border-amber-400 py-6 text-center text-xs sm:text-sm font-medium mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2 font-farm text-emerald-100 text-base">
+        <span>🥕 Lớp Anh thầy Kết</span>
+      </div>
+      <p>© 2026 Học từ vựng qua bài đọc song ngữ.</p>
+    </div>
+  </footer>
+
+  <!-- POPUP DICTIONARY MODAL -->
+  <div id="vocab-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl border-4 border-emerald-400 shadow-2xl max-w-lg w-full overflow-hidden transform transition-all scale-95 opacity-0 duration-200" id="modal-content">
       
       <!-- Modal Header -->
-      <div class="bg-gradient-to-r from-amber-400 to-orange-400 px-6 py-4 flex items-center justify-between text-slate-900">
-        <div class="flex items-center space-x-2">
-          <span class="bg-white text-amber-600 rounded-full w-8 h-8 flex items-center justify-center font-extrabold text-lg shadow-sm">
-            <i class="fa-solid fa-book-bookmark"></i>
-          </span>
-          <h3 class="font-farm font-bold text-xl tracking-wide">Từ Điển Nông Trại C1/C2</h3>
+      <div class="bg-gradient-to-r from-emerald-500 to-green-600 p-4 sm:p-5 text-white relative flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl bg-white/20 p-2 rounded-2xl">🐤</span>
+          <div>
+            <span id="modal-type-badge" class="bg-amber-300 text-emerald-950 text-[10px] sm:text-xs font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm">
+              NOUN
+            </span>
+            <h3 id="modal-word" class="text-2xl sm:text-3xl font-extrabold font-farm tracking-wide text-amber-100 mt-1">
+              Word
+            </h3>
+          </div>
         </div>
-        <button id="close-modal-btn" class="w-8 h-8 bg-white/30 hover:bg-white text-slate-800 hover:text-red-600 rounded-full transition-colors flex items-center justify-center font-bold">
-          <i class="fa-solid fa-xmark text-lg"></i>
+        
+        <button onclick="closeVocabModal()" class="w-9 h-9 bg-white/20 hover:bg-white/40 text-white rounded-full flex items-center justify-center transition active:scale-95">
+          <i class="fa-solid fa-xmark text-xl"></i>
         </button>
       </div>
 
       <!-- Modal Body -->
-      <div class="p-6 space-y-4">
-        <div>
-          <div class="flex items-baseline space-x-3">
-            <h2 id="modal-word" class="text-2xl md:text-3xl font-extrabold text-emerald-700 font-farm">Word Phrase</h2>
-            <span id="modal-pos" class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full uppercase">Noun</span>
-          </div>
-          <p id="modal-ipa" class="text-slate-500 font-mono text-sm mt-0.5">/ phonetic /</p>
-        </div>
-
-        <div class="bg-emerald-50 rounded-2xl p-4 border border-emerald-200">
-          <p class="text-xs text-emerald-800 uppercase font-extrabold tracking-wider mb-1">Bản Dịch Tiếng Việt Chuẩn Nghĩa</p>
-          <p id="modal-meaning" class="text-lg font-extrabold text-slate-900">Nghĩa của từ ở đây</p>
-        </div>
-
-        <div class="space-y-1">
-          <p class="text-xs text-slate-400 font-extrabold uppercase tracking-wider">Ví Dụ Minh Họa Trong Ngữ Cảnh</p>
-          <p id="modal-example" class="text-sm text-slate-700 italic bg-slate-50 p-3 rounded-xl border border-slate-200 leading-relaxed">
-            "Example sentence goes here."
-          </p>
-        </div>
-
-        <div class="bg-amber-50 rounded-2xl p-3.5 border border-amber-200 flex items-start space-x-2.5">
-          <i class="fa-solid fa-lightbulb text-amber-500 text-xl mt-0.5 shrink-0"></i>
+      <div class="p-5 sm:p-6 space-y-4 max-h-[75vh] overflow-y-auto">
+        <!-- Pronunciation & Audio -->
+        <div class="flex items-center justify-between bg-emerald-50 p-3 rounded-2xl border border-emerald-200">
           <div>
-            <span class="text-xs font-bold text-amber-900 block font-farm">Mẹo Ghi Nhớ Tự Nhiên:</span>
-            <p id="modal-tip" class="text-xs text-amber-800">Ghi nhớ cụm từ này để ghi điểm cao trong bài thi Reading!</p>
+            <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block">Phiên Âm IPA</span>
+            <span id="modal-ipa" class="text-lg font-bold text-slate-800 font-mono">/ipa/</span>
           </div>
+          <button id="modal-tts-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-farm text-xs font-bold px-4 py-2 rounded-xl shadow transition flex items-center gap-2">
+            <i class="fa-solid fa-volume-high"></i> Phát Âm
+          </button>
+        </div>
+
+        <!-- Vietnamese Meaning -->
+        <div>
+          <span class="text-xs font-extrabold text-slate-400 uppercase tracking-wider block mb-1">Nghĩa Tiếng Việt</span>
+          <div id="modal-meaning" class="text-lg font-bold text-emerald-900 bg-amber-50 p-3 rounded-2xl border border-amber-200">
+            Nghĩa của từ
+          </div>
+        </div>
+
+        <!-- Example Sentence -->
+        <div>
+          <span class="text-xs font-extrabold text-slate-400 uppercase tracking-wider block mb-1">Ví Dụ Trong Bài Đọc</span>
+          <div id="modal-example" class="text-sm font-medium text-slate-700 italic bg-slate-50 p-3 rounded-2xl border border-slate-200 leading-relaxed">
+            "Example sentence goes here."
+          </div>
+        </div>
+
+        <!-- Farm Tip -->
+        <div class="bg-lime-50 p-3 rounded-2xl border border-lime-200 flex items-start gap-2.5 text-xs text-lime-900">
+          <i class="fa-solid fa-lightbulb text-amber-500 text-base mt-0.5"></i>
+          <span><strong>Mẹo Nông Trại:</strong> Hãy chú ý cấu trúc từ vựng và câu ví dụ để vận dụng chính xác vào bài viết Task 2 hoặc Speaking nhé!</span>
         </div>
       </div>
 
       <!-- Modal Footer -->
-      <div class="bg-slate-50 px-6 py-3 border-t border-slate-100 text-right">
-        <button id="speak-modal-word" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-xl font-bold text-sm shadow transition-all flex items-center space-x-2 inline-flex">
-          <i class="fa-solid fa-volume-high"></i>
-          <span>Nghe Phát Âm Nhanh</span>
+      <div class="bg-slate-100 p-3 text-center border-t border-slate-200">
+        <button onclick="closeVocabModal()" class="bg-slate-700 hover:bg-slate-800 text-white font-farm text-xs font-bold px-6 py-2 rounded-xl transition">
+          Đóng Cửa Sổ (Close)
         </button>
       </div>
 
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="mt-auto text-center text-slate-500 text-sm py-8">
-    <div class="flex justify-center items-center space-x-3 mb-2 text-2xl text-emerald-600">
-      <i class="fa-solid fa-seedling"></i>
-      <i class="fa-solid fa-wheat-awn"></i>
-      <i class="fa-solid fa-carrot"></i>
-    </div>
-    <p class="font-semibold text-slate-700">Lớp Anh thầy Kết - Chúc các em học tập tốt!</p>
-  </footer>
-
-  <!-- DATA & JAVASCRIPT LOGIC -->
+  <!-- JAVASCRIPT LOGIC & FULL DATA -->
   <script>
     /* ==========================================================================
-       PASSAGES DATA STRUCTURE WITH COMPLETE ADVANCED VOCABULARY MAPPING
+       COMPLETE 100% DATA STRUCTURE FOR READING PASSAGES 01, 02, 03
        ========================================================================== */
     const passagesData = [
       {
-        id: "passage-01",
+        id: "p1",
         title: "READING PASSAGE 01",
-        topic: "Artificial Intelligence & Labor Market (Trí Tuệ Nhân Tạo & Thị Trường Lao Động)",
-        icon: "fa-robot",
-        colorScheme: "from-emerald-500 to-teal-600",
-        audioText: `The exponential integration of artificial intelligence into the modern workforce has sparked intense debate among economists regarding its long-term societal impact. While technological optimists contend that automation will ultimately generate novel industries and streamline workplace efficiency, critics caution against the unprecedented speed of job displacement. Unlike previous industrial revolutions, which primarily rendered manual labor redundant, contemporary algorithmic advancements increasingly threaten cognitive, white-collar professions. Consequently, educational systems worldwide are being urged to restructure their curricula, shifting focus from rote memorization toward non-automated skills such as critical thinking, emotional intelligence, and complex problem-solving. Failure to adapt to this paradigm shift could exacerbate income inequality and destabilize the global labor market.`,
-        chunks: [
+        subtitle: "Artificial Intelligence & Modern Workforce",
+        topic: "Công Nghệ & Lao Động Trí Óc",
+        icon: "🤖",
+        badgeColor: "bg-blue-600",
+        
+        fullEnText: "The exponential integration of artificial intelligence into the modern workforce has sparked intense debate among economists regarding its long-term societal impact. While technological optimists contend that automation will ultimately generate novel industries and streamline workplace efficiency, critics caution against the unprecedented speed of job displacement. Unlike previous industrial revolutions, which primarily rendered manual labor redundant, contemporary algorithmic advancements increasingly threaten cognitive, white-collar professions. Consequently, educational systems worldwide are being urged to restructure their curricula, shifting focus from rote memorization toward non-automated skills such as critical thinking, emotional intelligence, and complex problem-solving. Failure to adapt to this paradigm shift could exacerbate income inequality and destabilize the global labor market.",
+
+        paragraphs: [
           {
-            id: "p1-c1",
-            en: "artificial intelligence",
-            vi: "trí tuệ nhân tạo",
-            color: "bg-blue-100 text-blue-900 border-blue-300",
-            ipa: "/ˌɑː.tɪˈfɪʃ.əl ɪnˈtel.ɪ.dʒəns/",
-            pos: "Noun Phrase",
-            example: "Artificial intelligence is changing the world.",
-            tip: "Cụm danh từ phổ biến chỉ trí tuệ nhân tạo."
-          },
-          {
-            id: "p1-c2",
-            en: "modern workforce",
-            vi: "lực lượng lao động hiện đại",
-            color: "bg-emerald-100 text-emerald-900 border-emerald-300",
-            ipa: "/ˈmɒd.ən ˈwɜːk.fɔːs/",
-            pos: "Noun Phrase",
-            example: "The modern workforce requires digital skills.",
-            tip: "Workforce chỉ lực lượng người lao động."
-          },
-          {
-            id: "p1-c3",
-            en: "long-term societal impact",
-            vi: "tác động xã hội lâu dài",
-            color: "bg-amber-100 text-amber-900 border-amber-300",
-            ipa: "/lɒŋ.tɜːm səˈsaɪ.ə.təl ˈɪm.pækt/",
-            pos: "Noun Phrase",
-            example: "The long-term societal impact of social media is profound.",
-            tip: "Societal = thuộc về xã hội."
+            enChunks: [
+              {
+                id: "p1-c1",
+                type: "chunk-bg-1",
+                text: "The <span class='hl-vocab v-red' onclick='openVocabModal(\"p1-v1\")' onmouseover='syncHover(\"p1-v1\", true)' onmouseout='syncHover(\"p1-v1\", false)' data-v='p1-v1'>exponential integration</span> of artificial intelligence into the modern workforce"
+              },
+              {
+                text: " has sparked intense debate among economists regarding its long-term societal impact. While technological optimists "
+              },
+              {
+                id: "p1-c2",
+                type: "chunk-bg-2",
+                text: "<span class='hl-vocab v-blue' onclick='openVocabModal(\"p1-v2\")' onmouseover='syncHover(\"p1-v2\", true)' onmouseout='syncHover(\"p1-v2\", false)' data-v='p1-v2'>contend</span> that automation will ultimately generate novel industries"
+              },
+              {
+                text: " and "
+              },
+              {
+                id: "p1-c3",
+                type: "chunk-bg-3",
+                text: "<span class='hl-vocab v-purple' onclick='openVocabModal(\"p1-v3\")' onmouseover='syncHover(\"p1-v3\", true)' onmouseout='syncHover(\"p1-v3\", false)' data-v='p1-v3'>streamline</span> workplace efficiency"
+              },
+              {
+                text: ", critics caution against the unprecedented speed of "
+              },
+              {
+                id: "p1-c4",
+                type: "chunk-bg-4",
+                text: "<span class='hl-vocab v-emerald' onclick='openVocabModal(\"p1-v4\")' onmouseover='syncHover(\"p1-v4\", true)' onmouseout='syncHover(\"p1-v4\", false)' data-v='p1-v4'>job displacement</span>"
+              },
+              {
+                text: ". Unlike previous industrial revolutions, which primarily "
+              },
+              {
+                id: "p1-c5",
+                type: "chunk-bg-5",
+                text: "<span class='hl-vocab v-amber' onclick='openVocabModal(\"p1-v5\")' onmouseover='syncHover(\"p1-v5\", true)' onmouseout='syncHover(\"p1-v5\", false)' data-v='p1-v5'>rendered manual labor redundant</span>"
+              },
+              {
+                text: ", contemporary algorithmic advancements increasingly threaten cognitive, white-collar professions. Consequently, educational systems worldwide are being urged to restructure their curricula, shifting focus from rote memorization toward non-automated skills such as critical thinking, emotional intelligence, and complex problem-solving. Failure to adapt to this "
+              },
+              {
+                id: "p1-c6",
+                type: "chunk-bg-1",
+                text: "paradigm shift could <span class='hl-vocab v-rose' onclick='openVocabModal(\"p1-v6\")' onmouseover='syncHover(\"p1-v6\", true)' onmouseout='syncHover(\"p1-v6\", false)' data-v='p1-v6'>exacerbate income inequality</span>"
+              },
+              {
+                text: " and destabilize the global labor market."
+              }
+            ],
+
+            viChunks: [
+              {
+                id: "p1-c1",
+                type: "chunk-bg-1",
+                text: "Sự <span class='hl-vocab v-red' onmouseover='syncHover(\"p1-v1\", true)' onmouseout='syncHover(\"p1-v1\", false)' data-v='p1-v1'>tích hợp theo cấp số nhân</span> của trí tuệ nhân tạo vào lực lượng lao động hiện đại"
+              },
+              {
+                text: " đã châm ngòi cho những cuộc tranh luận gay gắt giữa các nhà kinh tế học về tác động xã hội lâu dài của nó. Trong khi những người lạc quan về công nghệ "
+              },
+              {
+                id: "p1-c2",
+                type: "chunk-bg-2",
+                text: "<span class='hl-vocab v-blue' onmouseover='syncHover(\"p1-v2\", true)' onmouseout='syncHover(\"p1-v2\", false)' data-v='p1-v2'>cho rằng</span> tự động hóa cuối cùng sẽ tạo ra các ngành công nghiệp mới"
+              },
+              {
+                text: " và "
+              },
+              {
+                id: "p1-c3",
+                type: "chunk-bg-3",
+                text: "<span class='hl-vocab v-purple' onmouseover='syncHover(\"p1-v3\", true)' onmouseout='syncHover(\"p1-v3\", false)' data-v='p1-v3'>tối ưu hóa</span> hiệu suất làm việc"
+              },
+              {
+                text: ", thì các nhà phê bình lại cảnh báo về tốc độ chưa từng có của "
+              },
+              {
+                id: "p1-c4",
+                type: "chunk-bg-4",
+                text: "<span class='hl-vocab v-emerald' onmouseover='syncHover(\"p1-v4\", true)' onmouseout='syncHover(\"p1-v4\", false)' data-v='p1-v4'>sự dịch chuyển công việc</span>"
+              },
+              {
+                text: ". Không giống như các cuộc cách mạng công nghiệp trước đây, vốn chủ yếu "
+              },
+              {
+                id: "p1-c5",
+                type: "chunk-bg-5",
+                text: "<span class='hl-vocab v-amber' onmouseover='syncHover(\"p1-v5\", true)' onmouseout='syncHover(\"p1-v5\", false)' data-v='p1-v5'>khiến lao động chân tay trở nên dư thừa</span>"
+              },
+              {
+                text: ", những tiến bộ thuật toán đương đại đang ngày càng đe dọa các ngành nghề trí óc, văn phòng. Do đó, các hệ thống giáo dục trên toàn thế giới đang được thúc giục tái cấu trúc chương trình giảng dạy, chuyển trọng tâm từ học vẹt sang các kỹ năng không thể tự động hóa như tư duy phản biện, trí tuệ cảm xúc và giải quyết vấn đề phức tạp. Việc không thể thích ứng với sự chuyển dịch cục diện này có thể "
+              },
+              {
+                id: "p1-c6",
+                type: "chunk-bg-1",
+                text: "<span class='hl-vocab v-rose' onmouseover='syncHover(\"p1-v6\", true)' onmouseout='syncHover(\"p1-v6\", false)' data-v='p1-v6'>làm trầm trọng thêm bất bình đẳng thu nhập</span>"
+              },
+              {
+                text: " và làm mất ổn định thị trường lao động toàn cầu."
+              }
+            ]
           }
         ],
-        vocabs: [
+
+        vocabList: [
           {
             id: "p1-v1",
-            en: "exponential integration",
-            vi: "sự tích hợp theo cấp số nhân",
-            textColor: "text-rose-600 bg-rose-50 border-rose-300",
+            word: "Exponential integration",
             ipa: "/ˌek.spəˈnen.ʃəl ˌɪn.tɪˈɡreɪ.ʃən/",
-            pos: "Noun Phrase (C2)",
-            example: "The exponential integration of technology transformed medicine.",
-            tip: "Exponential = tăng rất nhanh theo cấp số nhân."
+            type: "Noun Phrase",
+            colorClass: "v-red",
+            meaning: "Sự tích hợp/hợp nhất theo cấp số nhân (tăng trưởng cực nhanh)",
+            example: "The exponential integration of AI into healthcare is transforming diagnostic speed."
           },
           {
             id: "p1-v2",
-            en: "contend",
-            vi: "cho rằng / khẳng định",
-            textColor: "text-purple-600 bg-purple-50 border-purple-300",
+            word: "Contend",
             ipa: "/kənˈtend/",
-            pos: "Verb (C1)",
-            example: "Scientists contend that climate change requires urgent action.",
-            tip: "Contend = lập luận/khẳng định một quan điểm."
+            type: "Verb (C1)",
+            colorClass: "v-blue",
+            meaning: "Dám khẳng định, cho rằng, lập luận rằng",
+            example: "Economists contend that new technologies create more jobs than they destroy."
           },
           {
             id: "p1-v3",
-            en: "streamline",
-            vi: "tối ưu hóa / tinh gọn",
-            textColor: "text-indigo-600 bg-indigo-50 border-indigo-300",
+            word: "Streamline",
             ipa: "/ˈstriːm.laɪn/",
-            pos: "Verb (C1)",
-            example: "Companies use software to streamline administrative tasks.",
-            tip: "Streamline = làm cho một quy trình trở nên hiệu quả và gọn nhẹ hơn."
+            type: "Verb (C1)",
+            colorClass: "v-purple",
+            meaning: "Tối ưu hóa, tinh gọn quy trình làm việc",
+            example: "Streamlining corporate operations reduces unnecessary overhead costs."
           },
           {
             id: "p1-v4",
-            en: "unprecedented speed",
-            vi: "Tốc độ chưa từng có",
-            textColor: "text-pink-600 bg-pink-50 border-pink-300",
-            ipa: "/ʌnˈpres.ɪ.dent.ɪd spiːd/",
-            pos: "Noun Phrase (C2)",
-            example: "The city expanded at an unprecedented speed.",
-            tip: "Unprecedented = chưa từng có trong tiền lệ."
+            word: "Job displacement",
+            ipa: "/dɪsˈpleɪs.mənt/",
+            type: "Noun Phrase (C1)",
+            colorClass: "v-emerald",
+            meaning: "Sự mất việc làm / sự dịch chuyển công việc do tự động hóa",
+            example: "Automation often causes short-term job displacement in manufacturing."
           },
           {
             id: "p1-v5",
-            en: "job displacement",
-            vi: "sự mất việc làm / dịch chuyển việc làm",
-            textColor: "text-amber-600 bg-amber-50 border-amber-300",
-            ipa: "/dʒɒb dɪsˈpleɪs.mənt/",
-            pos: "Noun Phrase (C1)",
-            example: "Automation leads to widespread job displacement in manufacturing.",
-            tip: "Displacement = sự di dời, dịch chuyển khỏi vị trí cũ."
+            word: "Render manual labor redundant",
+            ipa: "/ˈren.dər ˈmæn.ju.əl ˈleɪ.bər rɪˈdʌn.dənt/",
+            type: "Verb Phrase (C2)",
+            colorClass: "v-amber",
+            meaning: "Khiến lao động chân tay trở nên dư thừa/không cần thiết",
+            example: "Heavy machinery rendered traditional manual labor redundant in farming."
           },
           {
             id: "p1-v6",
-            en: "rendered manual labor redundant",
-            vi: "làm cho lao động chân tay trở nên dư thừa",
-            textColor: "text-red-600 bg-red-50 border-red-300",
-            ipa: "/ˈren.dəd ˈmæn.ju.əl ˈleɪ.bər rɪˈdʌn.dənt/",
-            pos: "Verb Phrase (C2)",
-            example: "Robotics rendered manual labor redundant on assembly lines.",
-            tip: "Render = khiến cho; Redundant = dư thừa, không cần thiết nữa."
-          },
-          {
-            id: "p1-v7",
-            en: "algorithmic advancements",
-            vi: "những tiến bộ thuật toán",
-            textColor: "text-teal-600 bg-teal-50 border-teal-300",
-            ipa: "/ˌæl.ɡəˈrɪð.mɪk ədˈvɑːns.mənts/",
-            pos: "Noun Phrase (C1)",
-            example: "Algorithmic advancements have improved diagnostic accuracy.",
-            tip: "Algorithmic = liên quan đến thuật toán máy tính."
-          },
-          {
-            id: "p1-v8",
-            en: "cognitive, white-collar professions",
-            vi: "các nghề nghiệp trí óc và văn phòng",
-            textColor: "text-blue-600 bg-blue-50 border-blue-300",
-            ipa: "/ˈkɒɡ.nə.tɪv waɪt ˈkɒl.ər prəˈfeʃ.ənz/",
-            pos: "Noun Phrase (C2)",
-            example: "AI is now influencing cognitive, white-collar professions like law.",
-            tip: "White-collar = nhân viên văn phòng, trí óc."
-          },
-          {
-            id: "p1-v9",
-            en: "rote memorization",
-            vi: "việc học thuộc lòng",
-            textColor: "text-orange-600 bg-orange-50 border-orange-300",
-            ipa: "/rəʊt ˌmem.ər.aɪˈzeɪ.ʃən/",
-            pos: "Noun Phrase (C1)",
-            example: "Modern pedagogy discourages rote memorization in classrooms.",
-            tip: "Rote memorization = học vẹt, học thuộc lòng máy móc."
-          },
-          {
-            id: "p1-v10",
-            en: "paradigm shift",
-            vi: "sự thay đổi cục diện / mô hình",
-            textColor: "text-emerald-600 bg-emerald-50 border-emerald-300",
-            ipa: "/ˈpær.ə.daɪm ʃɪft/",
-            pos: "Noun Phrase (C2)",
-            example: "The internet caused a total paradigm shift in communication.",
-            tip: "Paradigm shift = sự thay đổi căn bản trong nhận thức/mô hình."
-          },
-          {
-            id: "p1-v11",
-            en: "exacerbate income inequality",
-            vi: "làm trầm trọng thêm sự bất bình đẳng thu nhập",
-            textColor: "text-red-700 bg-red-100 border-red-400",
-            ipa: "/ɪɡˈzæs.ə.beɪt ˈɪn.kʌm ˌɪn.ɪˈkwɒl.ə.ti/",
-            pos: "Verb Phrase (C2)",
-            example: "Unchecked market forces can exacerbate income inequality.",
-            tip: "Exacerbate = làm mọi chuyện tồi tệ/trầm trọng hơn."
-          }
-        ],
-        paragraphs: [
-          {
-            enChunks: [
-              { text: "The " },
-              { vocabId: "p1-v1", text: "exponential integration" },
-              { text: " of " },
-              { chunkId: "p1-c1", text: "artificial intelligence" },
-              { text: " into the " },
-              { chunkId: "p1-c2", text: "modern workforce" },
-              { text: " has sparked intense debate among economists regarding its " },
-              { chunkId: "p1-c3", text: "long-term societal impact" },
-              { text: ". While technological optimists " },
-              { vocabId: "p1-v2", text: "contend" },
-              { text: " that automation will ultimately generate novel industries and " },
-              { vocabId: "p1-v3", text: "streamline" },
-              { text: " workplace efficiency, critics caution against the " },
-              { vocabId: "p1-v4", text: "unprecedented speed" },
-              { text: " of " },
-              { vocabId: "p1-v5", text: "job displacement" },
-              { text: ". Unlike previous industrial revolutions, which primarily " },
-              { vocabId: "p1-v6", text: "rendered manual labor redundant" },
-              { text: ", contemporary " },
-              { vocabId: "p1-v7", text: "algorithmic advancements" },
-              { text: " increasingly threaten " },
-              { vocabId: "p1-v8", text: "cognitive, white-collar professions" },
-              { text: ". Consequently, educational systems worldwide are being urged to restructure their curricula, shifting focus from " },
-              { vocabId: "p1-v9", text: "rote memorization" },
-              { text: " toward non-automated skills such as critical thinking, emotional intelligence, and complex problem-solving. Failure to adapt to this " },
-              { vocabId: "p1-v10", text: "paradigm shift" },
-              { text: " could " },
-              { vocabId: "p1-v11", text: "exacerbate income inequality" },
-              { text: " and destabilize the global labor market." }
-            ],
-            viChunks: [
-              { text: "" },
-              { vocabId: "p1-v1", text: "sự tích hợp theo cấp số nhân" },
-              { text: " của " },
-              { chunkId: "p1-c1", text: "trí tuệ nhân tạo" },
-              { text: " vào " },
-              { chunkId: "p1-c2", text: "lực lượng lao động hiện đại" },
-              { text: " đã dấy lên cuộc tranh luận gay gắt giữa các nhà kinh tế học về " },
-              { chunkId: "p1-c3", text: "tác động xã hội lâu dài" },
-              { text: " của nó. Trong khi các nhà lạc quan công nghệ " },
-              { vocabId: "p1-v2", text: "cho rằng / khẳng định" },
-              { text: " rằng tự động hóa cuối cùng sẽ tạo ra các ngành công nghiệp mới và " },
-              { vocabId: "p1-v3", text: "tối ưu hóa / tinh gọn" },
-              { text: " hiệu suất làm việc, thì các nhà phê bình cảnh báo về " },
-              { vocabId: "p1-v4", text: "Tốc độ chưa từng có" },
-              { text: " của " },
-              { vocabId: "p1-v5", text: "sự mất việc làm / dịch chuyển việc làm" },
-              { text: ". Không giống như các cuộc cách mạng công nghiệp trước đây, vốn chủ yếu " },
-              { vocabId: "p1-v6", text: "làm cho lao động chân tay trở nên dư thừa" },
-              { text: ", " },
-              { vocabId: "p1-v7", text: "những tiến bộ thuật toán" },
-              { text: " ngày càng đe dọa " },
-              { vocabId: "p1-v8", text: "các nghề nghiệp trí óc và văn phòng" },
-              { text: ". Do đó, các hệ thống giáo dục trên toàn thế giới đang được kêu gọi tái cấu trúc chương trình giảng dạy, chuyển trọng tâm từ " },
-              { vocabId: "p1-v9", text: "việc học thuộc lòng" },
-              { text: " sang các kỹ năng không thể tự động hóa như tư duy phản biện, trí tuệ cảm xúc và giải quyết vấn đề phức tạp. Việc không thể thích ứng với " },
-              { vocabId: "p1-v10", text: "sự thay đổi cục diện / mô hình" },
-              { text: " này có thể " },
-              { vocabId: "p1-v11", text: "làm trầm trọng thêm sự bất bình đẳng thu nhập" },
-              { text: " và làm mất ổn định thị trường lao động toàn cầu." }
-            ]
+            word: "Exacerbate income inequality",
+            ipa: "/ɪɡˈzæs.ər.beɪt ˈɪn.kʌm ˌɪn.ɪˈkwɑː.lə.ti/",
+            type: "Verb Phrase (C2)",
+            colorClass: "v-rose",
+            meaning: "Làm trầm trọng thêm sự bất bình đẳng về thu nhập",
+            example: "Unchecked market forces can exacerbate income inequality between classes."
           }
         ]
       },
 
       {
-        id: "passage-02",
+        id: "p2",
         title: "READING PASSAGE 02",
-        topic: "Urban Gentrification & Social Stratification (Tái Thiết Đô Thị & Phân Tầng Xã Hội)",
-        icon: "fa-city",
-        colorScheme: "from-amber-500 to-orange-600",
-        audioText: `Urban gentrification, while often lauded for revitalizing dilapidated city districts, frequently exacerbates socio-economic stratification within metropolitan populations. As property developers invest in deteriorating neighborhoods, rising property values and increased living costs inevitably displace lower-income residents who have inhabited these areas for generations. Proponents argue that this demographic shift attracts capital investment, enhances municipal infrastructure, and curtails localized crime rates. Conversely, sociologists emphasize that the loss of affordable housing erodes social cohesion and marginalizes vulnerable communities. To mitigate these adverse outcomes, urban planners are increasingly urged to implement inclusive zoning policies and construct subsidized housing, ensuring that urban renewal does not occur at the expense of equitable social integration.`,
-        chunks: [
+        subtitle: "Urban Gentrification & Socio-Economic Dynamics",
+        topic: "Đô Thị Hóa & Phân Tầng Xã Hội",
+        icon: "🏙️",
+        badgeColor: "bg-emerald-600",
+
+        fullEnText: "Urban gentrification, while often lauded for revitalizing dilapidated city districts, frequently exacerbates socio-economic stratification within metropolitan populations. As property developers invest in deteriorating neighborhoods, rising property values and increased living costs inevitably displace lower-income residents who have inhabited these areas for generations. Proponents argue that this demographic shift attracts capital investment, enhances municipal infrastructure, and curtails localized crime rates. Conversely, sociologists emphasize that the loss of affordable housing erodes social cohesion and marginalizes vulnerable communities. To mitigate these adverse outcomes, urban planners are increasingly urged to implement inclusive zoning policies and construct subsidized housing, ensuring that urban renewal does not occur at the expense of equitable social integration.",
+
+        paragraphs: [
           {
-            id: "p2-c1",
-            en: "Urban gentrification",
-            vi: "Tái thiết đô thị",
-            color: "bg-blue-100 text-blue-900 border-blue-300",
-            ipa: "/ˈɜː.bən ˌdʒen.trɪ.fɪˈkeɪ.ʃən/",
-            pos: "Noun Phrase",
-            example: "Urban gentrification alters traditional city spaces.",
-            tip: "Gentrification = quá trình nâng cấp đô thị."
-          },
-          {
-            id: "p2-c2",
-            en: "lower-income residents",
-            vi: "người dân có thu nhập thấp hơn",
-            color: "bg-emerald-100 text-emerald-900 border-emerald-300",
-            ipa: "/ˈləʊ.ər ˈɪn.kʌm ˈrez.ɪ.dənts/",
-            pos: "Noun Phrase",
-            example: "Low-income residents receive government support.",
-            tip: "Cụm danh từ chỉ cư dân có thu nhập thấp."
+            enChunks: [
+              {
+                id: "p2-c1",
+                type: "chunk-bg-1",
+                text: "Urban gentrification, while often <span class='hl-vocab v-red' onclick='openVocabModal(\"p2-v1\")' onmouseover='syncHover(\"p2-v1\", true)' onmouseout='syncHover(\"p2-v1\", false)' data-v='p2-v1'>lauded for revitalizing dilapidated city districts</span>"
+              },
+              {
+                text: ", frequently "
+              },
+              {
+                id: "p2-c2",
+                type: "chunk-bg-2",
+                text: "<span class='hl-vocab v-blue' onclick='openVocabModal(\"p2-v2\")' onmouseover='syncHover(\"p2-v2\", true)' onmouseout='syncHover(\"p2-v2\", false)' data-v='p2-v2'>exacerbates socio-economic stratification</span>"
+              },
+              {
+                text: " within metropolitan populations. As property developers invest in deteriorating neighborhoods, rising property values and increased living costs inevitably displace lower-income residents who have inhabited these areas for generations. Proponents argue that this demographic shift attracts capital investment, enhances municipal infrastructure, and curtails localized crime rates. Conversely, sociologists emphasize that the loss of affordable housing "
+              },
+              {
+                id: "p2-c3",
+                type: "chunk-bg-3",
+                text: "<span class='hl-vocab v-purple' onclick='openVocabModal(\"p2-v3\")' onmouseover='syncHover(\"p2-v3\", true)' onmouseout='syncHover(\"p2-v3\", false)' data-v='p2-v3'>erodes social cohesion</span>"
+              },
+              {
+                text: " and "
+              },
+              {
+                id: "p2-c4",
+                type: "chunk-bg-4",
+                text: "<span class='hl-vocab v-emerald' onclick='openVocabModal(\"p2-v4\")' onmouseover='syncHover(\"p2-v4\", true)' onmouseout='syncHover(\"p2-v4\", false)' data-v='p2-v4'>marginalizes vulnerable communities</span>"
+              },
+              {
+                text: ". To "
+              },
+              {
+                id: "p2-c5",
+                type: "chunk-bg-5",
+                text: "<span class='hl-vocab v-teal' onclick='openVocabModal(\"p2-v5\")' onmouseover='syncHover(\"p2-v5\", true)' onmouseout='syncHover(\"p2-v5\", false)' data-v='p2-v5'>mitigate these adverse outcomes</span>"
+              },
+              {
+                text: ", urban planners are increasingly urged to implement inclusive zoning policies and construct subsidized housing, ensuring that urban renewal does not occur at the expense of equitable social integration."
+              }
+            ],
+
+            viChunks: [
+              {
+                id: "p2-c1",
+                type: "chunk-bg-1",
+                text: "Sự chỉnh trang đô thị, dù thường được <span class='hl-vocab v-red' onmouseover='syncHover(\"p2-v1\", true)' onmouseout='syncHover(\"p2-v1\", false)' data-v='p2-v1'>ca ngợi vì khôi phục các khu phố xập xệ</span>"
+              },
+              {
+                text: ", lại thường xuyên "
+              },
+              {
+                id: "p2-c2",
+                type: "chunk-bg-2",
+                text: "<span class='hl-vocab v-blue' onmouseover='syncHover(\"p2-v2\", true)' onmouseout='syncHover(\"p2-v2\", false)' data-v='p2-v2'>làm trầm trọng thêm sự phân tầng kinh tế - xã hội</span>"
+              },
+              {
+                text: " trong cư dân thành thị. Khi các nhà phát triển bất động sản đầu tư vào các khu xóm xuống cấp, giá bất động sản tăng cao và chi phí sinh hoạt đắt đỏ hơn sẽ tất yếu đẩy những người dân thu nhập thấp – những người đã sống ở đây qua nhiều thế hệ – rời đi. Những người ủng hộ cho rằng sự dịch chuyển nhân khẩu học này thu hút vốn đầu tư, nâng cấp hạ tầng đô thị và giảm tỷ lệ tội phạm địa phương. Ngược lại, các nhà xã hội học nhấn mạnh rằng sự mất đi của nhà ở giá rẻ "
+              },
+              {
+                id: "p2-c3",
+                type: "chunk-bg-3",
+                text: "<span class='hl-vocab v-purple' onmouseover='syncHover(\"p2-v3\", true)' onmouseout='syncHover(\"p2-v3\", false)' data-v='p2-v3'>xói mòn sự gắn kết xã hội</span>"
+              },
+              {
+                text: " và "
+              },
+              {
+                id: "p2-c4",
+                type: "chunk-bg-4",
+                text: "<span class='hl-vocab v-emerald' onmouseover='syncHover(\"p2-v4\", true)' onmouseout='syncHover(\"p2-v4\", false)' data-v='p2-v4'>đẩy các cộng đồng yếu thế ra lề xã hội</span>"
+              },
+              {
+                text: ". Để "
+              },
+              {
+                id: "p2-c5",
+                type: "chunk-bg-5",
+                text: "<span class='hl-vocab v-teal' onmouseover='syncHover(\"p2-v5\", true)' onmouseout='syncHover(\"p2-v5\", false)' data-v='p2-v5'>giảm thiểu những hệ quả bất lợi này</span>"
+              },
+              {
+                text: ", các nhà hoạch định đô thị đang ngày càng được kêu gọi thực hiện chính sách quy hoạch bao hàm và xây dựng nhà ở trợ giá, đảm bảo sự đổi mới đô thị không diễn ra bằng cái giá của sự hòa nhập xã hội công bằng."
+              }
+            ]
           }
         ],
-        vocabs: [
+
+        vocabList: [
           {
             id: "p2-v1",
-            en: "lauded",
-            vi: "được ca ngợi",
-            textColor: "text-indigo-600 bg-indigo-50 border-indigo-300",
-            ipa: "/lɔː.dɪd/",
-            pos: "Verb (Passive, C1)",
-            example: "The novel was lauded by critics nationwide.",
-            tip: "Laud = khen ngợi, ca ngợi nhiệt liệt."
+            word: "Lauded for revitalizing dilapidated city districts",
+            ipa: "/lɔːdɪd fɔːr ˌriːˈvaɪ.təl.aɪz.ɪŋ dɪˈlæp.ə.deɪ.tɪd/",
+            type: "Phrase (C2)",
+            colorClass: "v-red",
+            meaning: "Được khen ngợi/ca ngợi vì hồi sinh các khu phố xập xệ xuống cấp",
+            example: "The mayor was lauded for revitalizing dilapidated city districts with green parks."
           },
           {
             id: "p2-v2",
-            en: "revitalizing dilapidated city districts",
-            vi: "hồi sinh các khu phố mệt mỏi/xuống cấp",
-            textColor: "text-emerald-600 bg-emerald-50 border-emerald-300",
-            ipa: "/riːˈvaɪ.təl.aɪ.zɪŋ dɪˈlæp.ɪ.deɪ.tɪd ˈsɪt.i ˈdɪs.trɪkts/",
-            pos: "Verb Phrase (C2)",
-            example: "Revitalizing dilapidated city districts brings new businesses.",
-            tip: "Revitalize = làm sống lại; Dilapidated = hư hỏng, xập xệ."
+            word: "Exacerbate socio-economic stratification",
+            ipa: "/ɪɡˈzæs.ər.beɪt ˌsoʊ.si.oʊ ˌek.əˈnɑː.mɪk ˌstræt.ə.fəˈkeɪ.ʃən/",
+            type: "Verb Phrase (C2)",
+            colorClass: "v-blue",
+            meaning: "Làm trầm trọng thêm sự phân tầng kinh tế - xã hội",
+            example: "Rising living costs exacerbate socio-economic stratification in mega cities."
           },
           {
             id: "p2-v3",
-            en: "socio-economic stratification",
-            vi: "sự phân tầng kinh tế - xã hội",
-            textColor: "text-purple-600 bg-purple-50 border-purple-300",
-            ipa: "/ˌsəʊ.si.əʊ.iː.kəˈnɒm.ɪk ˌstræt.ɪ.fɪˈkeɪ.ʃən/",
-            pos: "Noun Phrase (C2)",
-            example: "Education helps break socio-economic stratification.",
-            tip: "Stratification = phân tầng thành nhiều tầng lớp."
+            word: "Erode social cohesion",
+            ipa: "/ɪˈroʊd ˈsoʊ.ʃəl koʊˈhiː.ʒən/",
+            type: "Verb Phrase (C1)",
+            colorClass: "v-purple",
+            meaning: "Làm xói mòn / suy giảm sự gắn kết xã hội",
+            example: "Extreme inequality can erode social cohesion and public trust."
           },
           {
             id: "p2-v4",
-            en: "deteriorating neighborhoods",
-            vi: "các khu dân cư đang xuống cấp",
-            textColor: "text-rose-600 bg-rose-50 border-rose-300",
-            ipa: "/dɪˈtɪə.ri.ə.reɪ.tɪŋ ˈneɪ.bə.hʊdz/",
-            pos: "Noun Phrase (C1)",
-            example: "The mayor promised to rebuild deteriorating neighborhoods.",
-            tip: "Deteriorate = ngày càng xấu đi/xuống cấp."
+            word: "Marginalize vulnerable communities",
+            ipa: "/ˈmɑːr.dʒɪ.nə.laɪz ˈvʌl.nɚ.ə.bəl/",
+            type: "Verb Phrase (C1)",
+            colorClass: "v-emerald",
+            meaning: "Đẩy các cộng đồng yếu thế/dễ bị tổn thương ra lề xã hội",
+            example: "Lack of public funding marginalizes vulnerable communities further."
           },
           {
             id: "p2-v5",
-            en: "demographic shift",
-            vi: "sự dịch chuyển nhân khẩu học",
-            textColor: "text-amber-600 bg-amber-50 border-amber-300",
-            ipa: "/ˌdem.əˈɡræf.ɪk ʃɪft/",
-            pos: "Noun Phrase (C1)",
-            example: "Aging populations cause a significant demographic shift.",
-            tip: "Demographic = thuộc về dân số học."
-          },
-          {
-            id: "p2-v6",
-            en: "curtails localized crime rates",
-            vi: "hạn chế/giảm thiểu tỷ lệ tội phạm địa phương",
-            textColor: "text-teal-600 bg-teal-50 border-teal-300",
-            ipa: "/kəˈteɪlz ˈləʊ.kəl.aɪzd kraɪm reɪts/",
-            pos: "Verb Phrase (C2)",
-            example: "Better street lighting curtails localized crime rates.",
-            tip: "Curtail = giảm bớt, cắt giảm."
-          },
-          {
-            id: "p2-v7",
-            en: "erodes social cohesion",
-            vi: "làm xói mòn sự gắn kết xã hội",
-            textColor: "text-red-600 bg-red-50 border-red-300",
-            ipa: "/ɪˈrəʊdz ˈsəʊ.ʃəl kəʊˈhiː.ʒən/",
-            pos: "Verb Phrase (C2)",
-            example: "Extreme inequality erodes social cohesion over time.",
-            tip: "Erode = ăn mòn; Cohesion = sự gắn kết."
-          },
-          {
-            id: "p2-v8",
-            en: "marginalizes vulnerable communities",
-            vi: "đẩy các cộng đồng dễ bị tổn thương ra bên lề",
-            textColor: "text-pink-600 bg-pink-50 border-pink-300",
-            ipa: "/ˈmɑː.dʒɪ.nəl.aɪ.zɪz ˈvʌl.nər.ə.bəl kəˈmjuː.nə.tiz/",
-            pos: "Verb Phrase (C2)",
-            example: "Unfair housing policies marginalize vulnerable communities.",
-            tip: "Marginalize = đẩy ra rìa/lề xã hội."
-          },
-          {
-            id: "p2-v9",
-            en: "mitigate these adverse outcomes",
-            vi: "giảm thiểu những hậu quả bất lợi này",
-            textColor: "text-blue-600 bg-blue-50 border-blue-300",
-            ipa: "/ˈmɪt.ɪ.ɡeɪt ðiːz ˈæd.vɜːs ˈaʊt.kʌmz/",
-            pos: "Verb Phrase (C2)",
-            example: "Regulations aim to mitigate these adverse outcomes.",
-            tip: "Mitigate = giảm bớt tác động tiêu cực."
-          },
-          {
-            id: "p2-v10",
-            en: "inclusive zoning policies",
-            vi: "chính sách quy hoạch vùng mang tính bao hàm",
-            textColor: "text-orange-600 bg-orange-50 border-orange-300",
-            ipa: "/ɪnˈkluː.sɪv ˈzəʊ.nɪŋ ˈpɒl.ə.siz/",
-            pos: "Noun Phrase (C1)",
-            example: "Cities adopt inclusive zoning policies for affordable housing.",
-            tip: "Inclusive = bao hàm, không loại trừ ai."
-          },
-          {
-            id: "p2-v11",
-            en: "equitable social integration",
-            vi: "sự hòa nhập xã hội công bằng",
-            textColor: "text-emerald-700 bg-emerald-100 border-emerald-400",
-            ipa: "/ˈek.wɪ.tə.bəl ˈsəʊ.ʃəl ˌɪn.tɪˈɡreɪ.ʃən/",
-            pos: "Noun Phrase (C2)",
-            example: "True democracy requires equitable social integration.",
-            tip: "Equitable = công bằng, bình đẳng."
-          }
-        ],
-        paragraphs: [
-          {
-            enChunks: [
-              { chunkId: "p2-c1", text: "Urban gentrification" },
-              { text: ", while often " },
-              { vocabId: "p2-v1", text: "lauded" },
-              { text: " for " },
-              { vocabId: "p2-v2", text: "revitalizing dilapidated city districts" },
-              { text: ", frequently exacerbates " },
-              { vocabId: "p2-v3", text: "socio-economic stratification" },
-              { text: " within metropolitan populations. As property developers invest in " },
-              { vocabId: "p2-v4", text: "deteriorating neighborhoods" },
-              { text: ", rising property values and increased living costs inevitably displace " },
-              { chunkId: "p2-c2", text: "lower-income residents" },
-              { text: " who have inhabited these areas for generations. Proponents argue that this " },
-              { vocabId: "p2-v5", text: "demographic shift" },
-              { text: " attracts capital investment, enhances municipal infrastructure, and " },
-              { vocabId: "p2-v6", text: "curtails localized crime rates" },
-              { text: ". Conversely, sociologists emphasize that the loss of affordable housing " },
-              { vocabId: "p2-v7", text: "erodes social cohesion" },
-              { text: " and " },
-              { vocabId: "p2-v8", text: "marginalizes vulnerable communities" },
-              { text: ". To " },
-              { vocabId: "p2-v9", text: "mitigate these adverse outcomes" },
-              { text: ", urban planners are increasingly urged to implement " },
-              { vocabId: "p2-v10", text: "inclusive zoning policies" },
-              { text: " and construct subsidized housing, ensuring that urban renewal does not occur at the expense of " },
-              { vocabId: "p2-v11", text: "equitable social integration" },
-              { text: "." }
-            ],
-            viChunks: [
-              { chunkId: "p2-c1", text: "Tái thiết đô thị" },
-              { text: ", mặc dù thường được " },
-              { vocabId: "p2-v1", text: "được ca ngợi" },
-              { text: " vì " },
-              { vocabId: "p2-v2", text: "hồi sinh các khu phố mệt mỏi/xuống cấp" },
-              { text: ", nhưng thường xuyên làm trầm trọng thêm " },
-              { vocabId: "p2-v3", text: "sự phân tầng kinh tế - xã hội" },
-              { text: " trong dân cư đô thị. Khi các nhà phát triển bất động sản đầu tư vào " },
-              { vocabId: "p2-v4", text: "các khu dân cư đang xuống cấp" },
-              { text: ", giá trị bất động sản tăng cao và chi phí sinh hoạt gia tăng tất yếu sẽ di dời " },
-              { chunkId: "p2-c2", text: "người dân có thu nhập thấp hơn" },
-              { text: " đã sinh sống ở những khu vực này qua nhiều thế hệ. Những người ủng hộ cho rằng " },
-              { vocabId: "p2-v5", text: "sự dịch chuyển nhân khẩu học" },
-              { text: " này thu hút vốn đầu tư, nâng cao cơ sở hạ tầng đô thị và " },
-              { vocabId: "p2-v6", text: "hạn chế/giảm thiểu tỷ lệ tội phạm địa phương" },
-              { text: ". Ngược lại, các nhà xã hội học nhấn mạnh rằng việc mất đi nhà ở giá rẻ sẽ " },
-              { vocabId: "p2-v7", text: "làm xói mòn sự gắn kết xã hội" },
-              { text: " và " },
-              { vocabId: "p2-v8", text: "đẩy các cộng đồng dễ bị tổn thương ra bên lề" },
-              { text: ". Để " },
-              { vocabId: "p2-v9", text: "giảm thiểu những hậu quả bất lợi này" },
-              { text: ", các nhà quy hoạch đô thị ngày càng được kêu gọi thực hiện " },
-              { vocabId: "p2-v10", text: "chính sách quy hoạch vùng mang tính bao hàm" },
-              { text: " và xây dựng nhà ở xã hội, đảm bảo sự đổi mới đô thị không diễn ra trên sự đánh đổi của " },
-              { vocabId: "p2-v11", text: "sự hòa nhập xã hội công bằng" },
-              { text: "." }
-            ]
+            word: "Mitigate adverse outcomes",
+            ipa: "/ˈmɪt.ə.ɡeɪt ædˈvɝːs ˈaʊt.kʌmz/",
+            type: "Verb Phrase (C1)",
+            colorClass: "v-teal",
+            meaning: "Giảm thiểu những kết quả/hệ quả bất lợi",
+            example: "Proactive environmental policies help mitigate adverse climate outcomes."
           }
         ]
       },
 
       {
-        id: "passage-03",
+        id: "p3",
         title: "READING PASSAGE 03",
-        topic: "Cybercrime & Cybersecurity Architecture (Tội Phạm Mạng & An Ninh Mạng)",
-        icon: "fa-shield-halved",
-        colorScheme: "from-blue-600 to-indigo-600",
-        audioText: `The proliferation of ubiquitous internet connectivity has inadvertently catalyzed a formidable surge in cybercrime, evolving from rudimentary malware attacks to sophisticated, state-sponsored cyber espionage. Ransomware, in particular, has emerged as a coercive vector, crippling vital infrastructure and extorting millions from unsuspecting corporate entities. Beyond pecuniary damages, these digital breaches imperil data privacy and undermine public trust in digital governance. To counter these ubiquitous threats, cybersecurity frameworks must transcend reactive defenses and adopt proactive, zero-trust architectures. Furthermore, given the transboundary nature of cyberthreats, international legal protocols and cross-border intelligence sharing are imperative to effectively apprehend cybercriminals operating within digital havens.`,
-        chunks: [
-          {
-            id: "p3-c1",
-            en: "digital breaches",
-            vi: "vi phạm kỹ thuật số",
-            color: "bg-blue-100 text-blue-900 border-blue-300",
-            ipa: "/ˈdɪdʒ.ɪ.təl briːtʃ.ɪz/",
-            pos: "Noun Phrase",
-            example: "Digital breaches cost companies millions.",
-            tip: "Breach = sự vi phạm, xâm nhập."
-          }
-        ],
-        vocabs: [
-          {
-            id: "p3-v1",
-            en: "proliferation of ubiquitous internet connectivity",
-            vi: "sự bùng nổ của kết nối internet phổ biến",
-            textColor: "text-blue-600 bg-blue-50 border-blue-300",
-            ipa: "/prəˌlɪf.əˈreɪ.ʃən əv juːˈbɪk.wɪ.təs ˈɪn.tə.net kə.nekˈtɪv.ə.ti/",
-            pos: "Noun Phrase (C2)",
-            example: "The proliferation of ubiquitous internet connectivity shaped online education.",
-            tip: "Ubiquitous = phổ biến khắp nơi."
-          },
-          {
-            id: "p3-v2",
-            en: "inadvertently catalyzed",
-            vi: "vô tình kích hoạt / thúc đẩy",
-            textColor: "text-purple-600 bg-purple-50 border-purple-300",
-            ipa: "/ˌɪn.ədˈvɜː.tənt.li ˈkæt.əl.aɪzd/",
-            pos: "Verb Phrase (C2)",
-            example: "The policy inadvertently catalyzed massive protests.",
-            tip: "Inadvertently = vô tình; Catalyze = xúc tác."
-          },
-          {
-            id: "p3-v3",
-            en: "formidable surge",
-            vi: "sự gia tăng đáng sợ / mạnh mẽ",
-            textColor: "text-rose-600 bg-rose-50 border-rose-300",
-            ipa: "/fɔːˈmɪd.ə.bəl sɜːdʒ/",
-            pos: "Noun Phrase (C2)",
-            example: "There was a formidable surge in online purchases.",
-            tip: "Formidable = đáng sợ/ghê gớm; Surge = tăng vọt."
-          },
-          {
-            id: "p3-v4",
-            en: "state-sponsored cyber espionage",
-            vi: "gián điệp mạng do nhà nước tài trợ",
-            textColor: "text-indigo-600 bg-indigo-50 border-indigo-300",
-            ipa: "/steɪt ˈspɒn.səd ˈsaɪ.bər ˈes.pi.ə.nɑːʒ/",
-            pos: "Noun Phrase (C2)",
-            example: "State-sponsored cyber espionage threatens critical infrastructure.",
-            tip: "Espionage = hoạt động gián điệp."
-          },
-          {
-            id: "p3-v5",
-            en: "coercive vector",
-            vi: "một công cụ cưỡng đoạt / đe dọa",
-            textColor: "text-pink-600 bg-pink-50 border-pink-300",
-            ipa: "/kəʊˈɜː.sɪv ˈvek.tər/",
-            pos: "Noun Phrase (C2)",
-            example: "Malware acts as a coercive vector against companies.",
-            tip: "Coercive = mang tính ép buộc, cưỡng chế."
-          },
-          {
-            id: "p3-v6",
-            en: "crippling vital infrastructure",
-            vi: "làm tê liệt hạ tầng quan trọng",
-            textColor: "text-red-600 bg-red-50 border-red-300",
-            ipa: "/ˈkrɪp.əl.ɪŋ ˈvaɪ.təl ˈɪn.frəˌstrʌk.tʃər/",
-            pos: "Verb Phrase (C2)",
-            example: "Blackouts risks crippling vital infrastructure in the city.",
-            tip: "Cripple = làm tê liệt/phế tật."
-          },
-          {
-            id: "p3-v7",
-            en: "extorting millions",
-            vi: "tống tiền hàng triệu đô la",
-            textColor: "text-amber-600 bg-amber-50 border-amber-300",
-            ipa: "/ɪkˈstɔː.tɪŋ ˈmɪl.jənz/",
-            pos: "Verb Phrase (C1)",
-            example: "Criminals were caught extorting millions from victims.",
-            tip: "Extort = tống tiền."
-          },
-          {
-            id: "p3-v8",
-            en: "pecuniary damages",
-            vi: "thiệt hại về tài chính / tiền bạc",
-            textColor: "text-teal-600 bg-teal-50 border-teal-300",
-            ipa: "/pɪˈkjuː.ni.ər.i ˈdæm.ɪ.dʒɪz/",
-            pos: "Noun Phrase (C2)",
-            example: "The lawsuit requested compensation for pecuniary damages.",
-            tip: "Pecuniary = liên quan đến tiền bạc."
-          },
-          {
-            id: "p3-v9",
-            en: "imperil data privacy",
-            vi: "đe dọa / gây nguy hiểm cho quyền riêng tư dữ liệu",
-            textColor: "text-red-700 bg-red-100 border-red-400",
-            ipa: "/ɪmˈper.əl ˈdeɪ.tə ˈprɪv.ə.si/",
-            pos: "Verb Phrase (C2)",
-            example: "Hacking attempts imperil data privacy everywhere.",
-            tip: "Imperil = Put in peril / gây nguy hiểm."
-          },
-          {
-            id: "p3-v10",
-            en: "undermine public trust",
-            vi: "làm suy giảm niềm tin của công chúng",
-            textColor: "text-orange-600 bg-orange-50 border-orange-300",
-            ipa: "/ˌʌn.dəˈmaɪn ˈpʌb.lɪk trʌst/",
-            pos: "Verb Phrase (C1)",
-            example: "Scandals undermine public trust in government.",
-            tip: "Undermine = làm suy yếu dần từ bên dưới."
-          },
-          {
-            id: "p3-v11",
-            en: "transcend reactive defenses",
-            vi: "vượt qua các giải pháp phòng thủ thụ động",
-            textColor: "text-emerald-600 bg-emerald-50 border-emerald-300",
-            ipa: "/trænˈsend riˈæk.tɪv dɪˈfens.ɪz/",
-            pos: "Verb Phrase (C2)",
-            example: "Modern cybersecurity must transcend reactive defenses.",
-            tip: "Transcend = vượt qua giới hạn thông thường."
-          },
-          {
-            id: "p3-v12",
-            en: "zero-trust architectures",
-            vi: "kiến trúc không tin tưởng",
-            textColor: "text-blue-700 bg-blue-100 border-blue-400",
-            ipa: "/ˈzɪə.rəʊ trʌst ˈɑː.kɪ.tek.tʃərz/",
-            pos: "Noun Phrase (C2)",
-            example: "Banks rely heavily on zero-trust architectures.",
-            tip: "Mô hình bảo mật xác thực mọi truy cập."
-          },
-          {
-            id: "p3-v13",
-            en: "transboundary nature",
-            vi: "tính chất xuyên biên giới",
-            textColor: "text-purple-600 bg-purple-50 border-purple-300",
-            ipa: "/trænzˈbaʊn.dər.i ˈneɪ.tʃər/",
-            pos: "Noun Phrase (C2)",
-            example: "Due to its transboundary nature, climate treaties are essential.",
-            tip: "Transboundary = vượt khỏi ranh giới một quốc gia."
-          },
-          {
-            id: "p3-v14",
-            en: "apprehend cybercriminals",
-            vi: "bắt giữ tội phạm mạng",
-            textColor: "text-pink-600 bg-pink-50 border-pink-300",
-            ipa: "/ˌæp.rɪˈhend ˈsaɪ.bərˌkrɪm.ɪ.nəlz/",
-            pos: "Verb Phrase (C1)",
-            example: "Interpol works together to apprehend cybercriminals.",
-            tip: "Apprehend = bắt giữ tội phạm."
-          }
-        ],
+        subtitle: "Cybercrime Proliferation & Global Security",
+        topic: "An Ninh Mạng & An Toàn Toàn Cầu",
+        icon: "🔒",
+        badgeColor: "bg-purple-600",
+
+        fullEnText: "The proliferation of ubiquitous internet connectivity has inadvertently catalyzed a formidable surge in cybercrime, evolving from rudimentary malware attacks to sophisticated, state-sponsored cyber espionage. Ransomware, in particular, has emerged as a coercive vector, crippling vital infrastructure and extorting millions from unsuspecting corporate entities. Beyond pecuniary damages, these digital breaches imperil data privacy and undermine public trust in digital governance. To counter these ubiquitous threats, cybersecurity frameworks must transcend reactive defenses and adopt proactive, zero-trust architectures. Furthermore, given the transboundary nature of cyberthreats, international legal protocols and cross-border intelligence sharing are imperative to effectively apprehend cybercriminals operating within digital havens.",
+
         paragraphs: [
           {
             enChunks: [
-              { text: "The " },
-              { vocabId: "p3-v1", text: "proliferation of ubiquitous internet connectivity" },
-              { text: " has " },
-              { vocabId: "p3-v2", text: "inadvertently catalyzed" },
-              { text: " a " },
-              { vocabId: "p3-v3", text: "formidable surge" },
-              { text: " in cybercrime, evolving from rudimentary malware attacks to sophisticated, " },
-              { vocabId: "p3-v4", text: "state-sponsored cyber espionage" },
-              { text: ". Ransomware, in particular, has emerged as a " },
-              { vocabId: "p3-v5", text: "coercive vector" },
-              { text: ", " },
-              { vocabId: "p3-v6", text: "crippling vital infrastructure" },
-              { text: " and " },
-              { vocabId: "p3-v7", text: "extorting millions" },
-              { text: " from unsuspecting corporate entities. Beyond " },
-              { vocabId: "p3-v8", text: "pecuniary damages" },
-              { text: ", these " },
-              { chunkId: "p3-c1", text: "digital breaches" },
-              { text: " " },
-              { vocabId: "p3-v9", text: "imperil data privacy" },
-              { text: " and " },
-              { vocabId: "p3-v10", text: "undermine public trust" },
-              { text: " in digital governance. To counter these ubiquitous threats, cybersecurity frameworks must " },
-              { vocabId: "p3-v11", text: "transcend reactive defenses" },
-              { text: " and adopt proactive, " },
-              { vocabId: "p3-v12", text: "zero-trust architectures" },
-              { text: ". Furthermore, given the " },
-              { vocabId: "p3-v13", text: "transboundary nature" },
-              { text: " of cyberthreats, international legal protocols and cross-border intelligence sharing are imperative to effectively " },
-              { vocabId: "p3-v14", text: "apprehend cybercriminals" },
-              { text: " operating within digital havens." }
+              {
+                id: "p3-c1",
+                type: "chunk-bg-1",
+                text: "The <span class='hl-vocab v-red' onclick='openVocabModal(\"p3-v1\")' onmouseover='syncHover(\"p3-v1\", true)' onmouseout='syncHover(\"p3-v1\", false)' data-v='p3-v1'>proliferation of ubiquitous internet connectivity</span>"
+              },
+              {
+                text: " has inadvertently "
+              },
+              {
+                id: "p3-c2",
+                type: "chunk-bg-2",
+                text: "<span class='hl-vocab v-blue' onclick='openVocabModal(\"p3-v2\")' onmouseover='syncHover(\"p3-v2\", true)' onmouseout='syncHover(\"p3-v2\", false)' data-v='p3-v2'>catalyzed a formidable surge in cybercrime</span>"
+              },
+              {
+                text: ", evolving from rudimentary malware attacks to sophisticated, state-sponsored cyber espionage. Ransomware, in particular, has emerged as a "
+              },
+              {
+                id: "p3-c3",
+                type: "chunk-bg-3",
+                text: "<span class='hl-vocab v-purple' onclick='openVocabModal(\"p3-v3\")' onmouseover='syncHover(\"p3-v3\", true)' onmouseout='syncHover(\"p3-v3\", false)' data-v='p3-v3'>coercive vector</span>"
+              },
+              {
+                text: ", crippling vital infrastructure and extorting millions from unsuspecting corporate entities. Beyond pecuniary damages, these digital breaches "
+              },
+              {
+                id: "p3-c4",
+                type: "chunk-bg-4",
+                text: "<span class='hl-vocab v-emerald' onclick='openVocabModal(\"p3-v4\")' onmouseover='syncHover(\"p3-v4\", true)' onmouseout='syncHover(\"p3-v4\", false)' data-v='p3-v4'>imperil data privacy</span>"
+              },
+              {
+                text: " and undermine public trust in digital governance. To counter these ubiquitous threats, cybersecurity frameworks must transcend reactive defenses and adopt proactive, "
+              },
+              {
+                id: "p3-c5",
+                type: "chunk-bg-5",
+                text: "<span class='hl-vocab v-amber' onclick='openVocabModal(\"p3-v5\")' onmouseover='syncHover(\"p3-v5\", true)' onmouseout='syncHover(\"p3-v5\", false)' data-v='p3-v5'>zero-trust architectures</span>"
+              },
+              {
+                text: ". Furthermore, given the "
+              },
+              {
+                id: "p3-c6",
+                type: "chunk-bg-1",
+                text: "<span class='hl-vocab v-rose' onclick='openVocabModal(\"p3-v6\")' onmouseover='syncHover(\"p3-v6\", true)' onmouseout='syncHover(\"p3-v6\", false)' data-v='p3-v6'>transboundary nature of cyberthreats</span>"
+              },
+              {
+                text: ", international legal protocols and cross-border intelligence sharing are imperative to effectively apprehend cybercriminals operating within digital havens."
+              }
             ],
+
             viChunks: [
-              { text: "" },
-              { vocabId: "p3-v1", text: "sự bùng nổ của kết nối internet phổ biến" },
-              { text: " đã " },
-              { vocabId: "p3-v2", text: "vô tình kích hoạt / thúc đẩy" },
-              { text: " một " },
-              { vocabId: "p3-v3", text: "sự gia tăng đáng sợ / mạnh mẽ" },
-              { text: " của tội phạm mạng, tiến hóa từ các cuộc tấn công mã độc thô sơ đến " },
-              { vocabId: "p3-v4", text: "gián điệp mạng do nhà nước tài trợ" },
-              { text: ". Mã độc tống tiền (Ransomware), nói riêng, đã nổi lên như " },
-              { vocabId: "p3-v5", text: "một công cụ cưỡng đoạt / đe dọa" },
-              { text: ", " },
-              { vocabId: "p3-v6", text: "làm tê liệt hạ tầng quan trọng" },
-              { text: " và " },
-              { vocabId: "p3-v7", text: "tống tiền hàng triệu đô la" },
-              { text: " từ các tổ chức doanh nghiệp nhẹ dạ. Rời xa khỏi những " },
-              { vocabId: "p3-v8", text: "thiệt hại về tài chính / tiền bạc" },
-              { text: ", những " },
-              { chunkId: "p3-c1", text: "vi phạm kỹ thuật số" },
-              { text: " này " },
-              { vocabId: "p3-v9", text: "đe dọa / gây nguy hiểm cho quyền riêng tư dữ liệu" },
-              { text: " và " },
-              { vocabId: "p3-v10", text: "làm suy giảm niềm tin của công chúng" },
-              { text: " vào quản trị kỹ thuật số. Để chống lại những mối đe dọa diện rộng này, các khung an ninh mạng phải " },
-              { vocabId: "p3-v11", text: "vượt qua các giải pháp phòng thủ thụ động" },
-              { text: " và áp dụng " },
-              { vocabId: "p3-v12", text: "kiến trúc không tin tưởng" },
-              { text: " chủ động. Hơn nữa, do " },
-              { vocabId: "p3-v13", text: "tính chất xuyên biên giới" },
-              { text: " của các mối đe dọa mạng, các nghị định thư pháp lý quốc tế và chia sẻ tình báo xuyên biên giới là bắt buộc để bắt giữ hiệu quả nhằm " },
-              { vocabId: "p3-v14", text: "bắt giữ tội phạm mạng" },
-              { text: " hoạt động trong các nơi trú ẩn kỹ thuật số." }
+              {
+                id: "p3-c1",
+                type: "chunk-bg-1",
+                text: "Sự <span class='hl-vocab v-red' onmouseover='syncHover(\"p3-v1\", true)' onmouseout='syncHover(\"p3-v1\", false)' data-v='p3-v1'>bùng nổ kết nối internet phổ biến khắp mọi nơi</span>"
+              },
+              {
+                text: " đã vô tình "
+              },
+              {
+                id: "p3-c2",
+                type: "chunk-bg-2",
+                text: "<span class='hl-vocab v-blue' onmouseover='syncHover(\"p3-v2\", true)' onmouseout='syncHover(\"p3-v2\", false)' data-v='p3-v2'>thúc đẩy một sự gia tăng đáng sợ của tội phạm mạng</span>"
+              },
+              {
+                text: ", tiến hóa từ các đợt tấn công mã độc thô sơ đến gián điệp mạng tinh vi do nhà nước tài trợ. Đặc biệt, mã độc tống tiền (Ransomware) đã nổi lên như một "
+              },
+              {
+                id: "p3-c3",
+                type: "chunk-bg-3",
+                text: "<span class='hl-vocab v-purple' onmouseover='syncHover(\"p3-v3\", true)' onmouseout='syncHover(\"p3-v3\", false)' data-v='p3-v3'>công cụ cưỡng đoạt</span>"
+              },
+              {
+                text: ", làm tê liệt hạ tầng thiết yếu và tống tiền hàng triệu đô la từ các tập đoàn không phòng bị. Bảy xa hơn những thiệt hại về tài chính, các vi phạm kỹ thuật số này "
+              },
+              {
+                id: "p3-c4",
+                type: "chunk-bg-4",
+                text: "<span class='hl-vocab v-emerald' onmouseover='syncHover(\"p3-v4\", true)' onmouseout='syncHover(\"p3-v4\", false)' data-v='p3-v4'>đe dọa nghiêm trọng quyền riêng tư dữ liệu</span>"
+              },
+              {
+                text: " và xói mòn niềm tin của công chúng vào quản trị số. Để chống lại các mối đe dọa hiện hữu khắp nơi này, các khuôn khổ an ninh mạng phải vượt qua hệ phòng thủ thụ động và áp dụng các "
+              },
+              {
+                id: "p3-c5",
+                type: "chunk-bg-5",
+                text: "<span class='hl-vocab v-amber' onmouseover='syncHover(\"p3-v5\", true)' onmouseout='syncHover(\"p3-v5\", false)' data-v='p3-v5'>kiến trúc không tin tưởng (Zero-Trust)</span>"
+              },
+              {
+                text: " chủ động. Hơn nữa, xuất phát từ "
+              },
+              {
+                id: "p3-c6",
+                type: "chunk-bg-1",
+                text: "<span class='hl-vocab v-rose' onmouseover='syncHover(\"p3-v6\", true)' onmouseout='syncHover(\"p3-v6\", false)' data-v='p3-v6'>tính chất xuyên biên giới của các mối đe dọa mạng</span>"
+              },
+              {
+                text: ", các nghị định thư pháp lý quốc tế và chia sẻ tình báo xuyên biên giới là điều bắt buộc để bắt giữ hiệu quả những tên tội phạm mạng đang hoạt động trong các ẩn trú số."
+              }
             ]
+          }
+        ],
+
+        vocabList: [
+          {
+            id: "p3-v1",
+            word: "Proliferation of ubiquitous internet",
+            ipa: "/prəˌlɪf.əˈreɪ.ʃən əv juːˈbɪk.wə.təs/",
+            type: "Phrase (C2)",
+            colorClass: "v-red",
+            meaning: "Sự bùng nổ / sự tăng nhanh của Internet có mặt ở khắp mọi nơi",
+            example: "The proliferation of ubiquitous devices changed how we consume news."
+          },
+          {
+            id: "p3-v2",
+            word: "Catalyze a formidable surge",
+            ipa: "/ˈkæt.əl.aɪz ə ˈfɔːr.mɪ.də.bəl sɝːdʒ/",
+            type: "Verb Phrase (C2)",
+            colorClass: "v-blue",
+            meaning: "Xúc tác / thúc đẩy một sự gia tăng vô cùng lớn",
+            example: "Policy changes catalyzed a formidable surge in renewable energy investments."
+          },
+          {
+            id: "p3-v3",
+            word: "Coercive vector",
+            ipa: "/koʊˈɝː.sɪv ˈvek.tɚ/",
+            type: "Noun Phrase (C2)",
+            colorClass: "v-purple",
+            meaning: "Phương thức / công cụ cưỡng đoạt, đe dọa ép buộc",
+            example: "Ransomware acts as a coercive vector against unsecured databases."
+          },
+          {
+            id: "p3-v4",
+            word: "Imperil data privacy",
+            ipa: "/ɪmˈper.əl ˈdeɪ.tə ˈpraɪ.və.si/",
+            type: "Verb Phrase (C1)",
+            colorClass: "v-emerald",
+            meaning: "Đe dọa / gây nguy hiểm cho quyền riêng tư dữ liệu",
+            example: "Unencrypted cloud storage can imperil sensitive user data privacy."
+          },
+          {
+            id: "p3-v5",
+            word: "Zero-trust architectures",
+            ipa: "/ˈzɪr.oʊ trʌst ˈɑːr.kə.tek.tʃɚ/",
+            type: "Noun Phrase (C1)",
+            colorClass: "v-amber",
+            meaning: "Mô hình / kiến trúc an ninh mạng Zero-Trust (không tin tưởng bất kỳ ai)",
+            example: "Modern financial institutions rely on zero-trust architectures."
+          },
+          {
+            id: "p3-v6",
+            word: "Transboundary nature of cyberthreats",
+            ipa: "/trænzˈbaʊn.dər.i ˈneɪ.tʃɚ/",
+            type: "Phrase (C2)",
+            colorClass: "v-rose",
+            meaning: "Bản chất / tính chất xuyên biên giới của các mối đe dọa an ninh mạng",
+            example: "Due to the transboundary nature of cyberthreats, global cooperation is key."
           }
         ]
       }
     ];
 
     /* ==========================================================================
-       APP LOGIC & RENDER FUNCTIONS
+       APP STATE & AUDIO ENGINE (Web Speech API)
        ========================================================================== */
+    let currentUtterance = null;
+    let currentSpeakingPassageId = null;
+    let playbackRate = 1.0;
 
-    const synth = window.speechSynthesis;
-    const chunksLookup = {};
-    const vocabsLookup = {};
-
-    // Index lookup tables
-    passagesData.forEach(p => {
-      p.chunks.forEach(c => chunksLookup[c.id] = c);
-      if (p.vocabs) {
-        p.vocabs.forEach(v => vocabsLookup[v.id] = v);
-      }
+    // Render HTML on Document Ready
+    window.addEventListener('DOMContentLoaded', () => {
+      renderAllPassages();
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      renderPassages();
-      setupModalEvents();
-    });
-
-    // Render passages as Happy Farm cards
-    function renderPassages() {
-      const container = document.getElementById('passages-container');
+    // Main Function to Render All Passages
+    function renderAllPassages() {
+      const container = document.getElementById('passages-accordion-container');
       container.innerHTML = '';
 
-      passagesData.forEach((p, idx) => {
-        const isFirst = idx === 0;
+      passagesData.forEach((p, index) => {
+        const isFirst = index === 0;
         
-        const cardHtml = `
-          <div class="bg-white rounded-3xl border-4 border-emerald-300 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden" id="card-${p.id}">
+        const cardHTML = `
+          <div class="bg-white rounded-3xl border-3 border-emerald-300 shadow-md overflow-hidden transition-all duration-300" id="card-${p.id}">
             
-            <!-- Accordion Header Button -->
-            <button onclick="togglePassage('${p.id}')" 
-                    class="w-full bg-gradient-to-r ${p.colorScheme} p-4 md:p-5 text-white flex items-center justify-between text-left focus:outline-none select-none">
-              <div class="flex items-center space-x-3.5 pr-2">
-                <span class="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-2xl flex items-center justify-center text-xl md:text-2xl backdrop-blur-sm border border-white/30 shrink-0">
-                  <i class="fa-solid ${p.icon}"></i>
-                </span>
+            <!-- ACCORDION HEADER BAR -->
+            <div onclick="togglePassage('${p.id}')" class="bg-gradient-to-r from-emerald-100 via-green-50 to-lime-100 p-4 sm:p-5 flex items-center justify-between cursor-pointer border-b-2 border-emerald-200 hover:bg-emerald-100/80 transition select-none">
+              
+              <div class="flex items-center gap-3 sm:gap-4">
+                <div class="${p.badgeColor} text-white font-farm text-xl sm:text-2xl w-12 h-12 rounded-2xl flex items-center justify-center shadow-md shrink-0">
+                  ${p.icon}
+                </div>
                 <div>
-                  <div class="flex items-center space-x-2">
-                    <span class="bg-yellow-400 text-yellow-950 font-farm text-xs font-bold px-3 py-0.5 rounded-full uppercase shadow-sm">
+                  <div class="flex items-center gap-2">
+                    <span class="bg-amber-400 text-emerald-950 text-[10px] sm:text-xs font-extrabold font-farm px-2.5 py-0.5 rounded-full uppercase shadow-sm">
                       ${p.title}
                     </span>
+                    <span class="text-xs font-bold text-emerald-700 hidden sm:inline-block">
+                      • ${p.topic}
+                    </span>
                   </div>
-                  <h3 class="text-base md:text-xl font-bold font-farm mt-1 tracking-wide leading-tight text-white drop-shadow">
-                    ${p.topic}
-                  </h3>
+                  <h2 class="text-lg sm:text-xl font-bold font-farm text-slate-800 mt-0.5">
+                    ${p.subtitle}
+                  </h2>
                 </div>
               </div>
 
-              <div class="flex items-center space-x-3 shrink-0">
-                <span class="text-xs bg-white/20 text-white font-bold px-3 py-1 rounded-full hidden sm:inline-block">
-                  Click để mở / đóng 🌻
+              <div class="flex items-center gap-3">
+                <span class="text-xs font-bold text-emerald-700 bg-white/80 px-3 py-1 rounded-xl border border-emerald-200 hidden md:block">
+                  <i class="fa-solid fa-language text-amber-500 mr-1"></i> Song Ngữ 2 Cột
                 </span>
-                <span id="arrow-${p.id}" class="transform transition-transform duration-300 ${isFirst ? 'rotate-180' : 'rotate-0'} text-xl">
+                <div id="arrow-${p.id}" class="w-8 h-8 rounded-full bg-white text-emerald-700 flex items-center justify-center shadow-sm transition-transform duration-300 ${isFirst ? 'rotate-180' : ''}">
                   <i class="fa-solid fa-chevron-down"></i>
-                </span>
+                </div>
               </div>
-            </button>
 
-            <!-- Accordion Body -->
-            <div id="body-${p.id}" class="${isFirst ? 'block' : 'hidden'} transition-all duration-300 bg-emerald-50/20">
+            </div>
+
+            <!-- ACCORDION BODY CONTENT -->
+            <div id="body-${p.id}" class="${isFirst ? 'block' : 'hidden'}">
               
-              <!-- Toolbar / Speech Player -->
-              <div class="p-4 bg-emerald-100/70 border-b border-emerald-200 flex flex-wrap items-center justify-between gap-3">
-                <div class="flex items-center space-x-2">
-                  <button id="audio-btn-${p.id}" onclick="toggleAudio('${p.id}')"
-                          class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-2xl font-bold text-sm shadow flex items-center space-x-2 transition-transform active:scale-95">
-                    <i id="audio-icon-${p.id}" class="fa-solid fa-circle-play text-lg"></i>
-                    <span id="audio-text-${p.id}">Nghe Phát Âm Tiếng Anh</span>
-                  </button>
-                  <button onclick="stopAudio()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 p-2 rounded-2xl text-sm transition-colors" title="Dừng âm thanh">
-                    <i class="fa-solid fa-square"></i>
-                  </button>
+              <!-- TOP AUDIO TTS CONTROLS BAR -->
+              <div class="bg-emerald-800 text-white p-3 sm:p-4 px-4 sm:px-6 flex flex-wrap items-center justify-between gap-3 border-b border-emerald-700">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-play text-amber-400 text-lg sm:text-xl animate-pulse"></i>
+                  <span class="font-farm text-xs sm:text-sm text-amber-200 font-bold">Luyện Nghe Bài Đọc (TTS Audio):</span>
                 </div>
 
-                <div class="text-xs font-semibold text-emerald-800 flex items-center space-x-1.5 bg-white/90 px-3 py-1.5 rounded-xl border border-emerald-200">
-                  <i class="fa-solid fa-lightbulb text-amber-500"></i>
-                  <span>Hover/Click từ vựng để tô sáng cặp nghĩa Anh - Việt tương ứng</span>
+                <!-- Control Buttons -->
+                <div class="flex items-center gap-2 flex-wrap">
+                  <button onclick="playTTS('${p.id}')" class="bg-amber-400 hover:bg-amber-300 text-emerald-950 text-xs font-farm font-bold px-3 py-1.5 rounded-xl shadow transition flex items-center gap-1.5 active:scale-95">
+                    <i class="fa-solid fa-play"></i> Phát
+                  </button>
+                  <button onclick="pauseTTS()" class="bg-white/20 hover:bg-white/30 text-white text-xs font-farm font-bold px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 active:scale-95">
+                    <i class="fa-solid fa-pause"></i> Tạm Dừng
+                  </button>
+                  <button onclick="stopTTS()" class="bg-red-500/80 hover:bg-red-500 text-white text-xs font-farm font-bold px-3 py-1.5 rounded-xl transition flex items-center gap-1.5 active:scale-95">
+                    <i class="fa-solid fa-square"></i> Dừng
+                  </button>
+
+                  <!-- Speed Selector -->
+                  <div class="flex items-center gap-1 bg-emerald-900/60 p-1 rounded-xl text-xs font-bold text-amber-200 border border-emerald-600/50">
+                    <span class="ml-1 text-[10px] text-emerald-300">Tốc độ:</span>
+                    <button onclick="setSpeed(0.8)" id="speed-0.8-${p.id}" class="px-2 py-0.5 rounded-lg hover:bg-emerald-700">0.8x</button>
+                    <button onclick="setSpeed(1.0)" id="speed-1.0-${p.id}" class="px-2 py-0.5 rounded-lg bg-amber-400 text-emerald-950">1.0x</button>
+                    <button onclick="setSpeed(1.2)" id="speed-1.2-${p.id}" class="px-2 py-0.5 rounded-lg hover:bg-emerald-700">1.2x</button>
+                  </div>
                 </div>
               </div>
 
-              <!-- Content Area: English on Top, Vietnamese on Bottom -->
-              <div class="p-5 md:p-7 space-y-6">
+              <!-- Content Area: English on Left, Vietnamese on Right (Side-by-Side Grid) -->
+              <div class="p-4 md:p-7 space-y-6">
                 
-                <!-- ENGLISH SECTION -->
-                <div class="bg-white p-5 md:p-6 rounded-2xl border-2 border-emerald-200 shadow-sm relative">
-                  <div class="absolute -top-3 left-4 bg-emerald-600 text-white text-xs font-farm font-bold px-3 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
-                    <i class="fa-solid fa-flag-usa"></i> BẢN TIẾNG ANH (ENGLISH)
-                  </div>
-                  <div class="text-base md:text-lg leading-relaxed text-slate-800 pt-2 font-medium" id="en-text-${p.id}">
-                    ${renderParagraphChunks(p.paragraphs[0].enChunks, p)}
-                  </div>
+                <!-- MOBILE VIEW TOGGLE TABS -->
+                <div class="flex md:hidden bg-emerald-100 p-1 rounded-2xl border border-emerald-200 text-xs font-bold font-farm mb-2">
+                  <button onclick="setMobileView('${p.id}', 'split')" id="tab-split-${p.id}" class="flex-1 py-1.5 rounded-xl bg-white text-emerald-800 shadow-sm text-center">
+                    <i class="fa-solid fa-columns mr-1"></i> Song Song 2 Cột
+                  </button>
+                  <button onclick="setMobileView('${p.id}', 'en')" id="tab-en-${p.id}" class="flex-1 py-1.5 rounded-xl text-slate-600 text-center">
+                    <i class="fa-solid fa-flag-usa mr-1"></i> Tiếng Anh
+                  </button>
+                  <button onclick="setMobileView('${p.id}', 'vi')" id="tab-vi-${p.id}" class="flex-1 py-1.5 rounded-xl text-slate-600 text-center">
+                    <i class="fa-solid fa-language mr-1"></i> Tiếng Việt
+                  </button>
                 </div>
 
-                <!-- VIETNAMESE TRANSLATION SECTION -->
-                <div class="bg-amber-50/80 p-5 md:p-6 rounded-2xl border-2 border-amber-200 shadow-sm relative">
-                  <div class="absolute -top-3 left-4 bg-amber-500 text-amber-950 text-xs font-farm font-bold px-3 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
-                    <i class="fa-solid fa-language"></i> BẢN DỊCH TIẾNG VIỆT SÁT NGHĨA
+                <!-- SIDE-BY-SIDE GRID CONTAINER -->
+                <div id="grid-${p.id}" class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 overflow-x-auto pb-2 md:pb-0">
+                  
+                  <!-- ENGLISH SECTION (LEFT) -->
+                  <div id="col-en-${p.id}" class="bg-white p-4 md:p-6 rounded-2xl border-2 border-emerald-300 shadow-sm relative min-w-[280px] flex-1">
+                    <div class="absolute -top-3 left-4 bg-emerald-600 text-white text-xs font-farm font-bold px-3 py-0.5 rounded-full flex items-center gap-1 shadow-sm z-10">
+                      <i class="fa-solid fa-flag-usa"></i> BẢN TIẾNG ANH (ENGLISH)
+                    </div>
+                    <div class="text-sm md:text-base lg:text-lg leading-relaxed text-slate-800 pt-3 font-medium" id="en-text-${p.id}">
+                      ${renderParagraphChunks(p.paragraphs[0].enChunks, p)}
+                    </div>
                   </div>
-                  <div class="text-base md:text-lg leading-relaxed text-slate-800 pt-2 font-medium" id="vi-text-${p.id}">
-                    ${renderParagraphChunks(p.paragraphs[0].viChunks, p)}
+
+                  <!-- VIETNAMESE TRANSLATION SECTION (RIGHT) -->
+                  <div id="col-vi-${p.id}" class="bg-amber-50/90 p-4 md:p-6 rounded-2xl border-2 border-amber-300 shadow-sm relative min-w-[280px] flex-1">
+                    <div class="absolute -top-3 left-4 bg-amber-500 text-amber-950 text-xs font-farm font-bold px-3 py-0.5 rounded-full flex items-center gap-1 shadow-sm z-10">
+                      <i class="fa-solid fa-language"></i> BẢN DỊCH TIẾNG VIỆT
+                    </div>
+                    <div class="text-sm md:text-base lg:text-lg leading-relaxed text-slate-800 pt-3 font-medium" id="vi-text-${p.id}">
+                      ${renderParagraphChunks(p.paragraphs[0].viChunks, p)}
+                    </div>
                   </div>
+
                 </div>
 
                 <!-- VOCABULARY QUICK CARDS / LEGEND TABLE -->
-                <div class="mt-8 bg-white p-5 rounded-2xl border-2 border-yellow-400 shadow-md">
-                  <h4 class="font-farm text-lg font-bold text-amber-900 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-star text-yellow-500"></i>
-                    <span>Bảng Từ Vựng Nâng Cao C1/C2 Trong Bài Đọc (Vocab Quick Legend)</span>
-                  </h4>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    ${renderVocabLegendCards(p.vocabs)}
+                <div class="mt-8 pt-6 border-t-2 border-dashed border-emerald-200">
+                  <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-farm font-bold text-base md:text-lg text-emerald-900 flex items-center gap-2">
+                      <span>🌽 BẢNG TỪ VỰNG NÂNG CAO (VOCABULARY LEGEND C1/C2)</span>
+                    </h3>
+                    <span class="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-xl">
+                      ${p.vocabList.length} Từ/Cụm Từ
+                    </span>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    ${p.vocabList.map(v => `
+                      <div onclick="openVocabModal('${v.id}')" onmouseover="syncHover('${v.id}', true)" onmouseout="syncHover('${v.id}', false)" class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between group">
+                        <div>
+                          <div class="flex items-center justify-between gap-1 mb-1">
+                            <span class="font-extrabold font-farm text-sm text-slate-800 group-hover:text-emerald-700 transition">
+                              ${v.word}
+                            </span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+                              ${v.type}
+                            </span>
+                          </div>
+                          <div class="text-xs font-mono text-emerald-700 font-bold mb-1">
+                            ${v.ipa}
+                          </div>
+                          <div class="text-xs text-slate-700 font-semibold bg-amber-50 p-2 rounded-xl border border-amber-200">
+                            ${v.meaning}
+                          </div>
+                        </div>
+                        <div class="text-[11px] text-emerald-600 font-bold mt-2 flex items-center justify-end gap-1">
+                          <span>Xem chi tiết</span>
+                          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </div>
+                      </div>
+                    `).join('')}
                   </div>
                 </div>
 
               </div>
+
             </div>
 
           </div>
         `;
-        container.insertAdjacentHTML('beforeend', cardHtml);
+
+        container.insertAdjacentHTML('beforeend', cardHTML);
       });
     }
 
-    // Render HTML string with Dual Highlighting
-    function renderParagraphChunks(chunkArray, passage) {
-      return chunkArray.map(item => {
-        if (!item.chunkId && !item.vocabId) {
-          return item.text;
+    // Helper to render HTML Chunks with Sync IDs
+    function renderParagraphChunks(chunksArray, passage) {
+      return chunksArray.map(c => {
+        if (c.id) {
+          return `<span id="${c.id}" onmouseover="syncChunkHover('${c.id}', true)" onmouseout="syncChunkHover('${c.id}', false)" class="${c.type} inline-block transition-all duration-200 cursor-pointer my-0.5">${c.text}</span>`;
         }
-
-        let classes = [];
-        let attributes = [];
-        let content = item.text;
-
-        // Background Chunking Highlight
-        if (item.chunkId) {
-          const chunkData = chunksLookup[item.chunkId];
-          if (chunkData) {
-            classes.push('hl-chunk', chunkData.color, `data-chunk-${item.chunkId}`);
-            attributes.push(`onmouseenter="highlightPair('chunk', '${item.chunkId}', true)"`);
-            attributes.push(`onmouseleave="highlightPair('chunk', '${item.chunkId}', false)"`);
-            if (!item.vocabId) {
-              attributes.push(`onclick="openDictModal('${item.chunkId}', 'chunk')"`);
-            }
-          }
-        }
-
-        // Vocabulary Text Color Highlight
-        if (item.vocabId) {
-          const vocabData = vocabsLookup[item.vocabId];
-          if (vocabData) {
-            classes.push('hl-vocab', vocabData.textColor, `data-vocab-${item.vocabId}`);
-            attributes.push(`onmouseenter="highlightPair('vocab', '${item.vocabId}', true)"`);
-            attributes.push(`onmouseleave="highlightPair('vocab', '${item.vocabId}', false)"`);
-            attributes.push(`onclick="openDictModal('${item.vocabId}', 'vocab')"`);
-          }
-        }
-
-        return `<span class="${classes.join(' ')}" ${attributes.join(' ')} title="Click để mở Từ điển">${content}</span>`;
+        return `<span>${c.text}</span>`;
       }).join('');
     }
 
-    // Render Vocabulary Quick Legend Cards
-    function renderVocabLegendCards(vocabs) {
-      if (!vocabs) return '';
-      return vocabs.map(v => `
-        <div class="p-3 bg-slate-50 border rounded-xl hover:border-amber-400 transition-all flex flex-col justify-between cursor-pointer" onclick="openDictModal('${v.id}', 'vocab')">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="font-extrabold text-sm ${v.textColor.split(' ')[0]} font-farm">${v.en}</span>
-              <span class="text-[10px] font-bold px-2 py-0.5 bg-slate-200 text-slate-700 rounded-full">${v.pos}</span>
-            </div>
-            <p class="text-xs font-bold text-emerald-800 mt-1"><i class="fa-solid fa-arrow-right-long text-amber-500 mr-1"></i> ${v.vi}</p>
-          </div>
-          <p class="text-[11px] text-slate-400 font-mono mt-1">${v.ipa}</p>
-        </div>
-      `).join('');
-    }
-
-    // Toggle Passage Accordion
+    // Toggle Accordion Body
     function togglePassage(id) {
       const body = document.getElementById(`body-${id}`);
       const arrow = document.getElementById(`arrow-${id}`);
+      
       if (body.classList.contains('hidden')) {
         body.classList.remove('hidden');
         arrow.classList.add('rotate-180');
@@ -1108,115 +955,195 @@
       }
     }
 
-    // Highlight synchronized English-Vietnamese pair on hover or click
-    function highlightPair(type, id, isHovered) {
-      const selector = type === 'vocab' ? `.data-vocab-${id}` : `.data-chunk-${id}`;
-      const elements = document.querySelectorAll(selector);
+    function expandAllPassages() {
+      passagesData.forEach(p => {
+        const body = document.getElementById(`body-${p.id}`);
+        const arrow = document.getElementById(`arrow-${p.id}`);
+        if (body) body.classList.remove('hidden');
+        if (arrow) arrow.classList.add('rotate-180');
+      });
+    }
+
+    function collapseAllPassages() {
+      passagesData.forEach(p => {
+        const body = document.getElementById(`body-${p.id}`);
+        const arrow = document.getElementById(`arrow-${p.id}`);
+        if (body) body.classList.add('hidden');
+        if (arrow) arrow.classList.remove('rotate-180');
+      });
+    }
+
+    // Toggle Mobile View Modes (Split, EN Only, VI Only)
+    function setMobileView(passageId, mode) {
+      const colEn = document.getElementById(`col-en-${passageId}`);
+      const colVi = document.getElementById(`col-vi-${passageId}`);
+      const grid = document.getElementById(`grid-${passageId}`);
+
+      const tabSplit = document.getElementById(`tab-split-${passageId}`);
+      const tabEn = document.getElementById(`tab-en-${passageId}`);
+      const tabVi = document.getElementById(`tab-vi-${passageId}`);
+
+      [tabSplit, tabEn, tabVi].forEach(t => {
+        if (t) {
+          t.className = "flex-1 py-1.5 rounded-xl text-slate-600 text-center";
+        }
+      });
+
+      if (mode === 'split') {
+        grid.className = "grid grid-cols-2 gap-2 overflow-x-auto pb-2 md:grid-cols-2 md:gap-6";
+        colEn.classList.remove('hidden');
+        colVi.classList.remove('hidden');
+        if (tabSplit) tabSplit.className = "flex-1 py-1.5 rounded-xl bg-white text-emerald-800 shadow-sm text-center font-bold";
+      } else if (mode === 'en') {
+        grid.className = "grid grid-cols-1 gap-4";
+        colEn.classList.remove('hidden');
+        colVi.classList.add('hidden');
+        if (tabEn) tabEn.className = "flex-1 py-1.5 rounded-xl bg-white text-emerald-800 shadow-sm text-center font-bold";
+      } else if (mode === 'vi') {
+        grid.className = "grid grid-cols-1 gap-4";
+        colEn.classList.add('hidden');
+        colVi.classList.remove('hidden');
+        if (tabVi) tabVi.className = "flex-1 py-1.5 rounded-xl bg-white text-emerald-800 shadow-sm text-center font-bold";
+      }
+    }
+
+    // Synchronize Vocabulary Highlight Hover (Matching English & Vietnamese Words)
+    function syncHover(vocabId, isHovered) {
+      const elements = document.querySelectorAll(`[data-v="${vocabId}"]`);
       elements.forEach(el => {
         if (isHovered) {
-          el.classList.add('hl-pair-active');
+          el.classList.add('sync-active');
         } else {
-          el.classList.remove('hl-pair-active');
+          el.classList.remove('sync-active');
+        }
+      });
+    }
+
+    // Synchronize Background Chunk Hover
+    function syncChunkHover(chunkId, isHovered) {
+      const elements = document.querySelectorAll(`#${chunkId}`);
+      elements.forEach(el => {
+        if (isHovered) {
+          el.classList.add('sync-active');
+        } else {
+          el.classList.remove('sync-active');
         }
       });
     }
 
     /* ==========================================================================
-       SPEECH SYNTHESIS AUDIO LOGIC
+       POPUP DICTIONARY MODAL CONTROLLER
        ========================================================================== */
-    function toggleAudio(passageId) {
-      const passage = passagesData.find(p => p.id === passageId);
-      if (!passage) return;
-
-      const btnText = document.getElementById(`audio-text-${passageId}`);
-      const btnIcon = document.getElementById(`audio-icon-${passageId}`);
-
-      if (synth.speaking) {
-        synth.cancel();
-        btnText.innerText = "Nghe Phát Âm Tiếng Anh";
-        btnIcon.className = "fa-solid fa-circle-play text-lg";
-        return;
+    function openVocabModal(vocabId) {
+      let foundVocab = null;
+      for (const p of passagesData) {
+        const item = p.vocabList.find(v => v.id === vocabId);
+        if (item) {
+          foundVocab = item;
+          break;
+        }
       }
 
-      const utterance = new SpeechSynthesisUtterance(passage.audioText);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.9;
+      if (!foundVocab) return;
 
-      utterance.onstart = () => {
-        btnText.innerText = "Đang Phát Âm...";
-        btnIcon.className = "fa-solid fa-circle-pause text-lg animate-pulse";
-      };
+      document.getElementById('modal-word').textContent = foundVocab.word;
+      document.getElementById('modal-type-badge').textContent = foundVocab.type;
+      document.getElementById('modal-ipa').textContent = foundVocab.ipa;
+      document.getElementById('modal-meaning').textContent = foundVocab.meaning;
+      document.getElementById('modal-example').textContent = `"${foundVocab.example}"`;
 
-      utterance.onend = () => {
-        btnText.innerText = "Nghe Phát Âm Tiếng Anh";
-        btnIcon.className = "fa-solid fa-circle-play text-lg";
-      };
+      const ttsBtn = document.getElementById('modal-tts-btn');
+      ttsBtn.onclick = () => speakSingleWord(foundVocab.word);
 
-      synth.speak(utterance);
+      const modal = document.getElementById('vocab-modal');
+      const modalContent = document.getElementById('modal-content');
+      
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+      }, 10);
     }
 
-    function stopAudio() {
-      if (synth.speaking) {
-        synth.cancel();
-        passagesData.forEach(p => {
-          const btnText = document.getElementById(`audio-text-${p.id}`);
-          const btnIcon = document.getElementById(`audio-icon-${p.id}`);
-          if (btnText && btnIcon) {
-            btnText.innerText = "Nghe Phát Âm Tiếng Anh";
-            btnIcon.className = "fa-solid fa-circle-play text-lg";
-          }
-        });
-      }
+    function closeVocabModal() {
+      const modal = document.getElementById('vocab-modal');
+      const modalContent = document.getElementById('modal-content');
+
+      modalContent.classList.remove('scale-100', 'opacity-100');
+      modalContent.classList.add('scale-95', 'opacity-0');
+      
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 200);
     }
 
     /* ==========================================================================
-       DICTIONARY MODAL LOGIC
+       TEXT-TO-SPEECH (TTS) AUDIO ENGINE
        ========================================================================== */
-    function openDictModal(id, type = 'chunk') {
-      const data = type === 'vocab' ? vocabsLookup[id] : chunksLookup[id];
-      if (!data) return;
-
-      document.getElementById('modal-word').innerText = data.en;
-      document.getElementById('modal-pos').innerText = data.pos || 'Vocabulary';
-      document.getElementById('modal-ipa').innerText = data.ipa || '';
-      document.getElementById('modal-meaning').innerText = data.vi;
-      document.getElementById('modal-example').innerText = `"${data.example || 'No context example.'}"`;
-      document.getElementById('modal-tip').innerText = data.tip || 'Ghi nhớ cụm từ này để làm chủ bài thi Reading!';
-
-      const modal = document.getElementById('dict-modal');
-      const content = document.getElementById('dict-modal-content');
-
-      modal.classList.remove('hidden');
-      setTimeout(() => {
-        content.classList.remove('scale-95', 'opacity-0');
-        content.classList.add('scale-100', 'opacity-100');
-      }, 10);
-
-      // Pronunciation button in dictionary modal
-      const speakBtn = document.getElementById('speak-modal-word');
-      speakBtn.onclick = () => {
-        const wordUtterance = new SpeechSynthesisUtterance(data.en);
-        wordUtterance.lang = 'en-US';
-        synth.speak(wordUtterance);
-      };
+    function speakSingleWord(word) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      }
     }
 
-    function setupModalEvents() {
-      const modal = document.getElementById('dict-modal');
-      const closeBtn = document.getElementById('close-modal-btn');
-      const content = document.getElementById('dict-modal-content');
-
-      const closeModal = () => {
-        content.classList.remove('scale-100', 'opacity-100');
-        content.classList.add('scale-95', 'opacity-0');
-        setTimeout(() => modal.classList.add('hidden'), 200);
-      };
-
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+    function setSpeed(speed) {
+      playbackRate = speed;
+      passagesData.forEach(p => {
+        [0.8, 1.0, 1.2].forEach(s => {
+          const btn = document.getElementById(`speed-${s}-${p.id}`);
+          if (btn) {
+            if (s === speed) {
+              btn.className = "px-2 py-0.5 rounded-lg bg-amber-400 text-emerald-950 font-bold";
+            } else {
+              btn.className = "px-2 py-0.5 rounded-lg hover:bg-emerald-700 text-emerald-200";
+            }
+          }
+        });
       });
+
+      if (currentUtterance && window.speechSynthesis.speaking) {
+        const currentPassage = passagesData.find(p => p.id === currentSpeakingPassageId);
+        if (currentPassage) playTTS(currentPassage.id);
+      }
+    }
+
+    function playTTS(passageId) {
+      if (!('speechSynthesis' in window)) {
+        alert('Trình duyệt của bạn chưa hỗ trợ tính năng phát âm Web Speech API.');
+        return;
+      }
+
+      const passage = passagesData.find(p => p.id === passageId);
+      if (!passage) return;
+
+      window.speechSynthesis.cancel();
+
+      currentSpeakingPassageId = passageId;
+      currentUtterance = new SpeechSynthesisUtterance(passage.fullEnText);
+      currentUtterance.lang = 'en-US';
+      currentUtterance.rate = playbackRate;
+
+      window.speechSynthesis.speak(currentUtterance);
+    }
+
+    function pauseTTS() {
+      if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+        if (window.speechSynthesis.paused) {
+          window.speechSynthesis.resume();
+        } else {
+          window.speechSynthesis.pause();
+        }
+      }
+    }
+
+    function stopTTS() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
     }
   </script>
 </body>
