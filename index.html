@@ -18,7 +18,7 @@
   }
 
   html {
-    scroll-behavior: smooth; /* Hỗ trợ cuộn mượt mà */
+    scroll-behavior: smooth;
   }
 
   html, body {
@@ -326,7 +326,7 @@
 
 <script>
 /*************************************************************
- * TOPIC & BÀI ĐỌC SONG NGỮ DEFINITION
+ * TOPIC & BÀI ĐỌC SONG NGỮ DEFINITION (Đã bổ sung từ loại pos)
  *************************************************************/
 const topicsData = [
   {
@@ -359,23 +359,23 @@ const topicsData = [
           }
         ],
         vocab: [
-          { en: "exponential", ipa: "/ˌek.spəˈnen.ʃəl/", vn: "theo cấp số nhân" },
-          { en: "integration", ipa: "/ˌɪn.təˈɡreɪ.ʃən/", vn: "sự tích hợp / hòa nhập" },
-          { en: "artificial intelligence", ipa: "/ˌɑː.tɪˈfɪʃ.əl ɪnˈtel.ɪ.dʒəns/", vn: "trí tuệ nhân tạo" },
-          { en: "societal", ipa: "/səˈsaɪ.ə.təl/", vn: "thuộc về xã hội" },
-          { en: "optimists", ipa: "/ˈɒp.tɪ.mɪsts/", vn: "những người lạc quan" },
-          { en: "streamline", ipa: "/ˈstriːm.laɪn/", vn: "tối ưu hóa / hợp lý hóa" },
-          { en: "unprecedented", ipa: "/ʌnˈpres.ɪ.den.tɪd/", vn: "chưa từng có tiền lệ" },
-          { en: "displacement", ipa: "/dɪsˈpleɪs.mənt/", vn: "sự dịch chuyển / mất việc" },
-          { en: "redundant", ipa: "/rɪˈdʌn.dənt/", vn: "dư thừa / bị sa thải" },
-          { en: "algorithmic", ipa: "/ˌæl.ɡəˈrɪð.mɪk/", vn: "thuộc thuật toán" },
-          { en: "cognitive", ipa: "/ˈkɒɡ.nə.tɪv/", vn: "thuộc về nhận thức / trí óc" },
-          { en: "white-collar", ipa: "/waɪtˈkɒl.ər/", vn: "lao động trí óc / văn phòng" },
-          { en: "restructure", ipa: "/ˌriːˈstrʌk.tʃər/", vn: "tái cấu trúc" },
-          { en: "rote", ipa: "/roʊt/", vn: "học vẹt / học máy móc" },
-          { en: "critical thinking", ipa: "/ˈkrɪt.ɪ.kəl ˈθɪŋ.kɪŋ/", vn: "tư duy phản biện" },
-          { en: "paradigm shift", ipa: "/ˈpær.ə.daɪm ʃɪft/", vn: "sự chuyển đổi mô hình" },
-          { en: "exacerbate", ipa: "/ɪɡˈzæs.ə.beɪt/", vn: "làm trầm trọng thêm" }
+          { en: "exponential", pos: "adj", ipa: "/ˌek.spəˈnen.ʃəl/", vn: "theo cấp số nhân" },
+          { en: "integration", pos: "n", ipa: "/ˌɪn.təˈɡreɪ.ʃən/", vn: "sự tích hợp / hòa nhập" },
+          { en: "artificial intelligence", pos: "n.phr", ipa: "/ˌɑː.tɪˈfɪʃ.əl ɪnˈtel.ɪ.dʒəns/", vn: "trí tuệ nhân tạo" },
+          { en: "societal", pos: "adj", ipa: "/səˈsaɪ.ə.təl/", vn: "thuộc về xã hội" },
+          { en: "optimists", pos: "n", ipa: "/ˈɒp.tɪ.mɪsts/", vn: "những người lạc quan" },
+          { en: "streamline", pos: "v", ipa: "/ˈstriːm.laɪn/", vn: "tối ưu hóa / hợp lý hóa" },
+          { en: "unprecedented", pos: "adj", ipa: "/ʌnˈpres.ɪ.den.tɪd/", vn: "chưa từng có tiền lệ" },
+          { en: "displacement", pos: "n", ipa: "/dɪsˈpleɪs.mənt/", vn: "sự dịch chuyển / mất việc" },
+          { en: "redundant", pos: "adj", ipa: "/rɪˈdʌn.dənt/", vn: "dư thừa / bị sa thải" },
+          { en: "algorithmic", pos: "adj", ipa: "/ˌæl.ɡəˈrɪð.mɪk/", vn: "thuộc thuật toán" },
+          { en: "cognitive", pos: "adj", ipa: "/ˈkɒɡ.nə.tɪv/", vn: "thuộc về nhận thức / trí óc" },
+          { en: "white-collar", pos: "adj", ipa: "/waɪtˈkɒl.ər/", vn: "lao động trí óc / văn phòng" },
+          { en: "restructure", pos: "v", ipa: "/ˌriːˈstrʌk.tʃər/", vn: "tái cấu trúc" },
+          { en: "rote", pos: "adj / n", ipa: "/roʊt/", vn: "học vẹt / học máy móc" },
+          { en: "critical thinking", pos: "n.phr", ipa: "/ˈkrɪt.ɪ.kəl ˈθɪŋ.kɪŋ/", vn: "tư duy phản biện" },
+          { en: "paradigm shift", pos: "n.phr", ipa: "/ˈpær.ə.daɪm ʃɪft/", vn: "sự chuyển đổi mô hình" },
+          { en: "exacerbate", pos: "v", ipa: "/ɪɡˈzæs.ə.beɪt/", vn: "làm trầm trọng thêm" }
         ]
       },
       {
@@ -404,21 +404,21 @@ const topicsData = [
           }
         ],
         vocab: [
-          { en: "gentrification", ipa: "/ˌdʒen.trɪ.fɪˈkeɪ.ʃən/", vn: "sự chỉnh trang đô thị" },
-          { en: "dilapidated", ipa: "/dɪˈlæp.ɪ.deɪ.tɪd/", vn: "xuống cấp / xập xệ" },
-          { en: "stratification", ipa: "/ˌstræt.ɪ.fɪˈkeɪ.ʃən/", vn: "sự phân tầng (xã hội)" },
-          { en: "deteriorating", ipa: "/dɪˈtɪə.ri.ə.reɪ.tɪŋ/", vn: "đang xuống cấp / xấu đi" },
-          { en: "displace", ipa: "/dɪsˈpleɪs/", vn: "di dời / đẩy đi nơi khác" },
-          { en: "Proponents", ipa: "/prəˈpoʊ.nənts/", vn: "những người ủng hộ" },
-          { en: "municipal", ipa: "/mjuːˈnɪs.ɪ.pəl/", vn: "thuộc đô thị / thành phố" },
-          { en: "erodes", ipa: "/ɪˈroʊdz/", vn: "xói mòn / làm suy yếu" },
-          { en: "cohesion", ipa: "/kəʊˈhiː.ʒən/", vn: "sự gắn kết / kết nối" },
-          { en: "vulnerable", ipa: "/ˈvʌl.nər.ə.bəl/", vn: "dễ bị tổn thương" },
-          { en: "mitigate", ipa: "/ˈmɪt.ɪ.ɡeɪt/", vn: "giảm thiểu / làm dịu đi" },
-          { en: "adverse", ipa: "/ˈæd.vɜːs/", vn: "bất lợi / tiêu cực" },
-          { en: "inclusive", ipa: "/ɪnˈkluː.sɪv/", vn: "bao hàm / hòa nhập" },
-          { en: "subsidized", ipa: "/ˈsʌb.sɪ.daɪzd/", vn: "được trợ giá / bao cấp" },
-          { en: "equitable", ipa: "/ˈek.wɪ.tə.bəl/", vn: "bình đẳng / công bằng" }
+          { en: "gentrification", pos: "n", ipa: "/ˌdʒen.trɪ.fɪˈkeɪ.ʃən/", vn: "sự chỉnh trang đô thị" },
+          { en: "dilapidated", pos: "adj", ipa: "/dɪˈlæp.ɪ.deɪ.tɪd/", vn: "xuống cấp / xập xệ" },
+          { en: "stratification", pos: "n", ipa: "/ˌstræt.ɪ.fɪˈkeɪ.ʃən/", vn: "sự phân tầng (xã hội)" },
+          { en: "deteriorating", pos: "adj", ipa: "/dɪˈtɪə.ri.ə.reɪ.tɪŋ/", vn: "đang xuống cấp / xấu đi" },
+          { en: "displace", pos: "v", ipa: "/dɪsˈpleɪs/", vn: "di dời / đẩy đi nơi khác" },
+          { en: "Proponents", pos: "n", ipa: "/prəˈpoʊ.nənts/", vn: "những người ủng hộ" },
+          { en: "municipal", pos: "adj", ipa: "/mjuːˈnɪs.ɪ.pəl/", vn: "thuộc đô thị / thành phố" },
+          { en: "erodes", pos: "v", ipa: "/ɪˈroʊdz/", vn: "xói mòn / làm suy yếu" },
+          { en: "cohesion", pos: "n", ipa: "/kəʊˈhiː.ʒən/", vn: "sự gắn kết / kết nối" },
+          { en: "vulnerable", pos: "adj", ipa: "/ˈvʌl.nər.ə.bəl/", vn: "dễ bị tổn thương" },
+          { en: "mitigate", pos: "v", ipa: "/ˈmɪt.ɪ.ɡeɪt/", vn: "giảm thiểu / làm dịu đi" },
+          { en: "adverse", pos: "adj", ipa: "/ˈæd.vɜːs/", vn: "bất lợi / tiêu cực" },
+          { en: "inclusive", pos: "adj", ipa: "/ɪnˈkluː.sɪv/", vn: "bao hàm / hòa nhập" },
+          { en: "subsidized", pos: "adj", ipa: "/ˈsʌb.sɪ.daɪzd/", vn: "được trợ giá / bao cấp" },
+          { en: "equitable", pos: "adj", ipa: "/ˈek.wɪ.tə.bəl/", vn: "bình đẳng / công bằng" }
         ]
       },
       {
@@ -447,21 +447,21 @@ const topicsData = [
           }
         ],
         vocab: [
-          { en: "proliferation", ipa: "/prəˌlɪf.əˈreɪ.ʃən/", vn: "sự bùng nổ / gia tăng nhanh" },
-          { en: "ubiquitous", ipa: "/juːˈbɪk.wɪ.təs/", vn: "có mặt ở khắp nơi" },
-          { en: "formidable", ipa: "/fɔːˈmɪd.ə.bəl/", vn: "ghê gớm / đáng sợ" },
-          { en: "rudimentary", ipa: "/ˌruː.dɪˈmen.tər.i/", vn: "thô sơ / cơ bản" },
-          { en: "cyber espionage", ipa: "/ˈsaɪ.bər ˈes.pi.ə.nɑːʒ/", vn: "tình báo / gián điệp mạng" },
-          { en: "Ransomware", ipa: "/ˈræn.səm.weər/", vn: "mã độc tống tiền" },
-          { en: "coercive", ipa: "/koʊˈɜː.sɪv/", vn: "mang tính cưỡng đoạt / ép buộc" },
-          { en: "crippling", ipa: "/ˈkrɪp.əl.ɪŋ/", vn: "làm tàn phế / gãy đổ" },
-          { en: "pecuniary", ipa: "/pɪˈkjuː.ni.ər.i/", vn: "thuộc về tiền bạc / tài chính" },
-          { en: "imperil", ipa: "/ɪmˈper.əl/", vn: "đẩy vào nguy hiểm / đe dọa" },
-          { en: "reactive", ipa: "/riˈæk.tɪv/", vn: "bị động / phản ứng đối phó" },
-          { en: "zero-trust", ipa: "/ˈzɪə.roʊ trʌst/", vn: "không tin tưởng (mô hình an ninh)" },
-          { en: "transboundary", ipa: "/trænzˈbaʊn.dər.i/", vn: "xuyên biên giới" },
-          { en: "imperative", ipa: "/ɪmˈper.ə.tɪv/", vn: "bắt buộc / cực kỳ cấp thiết" },
-          { en: "apprehend", ipa: "/ˌæp.rɪˈhend/", vn: "bắt giữ (tội phạm)" }
+          { en: "proliferation", pos: "n", ipa: "/prəˌlɪf.əˈreɪ.ʃən/", vn: "sự bùng nổ / gia tăng nhanh" },
+          { en: "ubiquitous", pos: "adj", ipa: "/juːˈbɪk.wɪ.təs/", vn: "có mặt ở khắp nơi" },
+          { en: "formidable", pos: "adj", ipa: "/fɔːˈmɪd.ə.bəl/", vn: "ghê gớm / đáng sợ" },
+          { en: "rudimentary", pos: "adj", ipa: "/ˌruː.dɪˈmen.tər.i/", vn: "thô sơ / cơ bản" },
+          { en: "cyber espionage", pos: "n.phr", ipa: "/ˈsaɪ.bər ˈes.pi.ə.nɑːʒ/", vn: "tình báo / gián điệp mạng" },
+          { en: "Ransomware", pos: "n", ipa: "/ˈræn.səm.weər/", vn: "mã độc tống tiền" },
+          { en: "coercive", pos: "adj", ipa: "/koʊˈɜː.sɪv/", vn: "mang tính cưỡng đoạt / ép buộc" },
+          { en: "crippling", pos: "adj", ipa: "/ˈkrɪp.əl.ɪŋ/", vn: "làm tàn phế / gãy đổ" },
+          { en: "pecuniary", pos: "adj", ipa: "/pɪˈkjuː.ni.ər.i/", vn: "thuộc về tiền bạc / tài chính" },
+          { en: "imperil", pos: "v", ipa: "/ɪmˈper.əl/", vn: "đẩy vào nguy hiểm / đe dọa" },
+          { en: "reactive", pos: "adj", ipa: "/riˈæk.tɪv/", vn: "bị động / phản ứng đối phó" },
+          { en: "zero-trust", pos: "adj", ipa: "/ˈzɪə.roʊ trʌst/", vn: "không tin tưởng (mô hình an ninh)" },
+          { en: "transboundary", pos: "adj", ipa: "/trænzˈbaʊn.dər.i/", vn: "xuyên biên giới" },
+          { en: "imperative", pos: "adj", ipa: "/ɪmˈper.ə.tɪv/", vn: "bắt buộc / cực kỳ cấp thiết" },
+          { en: "apprehend", pos: "v", ipa: "/ˌæp.rɪˈhend/", vn: "bắt giữ (tội phạm)" }
         ]
       }
     ]
@@ -496,21 +496,21 @@ const topicsData = [
           }
         ],
         vocab: [
-          { en: "existential", ipa: "/ˌeɡ.zɪˈsten.ʃəl/", vn: "thuộc về sinh tồn / tồn tại" },
-          { en: "irreversible", ipa: "/ˌɪr.ɪˈvɜː.sə.bəl/", vn: "không thể đảo ngược" },
-          { en: "Anthropogenic", ipa: "/ˌæn.θrə.pəˈdʒen.ɪk/", vn: "do con người gây ra" },
-          { en: "deforestation", ipa: "/diːˌfɒr.ɪˈsteɪ.ʃən/", vn: "nạn phá rừng" },
-          { en: "fragmentation", ipa: "/ˌfræɡ.menˈteɪ.ʃən/", vn: "sự chia cắt / phân mảnh" },
-          { en: "ethical", ipa: "/ˈeθ.ɪ.kəl/", vn: "thuộc về đạo đức" },
-          { en: "obligation", ipa: "/ˌɒb.lɪˈɡeɪ.ʃən/", vn: "nghĩa vụ / trách nhiệm" },
-          { en: "sinks", ipa: "/sɪŋks/", vn: "bể hấp thụ (carbon)" },
-          { en: "mitigating", ipa: "/ˈmɪt.ɪ.ɡeɪ.tɪŋ/", vn: "giảm thiểu / làm nhẹ bớt" },
-          { en: "stabilizing", ipa: "/ˈsteɪ.bɪ.laɪ.zɪŋ/", vn: "làm ổn định" },
-          { en: "collapse", ipa: "/kəˈlæps/", vn: "sự sụp đổ" },
-          { en: "rigorous", ipa: "/ˈrɪɡ.ər.əs/", vn: "nghiêm ngặt / khắt khe" },
-          { en: "regulations", ipa: "/ˌreɡ.jəˈleɪ.ʃənz/", vn: "các quy định / luật lệ" },
-          { en: "transition", ipa: "/trænˈzɪʃ.ən/", vn: "quá trình chuyển đổi" },
-          { en: "renewable", ipa: "/rɪˈnjuː.ə.bəl/", vn: "tái tạo được" }
+          { en: "existential", pos: "adj", ipa: "/ˌeɡ.zɪˈsten.ʃəl/", vn: "thuộc về sinh tồn / tồn tại" },
+          { en: "irreversible", pos: "adj", ipa: "/ˌɪr.ɪˈvɜː.sə.bəl/", vn: "không thể đảo ngược" },
+          { en: "Anthropogenic", pos: "adj", ipa: "/ˌæn.θrə.pəˈdʒen.ɪk/", vn: "do con người gây ra" },
+          { en: "deforestation", pos: "n", ipa: "/diːˌfɒr.ɪˈsteɪ.ʃən/", vn: "nạn phá rừng" },
+          { en: "fragmentation", pos: "n", ipa: "/ˌfræɡ.menˈteɪ.ʃən/", vn: "sự chia cắt / phân mảnh" },
+          { en: "ethical", pos: "adj", ipa: "/ˈeθ.ɪ.kəl/", vn: "thuộc về đạo đức" },
+          { en: "obligation", pos: "n", ipa: "/ˌɒb.lɪˈɡeɪ.ʃən/", vn: "nghĩa vụ / trách nhiệm" },
+          { en: "sinks", pos: "n", ipa: "/sɪŋks/", vn: "bể hấp thụ (carbon)" },
+          { en: "mitigating", pos: "v", ipa: "/ˈmɪt.ɪ.ɡeɪ.tɪŋ/", vn: "giảm thiểu / làm nhẹ bớt" },
+          { en: "stabilizing", pos: "v", ipa: "/ˈsteɪ.bɪ.laɪ.zɪŋ/", vn: "làm ổn định" },
+          { en: "collapse", pos: "n / v", ipa: "/kəˈlæps/", vn: "sự sụp đổ" },
+          { en: "rigorous", pos: "adj", ipa: "/ˈrɪɡ.ər.əs/", vn: "nghiêm ngặt / khắt khe" },
+          { en: "regulations", pos: "n", ipa: "/ˌreɡ.jəˈleɪ.ʃənz/", vn: "các quy định / luật lệ" },
+          { en: "transition", pos: "n / v", ipa: "/trænˈzɪʃ.ən/", vn: "quá trình chuyển đổi" },
+          { en: "renewable", pos: "adj", ipa: "/rɪˈnjuː.ə.bəl/", vn: "tái tạo được" }
         ]
       },
       {
@@ -539,21 +539,21 @@ const topicsData = [
           }
         ],
         vocab: [
-          { en: "Ocean acidification", ipa: "/ˈəʊ.ʃən əˌsɪd.ɪ.fɪˈkeɪ.ʃən/", vn: "sự axit hóa đại dương" },
-          { en: "atmospheric", ipa: "/ˌæt.məsˈfer.ɪk/", vn: "thuộc khí quyển" },
-          { en: "diminishes", ipa: "/dɪˈmɪn.ɪ.ʃɪz/", vn: "làm giảm bớt / thu nhỏ" },
-          { en: "concentration", ipa: "/ˌkɒn.sənˈtreɪ.ʃən/", vn: "nồng độ / sự tập trung" },
-          { en: "organisms", ipa: "/ˈɔː.ɡən.ɪ.zəmz/", vn: "các sinh vật" },
-          { en: "mollusks", ipa: "/ˈmɒl.əsks/", vn: "động vật thân mềm" },
-          { en: "bleaching", ipa: "/ˈbliː.tʃɪŋ/", vn: "sự tẩy trắng (san hô)" },
-          { en: "degradation", ipa: "/ˌdeɡ.rəˈdeɪ.ʃən/", vn: "sự suy thoái / biến chất" },
-          { en: "intricately", ipa: "/ˈɪn.trɪ.kət.li/", vn: "một cách phức tạp / tinh vi" },
-          { en: "foundational", ipa: "/faʊnˈdeɪ.ʃən.əl/", vn: "mang tính nền tảng" },
-          { en: "fisheries", ipa: "/ˈfɪʃ.ər.iz/", vn: "ngành ngư nghiệp / thủy sản" },
-          { en: "drastic", ipa: "/ˈdræs.tɪk/", vn: "quyết liệt / mạnh mẽ" },
-          { en: "initiatives", ipa: "/ɪˈnɪʃ.ə.tɪvz/", vn: "các sáng kiến / đề xuất" },
-          { en: "resilience", ipa: "/rɪˈzɪl.i.əns/", vn: "khả năng phục hồi / kiên cường" },
-          { en: "interconnected", ipa: "/ˌɪn.tə.kəˈnek.tɪd/", vn: "gắn kết lẫn nhau" }
+          { en: "Ocean acidification", pos: "n.phr", ipa: "/ˈəʊ.ʃən əˌsɪd.ɪ.fɪˈkeɪ.ʃən/", vn: "sự axit hóa đại dương" },
+          { en: "atmospheric", pos: "adj", ipa: "/ˌæt.məsˈfer.ɪk/", vn: "thuộc khí quyển" },
+          { en: "diminishes", pos: "v", ipa: "/dɪˈmɪn.ɪ.ʃɪz/", vn: "làm giảm bớt / thu nhỏ" },
+          { en: "concentration", pos: "n", ipa: "/ˌkɒn.sənˈtreɪ.ʃən/", vn: "nồng độ / sự tập trung" },
+          { en: "organisms", pos: "n", ipa: "/ˈɔː.ɡən.ɪ.zəmz/", vn: "các sinh vật" },
+          { en: "mollusks", pos: "n", ipa: "/ˈmɒl.əsks/", vn: "động vật thân mềm" },
+          { en: "bleaching", pos: "n", ipa: "/ˈbliː.tʃɪŋ/", vn: "sự tẩy trắng (san hô)" },
+          { en: "degradation", pos: "n", ipa: "/ˌdeɡ.rəˈdeɪ.ʃən/", vn: "sự suy thoái / biến chất" },
+          { en: "intricately", pos: "adv", ipa: "/ˈɪn.trɪ.kət.li/", vn: "một cách phức tạp / tinh vi" },
+          { en: "foundational", pos: "adj", ipa: "/faʊnˈdeɪ.ʃən.əl/", vn: "mang tính nền tảng" },
+          { en: "fisheries", pos: "n", ipa: "/ˈfɪʃ.ər.iz/", vn: "ngành ngư nghiệp / thủy sản" },
+          { en: "drastic", pos: "adj", ipa: "/ˈdræs.tɪk/", vn: "quyết liệt / mạnh mẽ" },
+          { en: "initiatives", pos: "n", ipa: "/ɪˈnɪʃ.ə.tɪvz/", vn: "các sáng kiến / đề xuất" },
+          { en: "resilience", pos: "n", ipa: "/rɪˈzɪl.i.əns/", vn: "khả năng phục hồi / kiên cường" },
+          { en: "interconnected", pos: "adj", ipa: "/ˌɪn.tə.kəˈnek.tɪd/", vn: "gắn kết lẫn nhau" }
         ]
       },
       {
@@ -582,21 +582,21 @@ const topicsData = [
           }
         ],
         vocab: [
-          { en: "expansion", ipa: "/ɪkˈspæn.ʃən/", vn: "sự mở rộng" },
-          { en: "sprawl", ipa: "/sprɔːl/", vn: "sự phát triển tràn lan" },
-          { en: "consumption", ipa: "/kənˈsʌmp.ʃən/", vn: "sự tiêu thụ" },
-          { en: "counteract", ipa: "/ˌkaʊn.tərˈækt/", vn: "chống lại / triệt tiêu" },
-          { en: "detrimental", ipa: "/ˌdet.rɪˈmen.təl/", vn: "có hại / gây tổn hại" },
-          { en: "sustainable", ipa: "/səˈsteɪ.nə.bəl/", vn: "bền vững" },
-          { en: "advocating", ipa: "/ˈæd.və.keɪ.tɪŋ/", vn: "cổ vũ / ủng hộ" },
-          { en: "transit", ipa: "/ˈtræn.zɪt/", vn: "giao thông / vận tải" },
-          { en: "heat island effect", ipa: "/hiːt ˈaɪ.lənd ɪˈfekt/", vn: "hiệu ứng đảo nhiệt" },
-          { en: "well-being", ipa: "/ˌwelˈbiː.ɪŋ/", vn: "sức khỏe và sự hạnh phúc" },
-          { en: "resilient", ipa: "/rɪˈzɪl.i.ənt/", vn: "kiên cường / chịu đựng tốt" },
-          { en: "targets", ipa: "/ˈtɑː.ɡɪts/", vn: "các mục tiêu" },
-          { en: "prosperity", ipa: "/prɒsˈper.ə.ti/", vn: "sự thịnh vượng" },
-          { en: "agricultural", ipa: "/ˌæɡ.rɪˈkʌl.tʃər.əl/", vn: "thuộc nông nghiệp" },
-          { en: "infrastructure", ipa: "/ˈɪn.frəˌstrʌk.tʃər/", vn: "cơ sở hạ tầng" }
+          { en: "expansion", pos: "n", ipa: "/ɪkˈspæn.ʃən/", vn: "sự mở rộng" },
+          { en: "sprawl", pos: "n / v", ipa: "/sprɔːl/", vn: "sự phát triển tràn lan" },
+          { en: "consumption", pos: "n", ipa: "/kənˈsʌmp.ʃən/", vn: "sự tiêu thụ" },
+          { en: "counteract", pos: "v", ipa: "/ˌkaʊn.tərˈækt/", vn: "chống lại / triệt tiêu" },
+          { en: "detrimental", pos: "adj", ipa: "/ˌdet.rɪˈmen.təl/", vn: "có hại / gây tổn hại" },
+          { en: "sustainable", pos: "adj", ipa: "/səˈsteɪ.nə.bəl/", vn: "bền vững" },
+          { en: "advocating", pos: "v", ipa: "/ˈæd.və.keɪ.tɪŋ/", vn: "cổ vũ / ủng hộ" },
+          { en: "transit", pos: "n", ipa: "/ˈtræn.zɪt/", vn: "giao thông / vận tải" },
+          { en: "heat island effect", pos: "n.phr", ipa: "/hiːt ˈaɪ.lənd ɪˈfekt/", vn: "hiệu ứng đảo nhiệt" },
+          { en: "well-being", pos: "n", ipa: "/ˌwelˈbiː.ɪŋ/", vn: "sức khỏe và sự hạnh phúc" },
+          { en: "resilient", pos: "adj", ipa: "/rɪˈzɪl.i.ənt/", vn: "kiên cường / chịu đựng tốt" },
+          { en: "targets", pos: "n", ipa: "/ˈtɑː.ɡɪts/", vn: "các mục tiêu" },
+          { en: "prosperity", pos: "n", ipa: "/prɒsˈper.ə.ti/", vn: "sự thịnh vượng" },
+          { en: "agricultural", pos: "adj", ipa: "/ˌæɡ.rɪˈkʌl.tʃər.əl/", vn: "thuộc nông nghiệp" },
+          { en: "infrastructure", pos: "n", ipa: "/ˈɪn.frəˌstrʌk.tʃər/", vn: "cơ sở hạ tầng" }
         ]
       }
     ]
@@ -620,7 +620,7 @@ let currentReflectionIndex = 0;
 
 /*************************************************************
  * INITIALIZATION
- *************************************************************/
+ *********************************----------------************/
 window.onload = function() {
   populateTopicDropdown();
   loadTopicData(0);
@@ -676,9 +676,12 @@ function loadTopicData(topicIdx) {
             <div class="flex-1 min-w-0">
               <div class="flex items-center justify-between gap-1">
                 <span class="font-bold text-amber-900 text-xs md:text-sm vocab-text truncate">${v.en}</span>
-                <button onclick="speakText('${v.en.replace(/'/g, "\\'")}')" class="text-amber-600 hover:text-amber-800 text-[11px] p-0.5 shrink-0">
-                  <i class="fa-solid fa-volume-high"></i>
-                </button>
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded border border-emerald-300">${v.pos}</span>
+                  <button onclick="speakText('${v.en.replace(/'/g, "\\'")}')" class="text-amber-600 hover:text-amber-800 text-[11px] p-0.5">
+                    <i class="fa-solid fa-volume-high"></i>
+                  </button>
+                </div>
               </div>
               <div class="text-[10px] md:text-[11px] text-gray-500 italic vocab-text break-words">${v.ipa}</div>
               <div class="text-xs text-emerald-800 font-semibold mt-0.5 vocab-text leading-tight break-words">${v.vn}</div>
@@ -755,7 +758,6 @@ function toggleAccordion(targetId) {
   const targetIcon = document.getElementById(`icon-${targetId}`);
   const isCurrentlyHidden = targetBody.classList.contains("hidden");
 
-  // Đóng toàn bộ các bài khác
   document.querySelectorAll('.accordion-body').forEach(body => {
     body.classList.add('hidden');
   });
@@ -763,12 +765,10 @@ function toggleAccordion(targetId) {
     icon.classList.remove('rotate-180');
   });
 
-  // Nếu bài đang đóng thì mở ra và cuộn màn hình lên vị trí bài đọc đó
   if (isCurrentlyHidden) {
     targetBody.classList.remove("hidden");
     targetIcon.classList.add("rotate-180");
 
-    // Tự động cuộn mượt mà lên vị trí hiển thị bài đọc
     setTimeout(() => {
       const cardElement = targetBody.closest('.article-card');
       if (cardElement) {
@@ -873,7 +873,7 @@ function renderFlashcard() {
   if (fcMode === 'EN-VN') {
     document.getElementById("fcFrontLabel").textContent = "Từ Tiếng Anh";
     document.getElementById("fcFrontText").innerHTML = `
-      <div class="leading-tight">${card.en}</div>
+      <div class="leading-tight">${card.en} <span class="text-xs bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-normal">(${card.pos})</span></div>
       <div class="text-[11px] md:text-xs text-amber-600 font-normal mt-1">${card.ipa}</div>
     `;
     document.getElementById("fcBackLabel").textContent = "Nghĩa Tiếng Việt";
@@ -883,7 +883,7 @@ function renderFlashcard() {
     document.getElementById("fcFrontText").textContent = card.vn;
     document.getElementById("fcBackLabel").textContent = "Từ Tiếng Anh & IPA";
     document.getElementById("fcBackText").innerHTML = `
-      <div class="leading-tight">${card.en}</div>
+      <div class="leading-tight">${card.en} <span class="text-xs bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded font-normal">(${card.pos})</span></div>
       <div class="text-[11px] md:text-xs text-amber-100 font-normal mt-1">${card.ipa}</div>
     `;
   }
