@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="overflow-x-hidden">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Luyện Đọc Song Ngữ Ôn Thi THPTQG - Lớp Anh thầy Kết</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -15,6 +15,15 @@
     --farm-dark-green: #2d6a4f;
     --farm-yellow: #ffb703;
     --farm-orange: #fb8500;
+  }
+
+  html {
+    scroll-behavior: smooth; /* Hỗ trợ cuộn mượt mà */
+  }
+
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   body {
@@ -43,8 +52,8 @@
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
     background: #e9f5ec;
@@ -77,8 +86,9 @@
     background-color: #ecfdf5;
     padding: 2px 6px;
     border-radius: 4px;
-    margin-left: 4px;
+    margin-left: 2px;
     display: inline;
+    word-break: break-word;
   }
 
   /* Ẩn bản dịch khi chế độ off */
@@ -106,28 +116,28 @@
 </style>
 </head>
 
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden w-full">
 
   <!-- TOP HEADER -->
-  <header class="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 text-white shadow-lg relative overflow-hidden">
+  <header class="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 text-white shadow-lg relative overflow-hidden w-full">
     <div class="absolute -right-6 -bottom-6 opacity-20 pointer-events-none">
-      <i class="fa-solid fa-book-open text-9xl"></i>
+      <i class="fa-solid fa-book-open text-7xl md:text-9xl"></i>
     </div>
-    <div class="absolute left-10 top-2 opacity-15 pointer-events-none">
-      <i class="fa-solid fa-cloud text-6xl"></i>
+    <div class="absolute left-2 top-2 opacity-15 pointer-events-none">
+      <i class="fa-solid fa-cloud text-4xl md:text-6xl"></i>
     </div>
 
-    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
-      <a href="" target="_blank" class="flex items-center gap-3 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition border border-white/20">
-        <i class="fa-solid fa-graduation-cap text-yellow-300 text-2xl"></i>
-        <span class="font-bold text-lg tracking-wide font-farm">Lớp Anh Thầy Kết</span>
+    <div class="max-w-6xl mx-auto px-3 py-3 md:py-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 relative z-10">
+      <a href="" target="_blank" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-full transition border border-white/20 text-xs md:text-base">
+        <i class="fa-solid fa-graduation-cap text-yellow-300 text-lg md:text-2xl"></i>
+        <span class="font-bold tracking-wide font-farm">Lớp Anh Thầy Kết</span>
       </a>
 
-      <div class="text-center">
-        <h1 class="text-2xl md:text-3xl font-bold tracking-wider text-yellow-300 drop-shadow">
+      <div class="text-center px-2">
+        <h1 class="text-xl md:text-3xl font-bold tracking-wider text-yellow-300 drop-shadow">
           📖 BÀI ĐỌC SONG NGỮ THPTQG 🎯
         </h1>
-        <p class="text-xs md:text-sm text-green-100 opacity-90">Chủ Đề Học Thuật Nâng Cao - Bứt Phá Từ Vựng & Điểm Số</p>
+        <p class="text-[11px] md:text-sm text-green-100 opacity-90">Chủ Đề Học Thuật Nâng Cao - Bứt Phá Từ Vựng & Điểm Số</p>
       </div>
 
       <div class="hidden md:flex items-center gap-2 text-yellow-300">
@@ -137,28 +147,28 @@
   </header>
 
   <!-- MAIN CONTAINER -->
-  <main class="max-w-5xl mx-auto px-4 py-6 flex-1 w-full space-y-8">
+  <main class="max-w-5xl mx-auto px-3 md:px-4 py-4 md:py-6 flex-1 w-full space-y-6 md:space-y-8 overflow-x-hidden">
 
     <!-- TOPIC SELECTOR & CONTROLS BAR -->
-    <section class="bg-white rounded-2xl p-4 md:p-6 shadow-md border-2 border-green-200 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="w-12 h-12 rounded-xl bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-emerald-600 text-xl shadow-sm">
+    <section class="bg-white rounded-2xl p-3 md:p-6 shadow-md border-2 border-green-200 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 w-full">
+      <div class="flex items-center gap-2.5 w-full md:w-auto">
+        <div class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-xl bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-emerald-600 text-lg md:text-xl shadow-sm">
           <i class="fa-solid fa-folder-open"></i>
         </div>
         <div>
-          <label for="topicSelect" class="block text-xs font-bold text-gray-500 uppercase tracking-wider">Chọn Chủ Đề Bài Đọc</label>
-          <span class="text-sm text-green-700 font-semibold">Mỗi topic chứa nhiều bài đọc cùng chủ đề!</span>
+          <label for="topicSelect" class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wider">Chọn Chủ Đề Bài Đọc</label>
+          <span class="text-xs md:text-sm text-green-700 font-semibold leading-tight block">Mỗi topic chứa nhiều bài đọc cùng chủ đề</span>
         </div>
       </div>
 
-      <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+      <div class="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto">
         <!-- Toggle Translation Button -->
-        <button id="toggleTransBtn" onclick="toggleTranslation()" class="w-full sm:w-auto px-4 py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-sm">
+        <button id="toggleTransBtn" onclick="toggleTranslation()" class="w-full sm:w-auto px-3.5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-xs md:text-sm shrink-0">
           <i class="fa-solid fa-eye-slash"></i> <span id="toggleTransText">Ẩn Bản Dịch</span>
         </button>
 
         <div class="w-full sm:w-72">
-          <select id="topicSelect" onchange="changeTopic(this.value)" class="w-full px-4 py-3 rounded-xl border-2 border-green-300 bg-emerald-50 text-green-900 font-bold focus:outline-none focus:ring-2 focus:ring-green-500 transition cursor-pointer shadow-inner">
+          <select id="topicSelect" onchange="changeTopic(this.value)" class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl border-2 border-green-300 bg-emerald-50 text-green-900 font-bold focus:outline-none focus:ring-2 focus:ring-green-500 transition cursor-pointer shadow-inner text-xs md:text-sm">
             <!-- Options populated dynamically -->
           </select>
         </div>
@@ -166,79 +176,79 @@
     </section>
 
     <!-- SECTION 1: READING PASSAGES WITH VOCAB -->
-    <section class="space-y-6">
-      <div class="flex items-center justify-between border-b-2 border-green-200 pb-3">
-        <h2 class="text-xl md:text-2xl font-bold text-green-800 flex items-center gap-2 font-farm">
+    <section id="readingSection" class="space-y-4 md:space-y-6 w-full">
+      <div class="flex items-center justify-between border-b-2 border-green-200 pb-2.5">
+        <h2 class="text-lg md:text-2xl font-bold text-green-800 flex items-center gap-2 font-farm">
           <i class="fa-solid fa-book-bookmark text-green-600"></i>
           Danh Sách Bài Đọc Hiểu Song Ngữ
         </h2>
-        <span id="articleCountBadge" class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full border border-green-300">
+        <span id="articleCountBadge" class="bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full border border-green-300 shrink-0">
           0 Bài Đọc
         </span>
       </div>
 
       <!-- Container for reading articles -->
-      <div id="articlesContainer" class="space-y-6">
+      <div id="articlesContainer" class="space-y-4 md:space-y-6 w-full">
         <!-- Articles injected by JS -->
       </div>
     </section>
 
     <!-- SECTION 2: FLASHCARD REVISION -->
-    <section class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-6 md:p-8 shadow-md border-2 border-amber-200 space-y-6 relative overflow-hidden">
+    <section class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-md border-2 border-amber-200 space-y-4 md:space-y-6 relative overflow-hidden w-full">
       <div class="absolute -right-4 -top-4 opacity-10 text-amber-800 pointer-events-none">
-        <i class="fa-solid fa-brain text-9xl"></i>
+        <i class="fa-solid fa-brain text-7xl md:text-9xl"></i>
       </div>
 
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-amber-200 pb-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-amber-200 pb-3">
         <div>
-          <h2 class="text-xl md:text-2xl font-bold text-amber-900 flex items-center gap-2 font-farm">
+          <h2 class="text-lg md:text-2xl font-bold text-amber-900 flex items-center gap-2 font-farm">
             <i class="fa-solid fa-layer-group text-amber-600"></i>
-            Ôn Tập Flashcard Từ Vựng Nâng Cao
+            Ôn Tập Flashcard Từ Vựng
           </h2>
-          <p class="text-xs md:text-sm text-amber-700">Tổng hợp toàn bộ từ vựng nâng cao từ các bài đọc trong chủ đề</p>
+          <p class="text-[11px] md:text-sm text-amber-700">Tổng hợp từ vựng nâng cao từ các bài đọc trong chủ đề</p>
         </div>
 
         <!-- Mode Selector Switcher -->
-        <div class="bg-white p-1 rounded-xl border border-amber-300 flex items-center shadow-sm">
-          <button id="modeEnVnBtn" onclick="setFlashcardMode('EN-VN')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition bg-amber-500 text-white shadow-sm">
+        <div class="bg-white p-1 rounded-xl border border-amber-300 flex items-center shadow-sm shrink-0">
+          <button id="modeEnVnBtn" onclick="setFlashcardMode('EN-VN')" class="px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition bg-amber-500 text-white shadow-sm">
             Anh - Việt
           </button>
-          <button id="modeVnEnBtn" onclick="setFlashcardMode('VN-EN')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition text-gray-600 hover:bg-amber-100">
+          <button id="modeVnEnBtn" onclick="setFlashcardMode('VN-EN')" class="px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition text-gray-600 hover:bg-amber-100">
             Việt - Anh
           </button>
         </div>
       </div>
 
       <!-- Flashcard Display Box -->
-      <div class="flex flex-col items-center justify-center space-y-4 py-4">
+      <div class="flex flex-col items-center justify-center space-y-4 py-2 md:py-4 w-full">
         
         <!-- Congratulation Box (Hidden by default) -->
-        <div id="fcCongratsBox" class="hidden w-full max-w-md p-8 bg-white border-2 border-emerald-400 rounded-3xl shadow-xl text-center space-y-4 animate-bounce-short">
-          <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner">
+        <div id="fcCongratsBox" class="hidden w-full max-w-sm md:max-w-md p-6 md:p-8 bg-white border-2 border-emerald-400 rounded-2xl md:rounded-3xl shadow-xl text-center space-y-3 md:space-y-4">
+          <div class="w-16 h-16 md:w-20 md:h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto shadow-inner">
             🏆
           </div>
-          <h3 class="text-2xl font-bold text-emerald-800 font-farm">🎉 Chúc mừng, bạn đã học xong từ vựng!</h3>
-          <p class="text-xs text-gray-600">Bạn đã thành công ghi nhớ toàn bộ từ vựng nâng cao trong chủ đề này.</p>
-          <button onclick="resetFlashcards()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition hover-bounce text-sm">
+          <h3 class="text-xl md:text-2xl font-bold text-emerald-800 font-farm">🎉 Chúc mừng, bạn đã học xong từ vựng!</h3>
+          <p class="text-xs text-gray-600">Bạn đã ghi nhớ toàn bộ từ vựng nâng cao trong chủ đề này.</p>
+          <button onclick="resetFlashcards()" class="px-5 py-2 md:px-6 md:py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition hover-bounce text-xs md:text-sm">
             <i class="fa-solid fa-rotate-right mr-1"></i> Học Lại Từ Đầu
           </button>
         </div>
 
         <!-- Flashcard Flip Container -->
-        <div id="flashcard" onclick="flipFlashcard()" class="w-full max-w-md h-56 perspective-1000 cursor-pointer">
+        <div id="flashcard" onclick="flipFlashcard()" class="w-full max-w-[90vw] sm:max-w-md h-52 sm:h-56 perspective-1000 cursor-pointer">
           <div id="flashcardInner" class="relative w-full h-full duration-500 transform-style-3d shadow-lg rounded-2xl border-2 border-amber-300 bg-white">
             <!-- Front Face -->
-            <div class="absolute w-full h-full backface-hidden flex flex-col items-center justify-center p-6 text-center bg-white rounded-2xl">
-              <span class="text-xs font-bold text-amber-500 uppercase tracking-widest mb-2" id="fcFrontLabel">Mặt Trước</span>
-              <div id="fcFrontText" class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Đang tải...</div>
-              <p class="text-xs text-gray-400 mt-4"><i class="fa-solid fa-rotate text-amber-400 mr-1"></i> Nhấp vào thẻ để lật</p>
+            <div class="absolute w-full h-full backface-hidden flex flex-col items-center justify-center p-4 md:p-6 text-center bg-white rounded-2xl overflow-hidden">
+              <span class="text-[10px] md:text-xs font-bold text-amber-500 uppercase tracking-widest mb-1 md:mb-2" id="fcFrontLabel">Mặt Trước</span>
+              <div id="fcFrontText" class="text-xl md:text-3xl font-bold text-gray-800 mb-1 break-words w-full px-2">Đang tải...</div>
+              <p class="text-[10px] md:text-xs text-gray-400 mt-2 md:mt-4"><i class="fa-solid fa-rotate text-amber-400 mr-1"></i> Nhấp vào thẻ để lật</p>
             </div>
 
             <!-- Back Face -->
-            <div class="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center p-6 text-center bg-amber-500 text-white rounded-2xl">
-              <span class="text-xs font-bold text-amber-100 uppercase tracking-widest mb-2" id="fcBackLabel">Đáp Án</span>
-              <div id="fcBackText" class="text-2xl md:text-3xl font-bold mb-2">...</div>
-              <button onclick="event.stopPropagation(); speakText(document.getElementById('fcAudioText').value)" class="mt-2 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-xs flex items-center gap-1">
+            <div class="absolute w-full h-full backface-hidden rotate-y-180 flex flex-col items-center justify-center p-4 md:p-6 text-center bg-amber-500 text-white rounded-2xl overflow-hidden">
+              <span class="text-[10px] md:text-xs font-bold text-amber-100 uppercase tracking-widest mb-1 md:mb-2" id="fcBackLabel">Đáp Án</span>
+              <div id="fcBackText" class="text-xl md:text-3xl font-bold mb-1 break-words w-full px-2">...</div>
+              <button onclick="event.stopPropagation(); speakText(document.getElementById('fcAudioText').value)" class="mt-2 bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full text-[11px] md:text-xs flex items-center gap-1">
                 <i class="fa-solid fa-volume-high"></i> Nghe phát âm
               </button>
               <input type="hidden" id="fcAudioText" value="" />
@@ -247,57 +257,57 @@
         </div>
 
         <!-- Flashcard Action Buttons -->
-        <div id="fcControls" class="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <button onclick="knowWord()" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2 hover-bounce">
+        <div id="fcControls" class="flex flex-wrap items-center justify-center gap-2 md:gap-3 pt-2 w-full">
+          <button onclick="knowWord()" class="flex-1 sm:flex-none px-3.5 py-2 md:px-5 md:py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-1.5 text-xs md:text-sm">
             <i class="fa-solid fa-circle-check"></i> Đã biết
           </button>
-          <button onclick="dontKnowWord()" class="px-5 py-2.5 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2 hover-bounce">
+          <button onclick="dontKnowWord()" class="flex-1 sm:flex-none px-3.5 py-2 md:px-5 md:py-2.5 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-1.5 text-xs md:text-sm">
             <i class="fa-solid fa-circle-xmark"></i> Chưa biết
           </button>
-          <button onclick="nextFlashcard()" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2 hover-bounce">
-            <i class="fa-solid fa-forward"></i> Thẻ tiếp theo
+          <button onclick="nextFlashcard()" class="w-full sm:w-auto px-3.5 py-2 md:px-5 md:py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-1.5 text-xs md:text-sm">
+            <i class="fa-solid fa-forward"></i> Tiếp theo
           </button>
         </div>
 
-        <div class="text-xs text-amber-800 font-semibold" id="fcProgress">
+        <div class="text-[11px] md:text-xs text-amber-800 font-semibold" id="fcProgress">
           Tiến độ: 0 / 0 từ
         </div>
       </div>
     </section>
 
     <!-- SECTION 3: TRANSLATION REFLECTION PRACTICE -->
-    <section class="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-3xl p-6 md:p-8 shadow-md border-2 border-teal-200 space-y-6 relative overflow-hidden">
-      <div class="border-b border-teal-200 pb-4">
-        <h2 class="text-xl md:text-2xl font-bold text-teal-900 flex items-center gap-2 font-farm">
+    <section class="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-md border-2 border-teal-200 space-y-4 md:space-y-6 relative overflow-hidden w-full">
+      <div class="border-b border-teal-200 pb-3">
+        <h2 class="text-lg md:text-2xl font-bold text-teal-900 flex items-center gap-2 font-farm">
           <i class="fa-solid fa-bolt text-teal-600"></i>
-          Luyện Phản Xạ Dịch Câu Anh - Việt
+          Luyện Phản Xạ Dịch Câu
         </h2>
-        <p class="text-xs md:text-sm text-teal-700">Trích xuất ngẫu nhiên các câu trong bài đọc để luyện phản xạ dịch nghĩa sang tiếng Anh</p>
+        <p class="text-[11px] md:text-sm text-teal-700">Trích xuất ngẫu nhiên câu trong bài đọc để luyện phản xạ dịch sang tiếng Anh</p>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-teal-100 flex flex-col items-center text-center space-y-4">
+      <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-teal-100 flex flex-col items-center text-center space-y-3 md:space-y-4 w-full">
         <div class="w-full">
-          <span class="text-xs font-bold text-teal-500 uppercase tracking-widest">Câu Bản Dịch Tiếng Việt</span>
-          <div id="vietSentence" class="text-lg md:text-xl font-bold text-gray-800 mt-2 min-h-[50px] flex items-center justify-center">
+          <span class="text-[10px] md:text-xs font-bold text-teal-500 uppercase tracking-widest">Câu Bản Dịch Tiếng Việt</span>
+          <div id="vietSentence" class="text-base md:text-xl font-bold text-gray-800 mt-1 md:mt-2 min-h-[48px] flex items-center justify-center leading-snug">
             Bấm "Câu Tiếp Theo" để lấy câu phản xạ...
           </div>
         </div>
 
         <!-- Answer display box -->
-        <div id="engAnswerContainer" class="w-full bg-teal-50 border border-teal-200 rounded-xl p-4 hidden">
-          <span class="text-xs font-bold text-teal-700 uppercase tracking-widest block mb-1">Câu Tiếng Anh Gốc Trong Bài:</span>
-          <div id="engAnswer" class="text-base md:text-lg font-bold text-teal-900"></div>
+        <div id="engAnswerContainer" class="w-full bg-teal-50 border border-teal-200 rounded-xl p-3 md:p-4 hidden break-words">
+          <span class="text-[10px] md:text-xs font-bold text-teal-700 uppercase tracking-widest block mb-1">Câu Tiếng Anh Gốc Trong Bài:</span>
+          <div id="engAnswer" class="text-sm md:text-lg font-bold text-teal-900 leading-snug"></div>
           <button onclick="speakText(document.getElementById('engAnswer').innerText)" class="mt-2 text-xs text-teal-700 hover:text-teal-900 font-semibold inline-flex items-center gap-1">
             <i class="fa-solid fa-volume-high"></i> Nghe phát âm
           </button>
         </div>
 
         <!-- Controls -->
-        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <button onclick="showSpeakingAnswer()" class="px-6 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow transition hover-bounce flex items-center gap-2">
+        <div class="flex flex-wrap items-center justify-center gap-2.5 pt-1 w-full">
+          <button onclick="showSpeakingAnswer()" class="flex-1 sm:flex-none px-4 py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow transition text-xs md:text-sm flex items-center justify-center gap-1.5">
             <i class="fa-solid fa-eye"></i> Hiện Đáp Án
           </button>
-          <button onclick="nextSpeakingSentence()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow transition hover-bounce flex items-center gap-2">
+          <button onclick="nextSpeakingSentence()" class="flex-1 sm:flex-none px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow transition text-xs md:text-sm flex items-center justify-center gap-1.5">
             <i class="fa-solid fa-arrow-right"></i> Câu Tiếp Theo
           </button>
         </div>
@@ -307,16 +317,16 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-emerald-800 text-white text-center py-6 mt-12 border-t-4 border-yellow-400">
-    <div class="max-w-4xl mx-auto px-4 space-y-2">
-      <p class="font-farm text-lg text-yellow-300">🎓 Lớp Anh Thầy Kết - Học Thuật Nâng Cao - Ôn Thi THPTQG 🎯</p>
-      <p class="text-xs text-emerald-200">Chúc các em học sinh đạt điểm số thật cao trong kỳ thi THPT QG sắp tới!</p>
+  <footer class="bg-emerald-800 text-white text-center py-4 md:py-6 mt-8 md:mt-12 border-t-4 border-yellow-400 w-full">
+    <div class="max-w-4xl mx-auto px-3 space-y-1 md:space-y-2">
+      <p class="font-farm text-base md:text-lg text-yellow-300">🎓 Lớp Anh Thầy Kết - Ôn Thi THPTQG 🎯</p>
+      <p class="text-[10px] md:text-xs text-emerald-200">Chúc các em học sinh đạt điểm số thật cao trong kỳ thi THPT QG sắp tới!</p>
     </div>
   </footer>
 
 <script>
 /*************************************************************
- * TOPIC & BÀI ĐỌC SONG NGỮ DEFINITION (Highlight từ đơn lẻ)
+ * TOPIC & BÀI ĐỌC SONG NGỮ DEFINITION
  *************************************************************/
 const topicsData = [
   {
@@ -597,16 +607,14 @@ const topicsData = [
  * STATE VARIABLES
  *************************************************************/
 let currentTopicIndex = 0;
-let isTranslationVisible = true; // Trạng thái Ẩn/Hiện bản dịch
+let isTranslationVisible = true; 
 
-// Flashcard State
 let currentFlashcards = [];
 let fcIndex = 0;
 let fcIsFlipped = false;
-let fcMode = "EN-VN"; // 'EN-VN' or 'VN-EN'
-let knownWordCount = 0; // Đếm số từ đã thuộc trong lượt học hiện tại
+let fcMode = "EN-VN"; 
+let knownWordCount = 0; 
 
-// Reflection Speaking Practice State
 let reflectionSentences = [];
 let currentReflectionIndex = 0;
 
@@ -644,97 +652,85 @@ function loadTopicData(topicIdx) {
 
   container.innerHTML = "";
 
-  // Prepare cards array for Flashcards & Reflection
   currentFlashcards = [];
   reflectionSentences = [];
 
   topic.articles.forEach((art, idx) => {
-    // Collect vocab for flashcards
     if(art.vocab) {
       currentFlashcards.push(...art.vocab);
     }
 
-    // Build Bilingual Paragraph Text
     let bilingualHtml = "";
     art.bilingualSentences.forEach((sent) => {
-      // Push sentence pair for Reflection Practice
       reflectionSentences.push({ en: stripHtml(sent.en), vn: sent.vn });
-
       bilingualHtml += `${sent.en} <span class="trans-text">(${sent.vn})</span> `;
     });
 
-    // Build Vocab List HTML (With Tick Box for Learned Status)
     let vocabListHtml = "";
     if(art.vocab) {
       art.vocab.forEach((v, vIdx) => {
         const vocabId = `vocab-${art.id}-${vIdx}`;
         vocabListHtml += `
-          <div id="card-${vocabId}" class="p-2.5 bg-amber-50/60 rounded-xl border border-amber-200 hover:bg-amber-100/80 transition flex items-start gap-2.5">
-            <input type="checkbox" id="${vocabId}" onchange="toggleVocabLearned('${vocabId}')" class="mt-1 w-4 h-4 text-emerald-600 rounded border-amber-300 focus:ring-emerald-500 cursor-pointer">
+          <div id="card-${vocabId}" class="p-2 md:p-2.5 bg-amber-50/60 rounded-xl border border-amber-200 hover:bg-amber-100/80 transition flex items-start gap-2 overflow-hidden">
+            <input type="checkbox" id="${vocabId}" onchange="toggleVocabLearned('${vocabId}')" class="mt-1 w-4 h-4 text-emerald-600 rounded border-amber-300 focus:ring-emerald-500 cursor-pointer shrink-0">
             <div class="flex-1 min-w-0">
               <div class="flex items-center justify-between gap-1">
-                <span class="font-bold text-amber-900 text-sm vocab-text truncate">${v.en}</span>
-                <button onclick="speakText('${v.en.replace(/'/g, "\\'")}')" class="text-amber-600 hover:text-amber-800 text-xs p-1">
+                <span class="font-bold text-amber-900 text-xs md:text-sm vocab-text truncate">${v.en}</span>
+                <button onclick="speakText('${v.en.replace(/'/g, "\\'")}')" class="text-amber-600 hover:text-amber-800 text-[11px] p-0.5 shrink-0">
                   <i class="fa-solid fa-volume-high"></i>
                 </button>
               </div>
-              <div class="text-[11px] text-gray-500 italic vocab-text">${v.ipa}</div>
-              <div class="text-xs text-emerald-800 font-semibold mt-0.5 vocab-text">${v.vn}</div>
+              <div class="text-[10px] md:text-[11px] text-gray-500 italic vocab-text break-words">${v.ipa}</div>
+              <div class="text-xs text-emerald-800 font-semibold mt-0.5 vocab-text leading-tight break-words">${v.vn}</div>
             </div>
           </div>
         `;
       });
     }
 
-    // Mặc định mở bài đầu tiên, ẩn các bài sau
     const isFirst = idx === 0;
     const bodyHiddenClass = isFirst ? "" : "hidden";
     const iconRotateClass = isFirst ? "rotate-180" : "";
 
-    // Article Accordion Card Component
     const articleCard = document.createElement("div");
-    articleCard.className = "article-card bg-white rounded-2xl border-2 border-green-200 shadow-sm overflow-hidden transition hover:border-green-400";
+    articleCard.className = "article-card bg-white rounded-xl md:rounded-2xl border-2 border-green-200 shadow-sm overflow-hidden transition hover:border-green-400 w-full";
     articleCard.innerHTML = `
-      <!-- Accordion Header -->
-      <div onclick="toggleAccordion('${art.id}')" class="p-4 md:p-5 bg-gradient-to-r from-emerald-50 to-green-50 flex items-center justify-between cursor-pointer select-none border-b border-green-100">
-        <div class="flex items-center gap-3">
-          <span class="w-8 h-8 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">
+      <div onclick="toggleAccordion('${art.id}')" class="p-3 md:p-5 bg-gradient-to-r from-emerald-50 to-green-50 flex items-center justify-between cursor-pointer select-none border-b border-green-100 gap-2">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center text-xs md:text-sm shadow-sm shrink-0">
             <i class="fa-solid fa-book"></i>
           </span>
-          <h3 class="font-bold text-base md:text-lg text-green-900 font-farm">${art.title}</h3>
+          <h3 class="font-bold text-sm md:text-lg text-green-900 font-farm truncate">${art.title}</h3>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="text-xs bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-bold hidden sm:inline-block">
+        <div class="flex items-center gap-1.5 shrink-0">
+          <span class="text-[10px] md:text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full font-bold hidden sm:inline-block">
             ${art.vocab ? art.vocab.length : 0} từ nâng cao
           </span>
-          <i id="icon-${art.id}" class="accordion-icon fa-solid fa-chevron-down text-green-600 text-base duration-300 transform ${iconRotateClass}"></i>
+          <i id="icon-${art.id}" class="accordion-icon fa-solid fa-chevron-down text-green-600 text-xs md:text-base duration-300 transform ${iconRotateClass}"></i>
         </div>
       </div>
 
-      <!-- Accordion Body -->
-      <div id="body-${art.id}" class="accordion-body p-5 md:p-6 space-y-6 ${bodyHiddenClass}">
+      <div id="body-${art.id}" class="accordion-body p-3.5 md:p-6 space-y-4 md:space-y-6 ${bodyHiddenClass}">
         
-        <!-- Bilingual Reading Passage Box -->
-        <div class="bg-emerald-50/40 border border-emerald-200 rounded-2xl p-5 md:p-6 space-y-3 shadow-inner">
-          <div class="flex items-center justify-between border-b border-emerald-200 pb-2 mb-2">
-            <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider flex items-center gap-1">
-              <i class="fa-solid fa-language"></i> Nội Dung Bài Đọc Song Ngữ
+        <div class="bg-emerald-50/40 border border-emerald-200 rounded-xl md:rounded-2xl p-3.5 md:p-6 space-y-2 md:space-y-3 shadow-inner">
+          <div class="flex items-center justify-between border-b border-emerald-200 pb-2 mb-2 gap-2">
+            <span class="text-[10px] md:text-xs font-bold text-emerald-700 uppercase tracking-wider flex items-center gap-1 shrink-0">
+              <i class="fa-solid fa-language"></i> Nội Dung Song Ngữ
             </span>
-            <button onclick="speakText('${stripHtml(art.bilingualSentences.map(s => s.en).join(' ')).replace(/'/g, "\\'")}')" class="text-xs text-emerald-700 hover:text-emerald-900 font-bold flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-emerald-300 shadow-sm">
+            <button onclick="speakText('${stripHtml(art.bilingualSentences.map(s => s.en).join(' ')).replace(/'/g, "\\'")}')" class="text-[10px] md:text-xs text-emerald-700 hover:text-emerald-900 font-bold flex items-center gap-1 bg-white px-2 py-0.5 md:px-2.5 md:py-1 rounded-lg border border-emerald-300 shadow-sm shrink-0">
               <i class="fa-solid fa-volume-high"></i> Nghe toàn bài
             </button>
           </div>
-          <div class="text-base md:text-lg leading-relaxed text-gray-800 passage-text">
+          <div class="text-sm md:text-lg leading-relaxed text-gray-800 passage-text break-words">
             ${bilingualHtml}
           </div>
         </div>
 
-        <!-- Vocab Grid List -->
-        <div class="space-y-3">
-          <h4 class="text-sm font-bold text-amber-900 uppercase tracking-wider flex items-center gap-2">
-            <i class="fa-solid fa-highlighter text-amber-500"></i> Từ Vựng Nâng Cao Đã Highlight (Tích ô để đánh dấu đã thuộc)
+        <div class="space-y-2.5">
+          <h4 class="text-xs md:text-sm font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-highlighter text-amber-500"></i> Từ Vựng Nâng Cao Đã Highlight
           </h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
             ${vocabListHtml}
           </div>
         </div>
@@ -745,23 +741,21 @@ function loadTopicData(topicIdx) {
     container.appendChild(articleCard);
   });
 
-  // Apply state translation class
   applyTranslationVisibility();
 
-  // Reset Flashcards & Reflection
   resetFlashcards();
   resetSpeakingReflection();
 }
 
 /*************************************************************
- * ACCORDION TOGGLE (Mở 1 bài thì tự đóng các bài khác)
+ * ACCORDION TOGGLE (Cuộn màn hình lên đầu bài đọc khi mở)
  *************************************************************/
 function toggleAccordion(targetId) {
   const targetBody = document.getElementById(`body-${targetId}`);
   const targetIcon = document.getElementById(`icon-${targetId}`);
   const isCurrentlyHidden = targetBody.classList.contains("hidden");
 
-  // Đóng toàn bộ các accordion khác
+  // Đóng toàn bộ các bài khác
   document.querySelectorAll('.accordion-body').forEach(body => {
     body.classList.add('hidden');
   });
@@ -769,15 +763,23 @@ function toggleAccordion(targetId) {
     icon.classList.remove('rotate-180');
   });
 
-  // Nếu bài được click ban đầu đang đóng, mở nó ra
+  // Nếu bài đang đóng thì mở ra và cuộn màn hình lên vị trí bài đọc đó
   if (isCurrentlyHidden) {
     targetBody.classList.remove("hidden");
     targetIcon.classList.add("rotate-180");
+
+    // Tự động cuộn mượt mà lên vị trí hiển thị bài đọc
+    setTimeout(() => {
+      const cardElement = targetBody.closest('.article-card');
+      if (cardElement) {
+        cardElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   }
 }
 
 /*************************************************************
- * TOGGLE VOCAB LEARNED (Gạch chữ khi đánh dấu đã thuộc)
+ * TOGGLE VOCAB LEARNED
  *************************************************************/
 function toggleVocabLearned(vocabId) {
   const checkbox = document.getElementById(vocabId);
@@ -790,7 +792,7 @@ function toggleVocabLearned(vocabId) {
 }
 
 /*************************************************************
- * TOGGLE TRANSLATION MODE (ẨN / HIỆN BẢN DỊCH)
+ * TOGGLE TRANSLATION MODE
  *************************************************************/
 function toggleTranslation() {
   isTranslationVisible = !isTranslationVisible;
@@ -806,12 +808,12 @@ function applyTranslationVisibility() {
     main.classList.remove("hide-translation");
     btnText.textContent = "Ẩn Bản Dịch";
     btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> <span>Ẩn Bản Dịch</span>`;
-    btn.className = "w-full sm:w-auto px-4 py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-sm";
+    btn.className = "w-full sm:w-auto px-3.5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-xs md:text-sm shrink-0";
   } else {
     main.classList.add("hide-translation");
     btnText.textContent = "Hiện Bản Dịch";
     btn.innerHTML = `<i class="fa-solid fa-eye"></i> <span>Hiện Bản Dịch</span>`;
-    btn.className = "w-full sm:w-auto px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-sm";
+    btn.className = "w-full sm:w-auto px-3.5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow transition flex items-center justify-center gap-2 text-xs md:text-sm shrink-0";
   }
 }
 
@@ -823,7 +825,6 @@ function resetFlashcards() {
   knownWordCount = 0;
   fcIsFlipped = false;
   
-  // Hiển thị lại flashcard & ẩn thông báo hoàn thành
   document.getElementById("flashcard").classList.remove("hidden");
   document.getElementById("fcControls").classList.remove("hidden");
   document.getElementById("fcCongratsBox").classList.add("hidden");
@@ -834,11 +835,11 @@ function resetFlashcards() {
 function setFlashcardMode(mode) {
   fcMode = mode;
   document.getElementById("modeEnVnBtn").className = mode === 'EN-VN' 
-    ? "px-3 py-1.5 rounded-lg text-xs font-bold transition bg-amber-500 text-white shadow-sm"
-    : "px-3 py-1.5 rounded-lg text-xs font-bold transition text-gray-600 hover:bg-amber-100";
+    ? "px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition bg-amber-500 text-white shadow-sm"
+    : "px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition text-gray-600 hover:bg-amber-100";
   document.getElementById("modeVnEnBtn").className = mode === 'VN-EN' 
-    ? "px-3 py-1.5 rounded-lg text-xs font-bold transition bg-amber-500 text-white shadow-sm"
-    : "px-3 py-1.5 rounded-lg text-xs font-bold transition text-gray-600 hover:bg-amber-100";
+    ? "px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition bg-amber-500 text-white shadow-sm"
+    : "px-2.5 py-1 rounded-lg text-[11px] md:text-xs font-bold transition text-gray-600 hover:bg-amber-100";
 
   resetFlashcards();
 }
@@ -872,8 +873,8 @@ function renderFlashcard() {
   if (fcMode === 'EN-VN') {
     document.getElementById("fcFrontLabel").textContent = "Từ Tiếng Anh";
     document.getElementById("fcFrontText").innerHTML = `
-      <div>${card.en}</div>
-      <div class="text-xs text-amber-600 font-normal mt-1">${card.ipa}</div>
+      <div class="leading-tight">${card.en}</div>
+      <div class="text-[11px] md:text-xs text-amber-600 font-normal mt-1">${card.ipa}</div>
     `;
     document.getElementById("fcBackLabel").textContent = "Nghĩa Tiếng Việt";
     document.getElementById("fcBackText").textContent = card.vn;
@@ -882,8 +883,8 @@ function renderFlashcard() {
     document.getElementById("fcFrontText").textContent = card.vn;
     document.getElementById("fcBackLabel").textContent = "Từ Tiếng Anh & IPA";
     document.getElementById("fcBackText").innerHTML = `
-      <div>${card.en}</div>
-      <div class="text-xs text-amber-100 font-normal mt-1">${card.ipa}</div>
+      <div class="leading-tight">${card.en}</div>
+      <div class="text-[11px] md:text-xs text-amber-100 font-normal mt-1">${card.ipa}</div>
     `;
   }
 }
@@ -892,12 +893,11 @@ function nextFlashcard() {
   if (currentFlashcards.length === 0) return;
   
   if (fcIndex + 1 >= currentFlashcards.length) {
-    // Đã duyệt hết danh sách flashcard
     if (knownWordCount >= currentFlashcards.length) {
       showCongratulation();
       return;
     } else {
-      fcIndex = 0; // Quay lại thẻ đầu tiên nếu chưa thuộc hết
+      fcIndex = 0; 
     }
   } else {
     fcIndex++;
@@ -948,7 +948,6 @@ function nextSpeakingSentence() {
   if (reflectionSentences.length === 0) return;
   document.getElementById("engAnswerContainer").classList.add("hidden");
   
-  // Choose random or next
   currentReflectionIndex = Math.floor(Math.random() * reflectionSentences.length);
   const item = reflectionSentences[currentReflectionIndex];
   
