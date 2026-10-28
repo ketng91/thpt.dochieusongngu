@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Luyện Đọc Song Ngữ Ôn Thi THPTQG - Lớp Anh thầy Kết</title>
+<title>Luyện Đọc Song Ngữ Tiếng Anh THPTQG - Lớp Anh Thầy Kết</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -107,8 +107,8 @@
   /* Style cho từ vựng đã thuộc */
   .vocab-learned {
     opacity: 0.55;
-    background-color: #f3f4f6 !important; /* gray-100 */
-    border-color: #d1d5db !important; /* gray-300 */
+    background-color: #f3f4f6 !important;
+    border-color: #d1d5db !important;
   }
   .vocab-learned .vocab-text {
     text-decoration: line-through;
@@ -119,12 +119,12 @@
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden w-full">
 
   <!-- TOP HEADER -->
-  <header class="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 text-white shadow-lg relative overflow-hidden w-full">
+  <header class="bg-gradient-to-r from-emerald-700 via-teal-700 to-green-800 text-white shadow-lg relative overflow-hidden w-full">
     <div class="absolute -right-6 -bottom-6 opacity-20 pointer-events-none">
-      <i class="fa-solid fa-book-open text-7xl md:text-9xl"></i>
+      <i class="fa-solid fa-graduation-cap text-7xl md:text-9xl"></i>
     </div>
     <div class="absolute left-2 top-2 opacity-15 pointer-events-none">
-      <i class="fa-solid fa-cloud text-4xl md:text-6xl"></i>
+      <i class="fa-solid fa-award text-4xl md:text-6xl"></i>
     </div>
 
     <div class="max-w-6xl mx-auto px-3 py-3 md:py-4 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 relative z-10">
@@ -135,9 +135,9 @@
 
       <div class="text-center px-2">
         <h1 class="text-xl md:text-3xl font-bold tracking-wider text-yellow-300 drop-shadow">
-          📖 BÀI ĐỌC SONG NGỮ THPTQG 🎯
+          🎓 BÀI ĐỌC SONG NGỮ TIẾNG ANH THPTQG 🏆
         </h1>
-        <p class="text-[11px] md:text-sm text-green-100 opacity-90">Chủ Đề Học Thuật Nâng Cao - Bứt Phá Từ Vựng & Điểm Số</p>
+        <p class="text-[11px] md:text-sm text-green-100 opacity-90">Ôn Thi THPT Quốc Gia - Mở Rộng Từ Vựng & Bứt Phá Điểm Số</p>
       </div>
 
       <div class="hidden md:flex items-center gap-2 text-yellow-300">
@@ -156,8 +156,8 @@
           <i class="fa-solid fa-folder-open"></i>
         </div>
         <div>
-          <label for="topicSelect" class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wider">Chọn Chủ Đề Bài Đọc</label>
-          <span class="text-xs md:text-sm text-green-700 font-semibold leading-tight block">Mỗi topic chứa nhiều bài đọc cùng chủ đề</span>
+          <label for="topicSelect" class="block text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-wider">Chọn Unit Bài Đọc</label>
+          <span class="text-xs md:text-sm text-green-700 font-semibold leading-tight block">Mỗi Unit chứa 3 bài đọc hiểu nâng cao</span>
         </div>
       </div>
 
@@ -167,7 +167,7 @@
           <i class="fa-solid fa-eye-slash"></i> <span id="toggleTransText">Ẩn Bản Dịch</span>
         </button>
 
-        <div class="w-full sm:w-72">
+        <div class="w-full sm:w-80">
           <select id="topicSelect" onchange="changeTopic(this.value)" class="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl border-2 border-green-300 bg-emerald-50 text-green-900 font-bold focus:outline-none focus:ring-2 focus:ring-green-500 transition cursor-pointer shadow-inner text-xs md:text-sm">
             <!-- Options populated dynamically -->
           </select>
@@ -180,7 +180,7 @@
       <div class="flex items-center justify-between border-b-2 border-green-200 pb-2.5">
         <h2 class="text-lg md:text-2xl font-bold text-green-800 flex items-center gap-2 font-farm">
           <i class="fa-solid fa-book-bookmark text-green-600"></i>
-          Danh Sách Bài Đọc Hiểu Song Ngữ
+          Bài Đọc Hiểu Song Ngữ THTPQG
         </h2>
         <span id="articleCountBadge" class="bg-green-100 text-green-800 text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full border border-green-300 shrink-0">
           0 Bài Đọc
@@ -205,7 +205,7 @@
             <i class="fa-solid fa-layer-group text-amber-600"></i>
             Ôn Tập Flashcard Từ Vựng
           </h2>
-          <p class="text-[11px] md:text-sm text-amber-700">Tổng hợp từ vựng nâng cao từ các bài đọc trong chủ đề</p>
+          <p class="text-[11px] md:text-sm text-amber-700">Tổng hợp từ vựng nâng cao từ các bài đọc trong Unit</p>
         </div>
 
         <!-- Mode Selector Switcher -->
@@ -222,13 +222,13 @@
       <!-- Flashcard Display Box -->
       <div class="flex flex-col items-center justify-center space-y-4 py-2 md:py-4 w-full">
         
-        <!-- Congratulation Box (Hidden by default) -->
+        <!-- Congratulation Box -->
         <div id="fcCongratsBox" class="hidden w-full max-w-sm md:max-w-md p-6 md:p-8 bg-white border-2 border-emerald-400 rounded-2xl md:rounded-3xl shadow-xl text-center space-y-3 md:space-y-4">
           <div class="w-16 h-16 md:w-20 md:h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl md:text-4xl mx-auto shadow-inner">
             🏆
           </div>
           <h3 class="text-xl md:text-2xl font-bold text-emerald-800 font-farm">🎉 Chúc mừng, bạn đã học xong từ vựng!</h3>
-          <p class="text-xs text-gray-600">Bạn đã ghi nhớ toàn bộ từ vựng nâng cao trong chủ đề này.</p>
+          <p class="text-xs text-gray-600">Bạn đã ghi nhớ toàn bộ từ vựng nâng cao trong Unit này.</p>
           <button onclick="resetFlashcards()" class="px-5 py-2 md:px-6 md:py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition hover-bounce text-xs md:text-sm">
             <i class="fa-solid fa-rotate-right mr-1"></i> Học Lại Từ Đầu
           </button>
@@ -319,17 +319,18 @@
   <!-- FOOTER -->
   <footer class="bg-emerald-800 text-white text-center py-4 md:py-6 mt-8 md:mt-12 border-t-4 border-yellow-400 w-full">
     <div class="max-w-4xl mx-auto px-3 space-y-1 md:space-y-2">
-      <p class="font-farm text-base md:text-lg text-yellow-300">🎓 Lớp Anh Thầy Kết - Ôn Thi THPTQG 🎯</p>
-      <p class="text-[10px] md:text-xs text-emerald-200">Chúc các em học sinh đạt điểm số thật cao trong kỳ thi THPT QG sắp tới!</p>
+      <p class="font-farm text-base md:text-lg text-yellow-300">🎓 Lớp Anh Thầy Kết - Luyện Thi THPT Quốc Gia 🎯</p>
+      <p class="text-[10px] md:text-xs text-emerald-200">Chương trình Tiếng Anh 12 - Chinh Phục Điểm 9+ Tiếng Anh</p>
     </div>
   </footer>
 
 <script>
 /*************************************************************
- * TOPIC & BÀI ĐỌC SONG NGỮ DEFINITION (Đã bổ sung từ loại pos)
+ * DỮ LIỆU 12 UNIT ANH 12 GLOBAL SUCCESS (MỖI UNIT 3 BÀI ĐỌC)
  *************************************************************/
 const topicsData = [
-  {
+
+{
     id: 1,
     name: "Topic 1: Academic & Societal Trends (Kinh tế - Xã hội & Công nghệ)",
     articles: [
@@ -342,7 +343,7 @@ const topicsData = [
             vn: "Sự tích hợp theo cấp số nhân của trí tuệ nhân tạo vào lực lượng lao động hiện đại đã kích hoạt cuộc tranh luận dữ dội giữa các nhà kinh tế học về tác động xã hội lâu dài của nó."
           },
           {
-            en: "While technological <mark>optimists</mark> contend that automation will ultimately generate novel industries and <mark>streamline</mark> workplace efficiency, critics caution against the <mark>unprecedented</mark> speed of job <mark>displacement</mark>.",
+            en: "While technological <mark>optimist</mark> contend that automation will ultimately generate novel industries and <mark>streamline</mark> workplace efficiency, critics caution against the <mark>unprecedented</mark> speed of job <mark>displacement</mark>.",
             vn: "Trong khi các nhà lạc quan về công nghệ cho rằng tự động hóa cuối cùng sẽ tạo ra các ngành công nghiệp mới và tối ưu hóa hiệu suất làm việc, thì các nhà phê bình cảnh báo về tốc độ mất việc làm chưa từng có."
           },
           {
@@ -363,8 +364,8 @@ const topicsData = [
           { en: "integration", pos: "n", ipa: "/ˌɪn.təˈɡreɪ.ʃən/", vn: "sự tích hợp / hòa nhập" },
           { en: "artificial intelligence", pos: "n.phr", ipa: "/ˌɑː.tɪˈfɪʃ.əl ɪnˈtel.ɪ.dʒəns/", vn: "trí tuệ nhân tạo" },
           { en: "societal", pos: "adj", ipa: "/səˈsaɪ.ə.təl/", vn: "thuộc về xã hội" },
-          { en: "optimists", pos: "n", ipa: "/ˈɒp.tɪ.mɪsts/", vn: "những người lạc quan" },
-          { en: "streamline", pos: "v", ipa: "/ˈstriːm.laɪn/", vn: "tối ưu hóa / hợp lý hóa/ tinh gọn" },
+          { en: "optimist", pos: "n", ipa: "/ˈɒp.tɪ.mɪst/", vn: "người lạc quan" },
+          { en: "streamline", pos: "v", ipa: "/ˈstriːm.laɪn/", vn: "tối ưu hóa / hợp lý hóa / tinh gọn" },
           { en: "unprecedented", pos: "adj", ipa: "/ʌnˈpres.ɪ.den.tɪd/", vn: "chưa từng có tiền lệ" },
           { en: "displacement", pos: "n", ipa: "/dɪsˈpleɪs.mənt/", vn: "sự thay thế, sự dịch chuyển / mất việc" },
           { en: "redundant", pos: "adj", ipa: "/rɪˈdʌn.dənt/", vn: "dư thừa / bị sa thải" },
@@ -387,19 +388,19 @@ const topicsData = [
             vn: "Chỉnh trang đô thị, dù thường được ca ngợi vì hồi sinh các khu vực thành phố bị xuống cấp, nhưng lại thường xuyên làm trầm trọng thêm sự phân tầng kinh tế - xã hội trong cư dân đô thị."
           },
           {
-            en: "As property developers invest in <mark>deteriorating</mark> neighborhoods, rising property values and increased living costs inevitably <mark>displace</mark> lower-income residents who have inhabited these areas for generations.",
+            en: "As property developers invest in <mark>deteriorate</mark> neighborhoods, rising property values and increased living costs inevitably <mark>displace</mark> lower-income residents who have inhabited these areas for generations.",
             vn: "Khi các nhà phát triển bất động sản đầu tư vào các khu xóm đang xuống cấp, giá trị bất động sản tăng lên và chi phí sinh hoạt đắt đỏ hơn tất yếu sẽ đẩy những người dân có thu nhập thấp — những người đã sống ở đây qua nhiều thế hệ — ra khỏi nơi ở của họ."
           },
           {
-            en: "<mark>Proponents</mark> argue that this demographic shift attracts capital investment, enhances <mark>municipal</mark> infrastructure, and curtails localized crime rates.",
+            en: "<mark>Proponent</mark> argue that this demographic shift attracts capital investment, enhances <mark>municipal</mark> infrastructure, and curtails localized crime rates.",
             vn: "Những người ủng hộ lập luận rằng sự dịch chuyển nhân khẩu học này thu hút vốn đầu tư, nâng cấp cơ sở hạ tầng thành phố và làm giảm tỷ lệ tội phạm tại địa phương."
           },
           {
-            en: "Conversely, sociologists emphasize that the loss of affordable housing <mark>erodes</mark> social <mark>cohesion</mark> and marginalizes <mark>vulnerable</mark> communities.",
+            en: "Conversely, sociologists emphasize that the loss of affordable housing <mark>erode</mark> social <mark>cohesion</mark> and marginalizes <mark>vulnerable</mark> communities.",
             vn: "Ngược lại, các nhà xã hội học nhấn mạnh rằng sự mất đi của nhà ở giá rẻ sẽ làm xói mòn sự gắn kết xã hội và đẩy các cộng đồng dễ bị tổn thương ra rìa xã hội."
           },
           {
-            en: "To <mark>mitigate</mark> these <mark>adverse</mark> outcomes, urban planners are increasingly urged to implement <mark>inclusive</mark> zoning policies and construct <mark>subsidized</mark> housing, ensuring that urban renewal does not occur at the expense of equitable social integration.",
+            en: "To <mark>mitigate</mark> these <mark>adverse</mark> outcomes, urban planners are increasingly urged to implement <mark>inclusive</mark> zoning policies and construct <mark>subsidized</mark> housing, ensuring that urban renewal does not occur at the expense of <mark>equitable</mark> social integration.",
             vn: "Để giảm thiểu những kết quả bất lợi này, các nhà quy hoạch đô thị đang ngày càng được hối thúc thực thi các chính sách phân khu hòa nhập và xây dựng nhà ở trợ giá, đảm bảo sự đổi mới đô thị không diễn ra bằng cách đánh đổi sự tích hợp xã hội bình đẳng."
           }
         ],
@@ -407,17 +408,17 @@ const topicsData = [
           { en: "gentrification", pos: "n", ipa: "/ˌdʒen.trɪ.fɪˈkeɪ.ʃən/", vn: "sự chỉnh trang đô thị" },
           { en: "dilapidated", pos: "adj", ipa: "/dɪˈlæp.ɪ.deɪ.tɪd/", vn: "xuống cấp / xập xệ" },
           { en: "stratification", pos: "n", ipa: "/ˌstræt.ɪ.fɪˈkeɪ.ʃən/", vn: "sự phân tầng (xã hội)" },
-          { en: "deteriorating", pos: "adj", ipa: "/dɪˈtɪə.ri.ə.reɪ.tɪŋ/", vn: "đang xuống cấp / xấu đi" },
+          { en: "deteriorate", pos: "v", ipa: "/dɪˈtɪə.ri.ə.reɪt/", vn: "xuống cấp / xấu đi" },
           { en: "displace", pos: "v", ipa: "/dɪsˈpleɪs/", vn: "di dời / đẩy đi nơi khác" },
-          { en: "Proponents", pos: "n", ipa: "/prəˈpoʊ.nənts/", vn: "những người ủng hộ" },
+          { en: "proponent", pos: "n", ipa: "/prəˈpoʊ.nənt/", vn: "người ủng hộ" },
           { en: "municipal", pos: "adj", ipa: "/mjuːˈnɪs.ɪ.pəl/", vn: "thuộc đô thị / thành phố" },
-          { en: "erodes", pos: "v", ipa: "/ɪˈroʊdz/", vn: "xói mòn / làm suy yếu" },
+          { en: "erode", pos: "v", ipa: "/ɪˈroʊd/", vn: "xói mòn / làm suy yếu" },
           { en: "cohesion", pos: "n", ipa: "/kəʊˈhiː.ʒən/", vn: "sự gắn kết / kết nối" },
           { en: "vulnerable", pos: "adj", ipa: "/ˈvʌl.nər.ə.bəl/", vn: "dễ bị tổn thương" },
           { en: "mitigate", pos: "v", ipa: "/ˈmɪt.ɪ.ɡeɪt/", vn: "giảm thiểu / làm dịu đi" },
           { en: "adverse", pos: "adj", ipa: "/ˈæd.vɜːs/", vn: "bất lợi / tiêu cực" },
           { en: "inclusive", pos: "adj", ipa: "/ɪnˈkluː.sɪv/", vn: "bao hàm / hòa nhập" },
-          { en: "subsidized", pos: "adj", ipa: "/ˈsʌb.sɪ.daɪzd/", vn: "được trợ giá / bao cấp" },
+          { en: "subsidize", pos: "v", ipa: "/ˈsʌb.sɪ.daɪz/", vn: "trợ giá / bao cấp" },
           { en: "equitable", pos: "adj", ipa: "/ˈek.wɪ.tə.bəl/", vn: "bình đẳng / công bằng" }
         ]
       },
@@ -430,7 +431,7 @@ const topicsData = [
             vn: "Sự bùng nổ của kết nối internet diện rộng đã vô tình kích hoạt một sự gia tăng đáng sợ của tội phạm mạng, tiến hóa từ các cuộc tấn công mã độc thô sơ đến các chiến dịch tình báo mạng tinh vi do quốc gia bảo trợ."
           },
           {
-            en: "<mark>Ransomware</mark>, in particular, has emerged as a <mark>coercive</mark> vector, <mark>crippling</mark> vital infrastructure and extorting millions from unsuspecting corporate entities.",
+            en: "<mark>Ransomware</mark>, in particular, has emerged as a <mark>coercive</mark> vector, <mark>cripple</mark> vital infrastructure and extorting millions from unsuspecting corporate entities.",
             vn: "Đặc biệt, mã độc tống tiền đã nổi lên như một con đường cưỡng đoạt, làm tàn phế các cơ sở hạ tầng thiết yếu và tống tiền hàng triệu đô la từ các tập đoàn không phòng bị."
           },
           {
@@ -442,7 +443,7 @@ const topicsData = [
             vn: "Để chống lại những mối đe dọa chực chờ khắp nơi này, các khung an ninh mạng phải vượt qua phòng thủ bị động và áp dụng kiến trúc không tin tưởng (zero-trust) chủ động."
           },
           {
-            en: "Furthermore, given the <mark>transboundary</mark> nature of cyberthreats, international legal protocols and cross-border intelligence sharing are <mark>imperative</mark> to effectively apprehend cybercriminals operating within digital havens.",
+            en: "Furthermore, given the <mark>transboundary</mark> nature of cyberthreats, international legal protocols and cross-border intelligence sharing are <mark>imperative</mark> to effectively <mark>apprehend</mark> cybercriminals operating within digital havens.",
             vn: "Hơn nữa, do bản chất xuyên biên giới của các mối đe dọa mạng, các nghị định thư pháp lý quốc tế và chia sẻ tình báo xuyên biên giới là bắt buộc để bắt giữ hiệu quả những kẻ tội phạm mạng đang hoạt động trong các 'thiên đường' kỹ thuật số."
           }
         ],
@@ -454,7 +455,7 @@ const topicsData = [
           { en: "cyber espionage", pos: "n.phr", ipa: "/ˈsaɪ.bər ˈes.pi.ə.nɑːʒ/", vn: "tình báo / gián điệp mạng" },
           { en: "Ransomware", pos: "n", ipa: "/ˈræn.səm.weər/", vn: "mã độc tống tiền" },
           { en: "coercive", pos: "adj", ipa: "/koʊˈɜː.sɪv/", vn: "mang tính cưỡng đoạt / ép buộc" },
-          { en: "crippling", pos: "adj", ipa: "/ˈkrɪp.əl.ɪŋ/", vn: "làm tàn phế / gãy đổ" },
+          { en: "cripple", pos: "v", ipa: "/ˈkrɪp.əl/", vn: "làm tàn phế / gãy đổ" },
           { en: "pecuniary", pos: "adj", ipa: "/pɪˈkjuː.ni.ər.i/", vn: "thuộc về tiền bạc / tài chính" },
           { en: "imperil", pos: "v", ipa: "/ɪmˈper.əl/", vn: "đẩy vào nguy hiểm / đe dọa" },
           { en: "reactive", pos: "adj", ipa: "/riˈæk.tɪv/", vn: "bị động / phản ứng đối phó" },
@@ -483,15 +484,15 @@ const topicsData = [
             vn: "Các hoạt động do con người gây ra, đặc biệt là nạn phá rừng và việc đốt nhiên liệu hóa thạch liên tục, đã làm gián đoạn nghiêm trọng sự cân bằng sinh thái và gây ra sự phân mảnh môi trường sống trên diện rộng."
           },
           {
-            en: "Conservationists emphasize that preserving high-biodiversity ecosystems is not merely an <mark>ethical</mark> obligation, but a practical necessity for human survival.",
+            en: "Conservationists emphasize that preserving high-biodiversity ecosystems is not merely an <mark>ethical</mark> <mark>obligation</mark>, but a practical necessity for human survival.",
             vn: "Các nhà bảo tồn nhấn mạnh rằng việc bảo vệ các hệ sinh thái có độ đa dạng sinh học cao không chỉ là một nghĩa vụ đạo đức mà còn là một nhu cầu thực tế cho sự sinh tồn của loài người."
           },
           {
-            en: "Forests and wetlands serve as critical carbon <mark>sinks</mark>, <mark>mitigating</mark> the severe impact of extreme weather events and <mark>stabilizing</mark> global temperatures.",
+            en: "Forests and wetlands serve as critical carbon <mark>sink</mark>, <mark>mitigate</mark> the severe impact of extreme weather events and <mark>stabilize</mark> global temperatures.",
             vn: "Rừng và đất ngập nước đóng vai trò là những bể chứa carbon quan trọng, làm giảm thiểu tác động nghiêm trọng của các hiện tượng thời tiết cực đoan và ổn định nhiệt độ toàn cầu."
           },
           {
-            en: "To prevent total ecological <mark>collapse</mark>, policymakers must enforce <mark>rigorous</mark> environmental regulations and accelerate the transition toward renewable energy sources.",
+            en: "To prevent total ecological <mark>collapse</mark>, policymakers must enforce <mark>rigorous</mark> environmental <mark>regulation</mark> and accelerate the <mark>transition</mark> toward <mark>renewable</mark> energy sources.",
             vn: "Để ngăn chặn sự sụp đổ sinh thái hoàn toàn, các nhà hoạch định chính sách phải thực thi các quy định môi trường nghiêm ngặt và đẩy nhanh quá trình chuyển dịch sang các nguồn năng lượng tái tạo."
           }
         ],
@@ -503,12 +504,12 @@ const topicsData = [
           { en: "fragmentation", pos: "n", ipa: "/ˌfræɡ.menˈteɪ.ʃən/", vn: "sự chia cắt / phân mảnh" },
           { en: "ethical", pos: "adj", ipa: "/ˈeθ.ɪ.kəl/", vn: "thuộc về đạo đức" },
           { en: "obligation", pos: "n", ipa: "/ˌɒb.lɪˈɡeɪ.ʃən/", vn: "nghĩa vụ / trách nhiệm" },
-          { en: "sinks", pos: "n", ipa: "/sɪŋks/", vn: "bể hấp thụ (carbon)" },
-          { en: "mitigating", pos: "v", ipa: "/ˈmɪt.ɪ.ɡeɪ.tɪŋ/", vn: "giảm thiểu / làm nhẹ bớt" },
-          { en: "stabilizing", pos: "v", ipa: "/ˈsteɪ.bɪ.laɪ.zɪŋ/", vn: "làm ổn định" },
+          { en: "sink", pos: "n", ipa: "/sɪŋk/", vn: "bể hấp thụ (carbon)" },
+          { en: "mitigate", pos: "v", ipa: "/ˈmɪt.ɪ.ɡeɪt/", vn: "giảm thiểu / làm nhẹ bớt" },
+          { en: "stabilize", pos: "v", ipa: "/ˈsteɪ.bɪ.laɪz/", vn: "làm ổn định" },
           { en: "collapse", pos: "n / v", ipa: "/kəˈlæps/", vn: "sự sụp đổ" },
           { en: "rigorous", pos: "adj", ipa: "/ˈrɪɡ.ər.əs/", vn: "nghiêm ngặt / khắt khe" },
-          { en: "regulations", pos: "n", ipa: "/ˌreɡ.jəˈleɪ.ʃənz/", vn: "các quy định / luật lệ" },
+          { en: "regulation", pos: "n", ipa: "/ˌreɡ.jəˈleɪ.ʃən/", vn: "quy định / luật lệ" },
           { en: "transition", pos: "n / v", ipa: "/trænˈzɪʃ.ən/", vn: "quá trình chuyển đổi" },
           { en: "renewable", pos: "adj", ipa: "/rɪˈnjuː.ə.bəl/", vn: "tái tạo được" }
         ]
@@ -518,11 +519,11 @@ const topicsData = [
         title: "2. Ocean Acidification and Marine Ecosystems",
         bilingualSentences: [
           {
-            en: "<mark>Ocean acidification</mark>, often termed the 'other carbon problem', is a direct consequence of excess atmospheric carbon dioxide being absorbed by the oceans.",
+            en: "<mark>Ocean acidification</mark>, often termed the 'other carbon problem', is a direct consequence of excess <mark>atmospheric</mark> carbon dioxide being absorbed by the oceans.",
             vn: "Axit hóa đại dương, thường được gọi là 'vấn đề carbon thứ hai', là hệ quả trực tiếp của việc lượng carbon dioxide dư thừa trong khí quyển bị hấp thụ bởi các đại dương."
           },
           {
-            en: "This chemical shift <mark>diminishes</mark> the concentration of carbonate ions, making it extraordinarily difficult for marine organisms like corals and mollusks to construct protective shells.",
+            en: "This chemical shift <mark>diminish</mark> the <mark>concentration</mark> of carbonate ions, making it extraordinarily difficult for marine <mark>organism</mark> like corals and <mark>mollusk</mark> to construct protective shells.",
             vn: "Sự thay đổi hóa học này làm giảm nồng độ ion carbonate, khiến cho các sinh vật biển như san hô và động vật thân mềm cực kỳ khó xây dựng vỏ bảo vệ."
           },
           {
@@ -530,28 +531,28 @@ const topicsData = [
             vn: "Do đó, các rạn san hô — vốn được mệnh danh là rừng mưa của biển cả — đang chịu đựng tình trạng tẩy trắng san hô trên diện rộng và suy thoái kết cấu."
           },
           {
-            en: "Because marine ecosystems are <mark>intricately</mark> interconnected, the decline of foundational species threatens entire marine food webs and global fisheries.",
+            en: "Because marine ecosystems are <mark>intricately</mark> <mark>interconnected</mark>, the decline of <mark>foundational</mark> species threatens entire marine food webs and global <mark>fishery</mark>.",
             vn: "Bởi vì các hệ sinh thái biển gắn kết phức tạp với nhau, sự suy giảm của các loài nền tảng đang đe dọa toàn bộ mạng lưới thức ăn dưới biển và ngành ngư nghiệp toàn cầu."
           },
           {
-            en: "Addressing this crisis requires <mark>drastic</mark> reductions in carbon emissions coupled with localized marine conservation initiatives to enhance ecosystem <mark>resilience</mark>.",
+            en: "Addressing this crisis requires <mark>drastic</mark> reductions in carbon emissions coupled with localized marine conservation <mark>initiative</mark> to enhance ecosystem <mark>resilience</mark>.",
             vn: "Giải quyết khủng hoảng này đòi hỏi những sự cắt giảm quyết liệt trong lượng phát thải carbon cùng với các sáng kiến bảo tồn biển tại địa phương nhằm nâng cao khả năng phục hồi của hệ sinh thái."
           }
         ],
         vocab: [
           { en: "Ocean acidification", pos: "n.phr", ipa: "/ˈəʊ.ʃən əˌsɪd.ɪ.fɪˈkeɪ.ʃən/", vn: "sự axit hóa đại dương" },
           { en: "atmospheric", pos: "adj", ipa: "/ˌæt.məsˈfer.ɪk/", vn: "thuộc khí quyển" },
-          { en: "diminishes", pos: "v", ipa: "/dɪˈmɪn.ɪ.ʃɪz/", vn: "làm giảm bớt / thu nhỏ" },
+          { en: "diminish", pos: "v", ipa: "/dɪˈmɪn.ɪʃ/", vn: "làm giảm bớt / thu nhỏ" },
           { en: "concentration", pos: "n", ipa: "/ˌkɒn.sənˈtreɪ.ʃən/", vn: "nồng độ / sự tập trung" },
-          { en: "organisms", pos: "n", ipa: "/ˈɔː.ɡən.ɪ.zəmz/", vn: "các sinh vật" },
-          { en: "mollusks", pos: "n", ipa: "/ˈmɒl.əsks/", vn: "động vật thân mềm" },
+          { en: "organism", pos: "n", ipa: "/ˈɔː.ɡən.ɪ.zəm/", vn: "sinh vật" },
+          { en: "mollusk", pos: "n", ipa: "/ˈmɒl.əsk/", vn: "động vật thân mềm" },
           { en: "bleaching", pos: "n", ipa: "/ˈbliː.tʃɪŋ/", vn: "sự tẩy trắng (san hô)" },
           { en: "degradation", pos: "n", ipa: "/ˌdeɡ.rəˈdeɪ.ʃən/", vn: "sự suy thoái / biến chất" },
           { en: "intricately", pos: "adv", ipa: "/ˈɪn.trɪ.kət.li/", vn: "một cách phức tạp / tinh vi" },
           { en: "foundational", pos: "adj", ipa: "/faʊnˈdeɪ.ʃən.əl/", vn: "mang tính nền tảng" },
-          { en: "fisheries", pos: "n", ipa: "/ˈfɪʃ.ər.iz/", vn: "ngành ngư nghiệp / thủy sản" },
+          { en: "fishery", pos: "n", ipa: "/ˈfɪʃ.ər.i/", vn: "ngành ngư nghiệp / thủy sản" },
           { en: "drastic", pos: "adj", ipa: "/ˈdræs.tɪk/", vn: "quyết liệt / mạnh mẽ" },
-          { en: "initiatives", pos: "n", ipa: "/ɪˈnɪʃ.ə.tɪvz/", vn: "các sáng kiến / đề xuất" },
+          { en: "initiative", pos: "n", ipa: "/ɪˈnɪʃ.ə.tɪv/", vn: "sáng kiến / đề xuất" },
           { en: "resilience", pos: "n", ipa: "/rɪˈzɪl.i.əns/", vn: "khả năng phục hồi / kiên cường" },
           { en: "interconnected", pos: "adj", ipa: "/ˌɪn.tə.kəˈnek.tɪd/", vn: "gắn kết lẫn nhau" }
         ]
@@ -561,23 +562,23 @@ const topicsData = [
         title: "3. Sustainable Urbanization and Green Cities",
         bilingualSentences: [
           {
-            en: "Rapid global population growth has catalyzed unprecedented urban <mark>expansion</mark>, putting immense pressure on municipal infrastructure and natural resources.",
-            vn: "Sự tăng trưởng dân số toàn cầu nhanh chóng đã kích hoạt sự mở rộng đô thị chưa từng có, đặt áp lực vô cùng lớn lên cơ sở hạ tầng thành phố và tài nguyên thiên nhiên."
+            en: "Rapid global population growth has catalyzed unprecedented urban <mark>expansion</mark>, putting immense pressure on <mark>infrastructure</mark> and natural resources.",
+            vn: "Sự tăng trưởng dân số toàn cầu nhanh chóng đã kích hoạt sự mở rộng đô thị chưa từng có, đặt áp lực vô cùng lớn lên cơ sở hạ tầng và tài nguyên thiên nhiên."
           },
           {
-            en: "Unchecked urban <mark>sprawl</mark> often results in severe air pollution, high energy consumption, and the loss of surrounding agricultural land.",
+            en: "Unchecked urban <mark>sprawl</mark> often results in severe air pollution, high energy <mark>consumption</mark>, and the loss of surrounding <mark>agricultural</mark> land.",
             vn: "Sự phát triển đô thị tự do không kiểm soát thường dẫn đến ô nhiễm không khí nghiêm trọng, tiêu thụ năng lượng cao và mất diện tích đất nông nghiệp xung quanh."
           },
           {
-            en: "To counteract these <mark>detrimental</mark> trends, urban planners are advocating for <mark>sustainable</mark> urbanization frameworks that prioritize energy-efficient architecture and eco-friendly transit.",
+            en: "To <mark>counteract</mark> these <mark>detrimental</mark> trends, urban planners are <mark>advocate</mark> for <mark>sustainable</mark> urbanization frameworks that prioritize energy-efficient architecture and eco-friendly <mark>transit</mark>.",
             vn: "Để chống lại những xu hướng có hại này, các nhà quy hoạch đô thị đang cổ vũ cho các khung quy hoạch đô thị bền vững — nơi ưu tiên kiến trúc tiết kiệm năng lượng và giao thông thân thiện môi trường."
           },
           {
-            en: "Integrating green spaces like rooftop gardens and urban parks helps combat the urban <mark>heat island effect</mark> while enhancing resident well-being.",
+            en: "Integrating green spaces like rooftop gardens and urban parks helps combat the urban <mark>heat island effect</mark> while enhancing resident <mark>well-being</mark>.",
             vn: "Tích hợp không gian xanh như vườn trên mái và công viên đô thị giúp chống lại hiệu ứng đảo nhiệt đô thị đồng thời nâng cao sức khỏe cho cư dân."
           },
           {
-            en: "Ultimately, building <mark>resilient</mark>, low-carbon cities is essential to achieving global environmental targets and ensuring long-term <mark>prosperity</mark>.",
+            en: "Ultimately, building <mark>resilient</mark>, low-carbon cities is essential to achieving global environmental <mark>target</mark> and ensuring long-term <mark>prosperity</mark>.",
             vn: "Cuối cùng, xây dựng các thành phố kiên cường và có mức phát thải carbon thấp là điều thiết yếu để đạt được các mục tiêu môi trường toàn cầu và đảm bảo sự thịnh vượng lâu dài."
           }
         ],
@@ -588,19 +589,1339 @@ const topicsData = [
           { en: "counteract", pos: "v", ipa: "/ˌkaʊn.tərˈækt/", vn: "chống lại / triệt tiêu" },
           { en: "detrimental", pos: "adj", ipa: "/ˌdet.rɪˈmen.təl/", vn: "có hại / gây tổn hại" },
           { en: "sustainable", pos: "adj", ipa: "/səˈsteɪ.nə.bəl/", vn: "bền vững" },
-          { en: "advocating", pos: "v", ipa: "/ˈæd.və.keɪ.tɪŋ/", vn: "cổ vũ / ủng hộ" },
+          { en: "advocate", pos: "v", ipa: "/ˈæd.və.keɪt/", vn: "cổ vũ / ủng hộ" },
           { en: "transit", pos: "n", ipa: "/ˈtræn.zɪt/", vn: "giao thông / vận tải" },
           { en: "heat island effect", pos: "n.phr", ipa: "/hiːt ˈaɪ.lənd ɪˈfekt/", vn: "hiệu ứng đảo nhiệt" },
           { en: "well-being", pos: "n", ipa: "/ˌwelˈbiː.ɪŋ/", vn: "sức khỏe và sự hạnh phúc" },
           { en: "resilient", pos: "adj", ipa: "/rɪˈzɪl.i.ənt/", vn: "kiên cường / chịu đựng tốt" },
-          { en: "targets", pos: "n", ipa: "/ˈtɑː.ɡɪts/", vn: "các mục tiêu" },
+          { en: "target", pos: "n", ipa: "/ˈtɑː.ɡɪt/", vn: "mục tiêu" },
           { en: "prosperity", pos: "n", ipa: "/prɒsˈper.ə.ti/", vn: "sự thịnh vượng" },
           { en: "agricultural", pos: "adj", ipa: "/ˌæɡ.rɪˈkʌl.tʃər.əl/", vn: "thuộc nông nghiệp" },
           { en: "infrastructure", pos: "n", ipa: "/ˈɪn.frəˌstrʌk.tʃər/", vn: "cơ sở hạ tầng" }
         ]
       }
     ]
-  }
+  },
+
+
+
+
+
+
+
+
+{
+    id: 1,
+    name: "Unit 1: Life Stories We Admire",
+    articles: [
+      {
+        id: "1-1",
+        title: "1. Extraordinary Perseverance of Inspiring Figures",
+        bilingualSentences: [
+          {
+            en: "Throughout human history, remarkable individuals have demonstrated <mark>perseverance</mark> in overcoming severe <mark>adversity</mark>.",
+            vn: "Trong suốt lịch sử loài người, những cá nhân kiệt xuất đã thể hiện sự kiên trì bền bỉ trong việc vượt qua những nghịch cảnh dữ dội."
+          },
+          {
+            en: "Their <mark>visionary</mark> leadership and <mark>unwavering</mark> dedication continue to <mark>inspire</mark> younger generations worldwide.",
+            vn: "Sự lãnh đạo tầm nhìn và sự cống hiến không dao động của họ tiếp tục truyền cảm hứng cho các thế hệ trẻ trên toàn thế giới."
+          },
+          {
+            en: "Despite facing physical disabilities or financial hardship, they remained <mark>committed</mark> to their <mark>noble</mark> goals.",
+            vn: "Dù phải đối mặt với khuyết tật thể chất hay khó khăn tài chính, họ vẫn giữ vững cam kết với các mục tiêu cao cả của mình."
+          },
+          {
+            en: "<mark>Groundbreaking</mark> discoveries and social reforms were achieved through their <mark>relentless</mark> <mark>determination</mark>.",
+            vn: "Những phát minh đột phá và các cải cách xã hội đã đạt được thông qua quyết tâm không mệt mỏi của họ."
+          },
+          {
+            en: "Studying their life stories teaches us valuable lessons regarding <mark>resilience</mark> and moral <mark>integrity</mark>.",
+            vn: "Nghiên cứu câu chuyện cuộc đời họ dạy cho chúng ta những bài học giá trị về sự kiên cường và sự chính trực về đạo đức."
+          },
+          {
+            en: "Honoring these figures ensures that their <mark>enduring</mark> <mark>legacy</mark> shapes a better future for <mark>humanity</mark>.",
+            vn: "Tôn vinh những nhân vật này đảm bảo rằng di sản trường tồn của họ sẽ định hình một tương lai tốt đẹp hơn cho nhân loại."
+          }
+        ],
+        vocab: [
+          { en: "perseverance", pos: "n", ipa: "/ˌpɜː.sɪˈvɪə.rəns/", vn: "sự kiên trì, nhẫn nại" },
+          { en: "inspire", pos: "v", ipa: "/ɪnˈspaɪər/", vn: "truyền cảm hứng" },
+          { en: "committed", pos: "adj", ipa: "/kəˈmɪt.ɪd/", vn: "cam kết, tận tụy" },
+          { en: "determination", pos: "n", ipa: "/dɪˌtɜː.mɪˈneɪ.ʃən/", vn: "sự quyết tâm" },
+          { en: "integrity", pos: "n", ipa: "/ɪnˈteɡ.rə.ti/", vn: "sự chính trực" },
+          { en: "humanity", pos: "n", ipa: "/hjuːˈmæn.ə.ti/", vn: "nhân loại" },
+          { en: "adversity", pos: "n", ipa: "/ədˈvɜː.sə.ti/", vn: "nghịch cảnh" },
+          { en: "visionary", pos: "adj", ipa: "/ˈvɪʒ.ən.ər.i/", vn: "có tầm nhìn xa" },
+          { en: "unwavering", pos: "adj", ipa: "/ʌnˈweɪ.vər.ɪŋ/", vn: "không dao động" },
+          { en: "noble", pos: "adj", ipa: "/ˈnəʊ.bəl/", vn: "cao cả" },
+          { en: "groundbreaking", pos: "adj", ipa: "/ˈɡraʊndˌbreɪ.kɪŋ/", vn: "mang tính đột phá" },
+          { en: "relentless", pos: "adj", ipa: "/rɪˈlent.ləs/", vn: "không ngừng nghỉ" },
+          { en: "resilience", pos: "n", ipa: "/rɪˈzɪl.i.əns/", vn: "khả năng phục hồi, kiên cường" },
+          { en: "enduring", pos: "adj", ipa: "/ɪnˈdʒʊə.rɪŋ/", vn: "trường tồn, lâu dài" },
+          { en: "legacy", pos: "n", ipa: "/ˈleɡ.ə.si/", vn: "di sản" }
+        ]
+      },
+      {
+        id: "1-2",
+        title: "2. Philanthropic Contributions of Scientific Pioneers",
+        bilingualSentences: [
+          {
+            en: "Many celebrated scientists <mark>devoted</mark> their lives to <mark>humanitarian</mark> causes alongside their laboratory <mark>research</mark>.",
+            vn: "Nhiều nhà khoa học lừng danh đã cống hiến cuộc đời mình cho các nguyên nhân nhân đạo bên cạnh nghiên cứu phòng thí nghiệm."
+          },
+          {
+            en: "Rather than seeking personal wealth, they <mark>patented</mark> inventions to benefit global public <mark>health</mark>.",
+            vn: "Thay vì tìm kiếm giàu sang cá nhân, họ đã đăng ký bằng sáng chế phát minh để mang lại lợi ích cho sức khỏe cộng đồng toàn cầu."
+          },
+          {
+            en: "<mark>Selfless</mark> contributions to medicine <mark>eradicated</mark> deadly diseases and saved countless human <mark>lives</mark>.",
+            vn: "Những đóng góp vị tha cho y học đã xóa bỏ các bệnh truyền nhiễm chết người và cứu sống vô số mạng người."
+          },
+          {
+            en: "Their <mark>humble</mark> lifestyle stands as a powerful <mark>testament</mark> to genuine devotion and intellectual <mark>humility</mark>.",
+            vn: "Lối sống khiêm tốn của họ đứng vững như một minh chứng mạnh mẽ cho sự tận tụy chân chính và sự khiêm tốn trí tuệ."
+          },
+          {
+            en: "<mark>Philanthropic</mark> foundations established in their names continue funding educational scholarships for <mark>underprivileged</mark> <mark>youth</mark>.",
+            vn: "Các quỹ từ thiện mang tên họ tiếp tục tài trợ học bổng giáo dục cho thanh thiếu niên có hoàn cảnh khó khăn."
+          },
+          {
+            en: "<mark>Emulating</mark> their selfless spirit inspires modern researchers to solve global environmental and social <mark>crises</mark>.",
+            vn: "Học tập tinh thần vị tha của họ truyền cảm hứng cho các nhà nghiên cứu hiện đại giải quyết các khủng hoảng môi trường và xã hội toàn cầu."
+          }
+        ],
+        vocab: [
+          { en: "research", pos: "n", ipa: "/rɪˈsɜːtʃ/", vn: "sự nghiên cứu" },
+          { en: "health", pos: "n", ipa: "/helθ/", vn: "sức khỏe" },
+          { en: "lives", pos: "n", ipa: "/laɪvz/", vn: "các cuộc đời, mạng sống" },
+          { en: "humility", pos: "n", ipa: "/hjuːˈmɪl.ə.ti/", vn: "sự khiêm tốn" },
+          { en: "youth", pos: "n", ipa: "/juːθ/", vn: "thanh thiếu niên" },
+          { en: "crises", pos: "n", ipa: "/ˈkraɪ.siːz/", vn: "các cuộc khủng hoảng" },
+          { en: "philanthropic", pos: "adj", ipa: "/ˌfɪl.ænˈθrɒp.ɪk/", vn: "thuộc từ thiện, nhân đạo" },
+          { en: "humanitarian", pos: "adj", ipa: "/hjuːˌmæn.ɪˈteə.ri.ən/", vn: "mang tính nhân đạo" },
+          { en: "patented", pos: "v", ipa: "/ˈpeɪ.tən.tɪd/", vn: "đã cấp bằng sáng chế" },
+          { en: "eradicated", pos: "v", ipa: "/ɪˈræd.ɪ.keɪ.tɪd/", vn: "xóa bỏ hoàn toàn" },
+          { en: "selfless", pos: "adj", ipa: "/ˈself.ləs/", vn: "vị tha, không vị kỷ" },
+          { en: "testament", pos: "n", ipa: "/ˈtes.tə.mənt/", vn: "minh chứng" },
+          { en: "underprivileged", pos: "adj", ipa: "/ˌʌn.dəˈprɪv.əl.ɪdʒd/", vn: "thiệt thòi, nghèo khó" },
+          { en: "emulating", pos: "v", ipa: "/ˈem.jə.leɪt.ɪŋ/", vn: "học tập, noi theo" },
+          { en: "devoted", pos: "v", ipa: "/dɪˈvəʊ.tɪd/", vn: "cống hiến" },
+          { en: "humble", pos: "adj", ipa: "/ˈhʌm.bəl/", vn: "khiêm tốn" }
+        ]
+      },
+      {
+        id: "1-3",
+        title: "3. Overcoming Obstacles to Achieve Greatness",
+        bilingualSentences: [
+          {
+            en: "Great achievements are rarely accomplished without enduring initial <mark>skepticism</mark> and repeated <mark>failures</mark>.",
+            vn: "Những thành tựu vĩ đại hiếm khi đạt được mà không trải qua sự hoài nghi ban đầu và thất bại lặp đi lặp lại."
+          },
+          {
+            en: "Pioneers in literature and art often struggled against societal <mark>prejudice</mark> and harsh financial <mark>hardship</mark>.",
+            vn: "Những người tiên phong trong văn học và nghệ thuật thường phải đấu tranh chống lại định kiến xã hội và khó khăn tài chính gay gắt."
+          },
+          {
+            en: "Maintaining optimism during moments of <mark>despair</mark> allows visionaries to refine their creative <mark>work</mark>.",
+            vn: "Duy trì sự lạc quan trong những khoảnh khắc tuyệt vọng cho phép các nhà tầm nhìn tinh chỉnh tác phẩm sáng tạo của họ."
+          },
+          {
+            en: "Their eventual <mark>triumph</mark> proves that <mark>intrinsic</mark> motivation overrides external unfavorable <mark>circumstances</mark>.",
+            vn: "Thắng lợi cuối cùng của họ chứng minh rằng động lực bên trong vượt lên trên các hoàn cảnh bất lợi bên ngoài."
+          },
+          {
+            en: "<mark>Biography</mark> books detailing their struggles offer practical strategies for modern personal <mark>development</mark>.",
+            vn: "Các cuốn sách tiểu sử chi tiết về những cuộc đấu tranh của họ cung cấp các chiến lược thực tế cho sự phát triển cá nhân hiện đại."
+          },
+          {
+            en: "Recognizing that failure is merely a <mark>stepping stone</mark> fosters a resilient growth <mark>mindset</mark>.",
+            vn: "Nhận thức rằng thất bại chỉ là một nấc thang giúp nuôi dưỡng một tư duy phát triển kiên cường."
+          }
+        ],
+        vocab: [
+          { en: "failures", pos: "n", ipa: "/ˈfeɪ.ljəz/", vn: "các thất bại" },
+          { en: "hardship", pos: "n", ipa: "/ˈhɑːd.ʃɪp/", vn: "gian khó, gian khổ" },
+          { en: "work", pos: "n", ipa: "/wɜːk/", vn: "tác phẩm, công việc" },
+          { en: "circumstances", pos: "n", ipa: "/ˈsɜː.kəm.stæn.sɪz/", vn: "các hoàn cảnh" },
+          { en: "development", pos: "n", ipa: "/dɪˈvel.əp.mənt/", vn: "sự phát triển" },
+          { en: "mindset", pos: "n", ipa: "/ˈmaɪnd.set/", vn: "tư duy" },
+          { en: "skepticism", pos: "n", ipa: "/ˈskep.tɪ.sɪz.əm/", vn: "sự hoài nghi" },
+          { en: "prejudice", pos: "n", ipa: "/ˈpredʒ.ə.dɪs/", vn: "định kiến" },
+          { en: "despair", pos: "n", ipa: "/dɪˈspeər/", vn: "sự tuyệt vọng" },
+          { en: "triumph", pos: "n", ipa: "/ˈtraɪ.əmf/", vn: "thắng lợi rực rỡ" },
+          { en: "intrinsic", pos: "adj", ipa: "/ɪnˈtrɪn.zɪk/", vn: "bản chất bên trong" },
+          { en: "stepping stone", pos: "n.phr", ipa: "/ˈstep.ɪŋ ˌstəʊn/", vn: "nấc thang, bước đệm" },
+          { en: "unfavorable", pos: "adj", ipa: "/ʌnˈfeɪ.vər.ə.bəl/", vn: "không thuận lợi" },
+          { en: "biography", pos: "n", ipa: "/baɪˈɒɡ.rə.fi/", vn: "tiểu sử" }
+        ]
+      }
+    ]
+  },
+
+{
+    id: 2,
+    name: "Unit 2: A Multicultural World",
+    articles: [
+      {
+        id: "2-1",
+        title: "1. Cultural Diversity in Globalized Societies",
+        bilingualSentences: [
+          {
+            en: "Globalization has <mark>interconnected</mark> diverse cultures, fostering dynamic cultural exchange in <mark>cosmopolitan</mark> <mark>cities</mark>.",
+            vn: "Toàn cầu hóa đã kết nối các nền văn hóa đa dạng, thúc đẩy sự giao thoa văn hóa năng động tại các thành phố quốc tế."
+          },
+          {
+            en: "Exposure to varied traditions, <mark>cuisines</mark>, and arts enriches daily community life and broadens personal <mark>perspectives</mark>.",
+            vn: "Việc tiếp xúc với các truyền thống, ẩm thực và nghệ thuật phong phú làm giàu cuộc sống cộng đồng hàng ngày và mở rộng góc nhìn cá nhân."
+          },
+          {
+            en: "However, cultural <mark>assimilation</mark> poses significant threats to preserving minority language <mark>heritage</mark>.",
+            vn: "Tuy nhiên, sự đồng hóa văn hóa đặt ra những mối đe dọa đáng kể đối với việc bảo tồn di sản ngôn ngữ thiểu số."
+          },
+          {
+            en: "Promoting mutual respect prevents cultural misunderstandings and reduces social <mark>friction</mark>.",
+            vn: "Thúc đẩy sự tôn trọng lẫn nhau ngăn ngừa những hiểu lầm văn hóa và giảm bớt sự cọ xát xã hội."
+          },
+          {
+            en: "Multicultural education programs <mark>cultivate</mark> <mark>intercultural</mark> <mark>competence</mark> among students from early <mark>childhood</mark>.",
+            vn: "Các chương trình giáo dục đa văn hóa nuôi dưỡng năng lực liên văn hóa ở học sinh từ thời thơ ấu."
+          },
+          {
+            en: "Embracing cultural diversity creates <mark>inclusive</mark> communities capable of <mark>thriving</mark> in an interconnected <mark>world</mark>.",
+            vn: "Đón nhận sự đa dạng văn hóa tạo ra các cộng đồng bao quát có khả năng phát triển trong một thế giới kết nối."
+          }
+        ],
+        vocab: [
+          { en: "cities", pos: "n", ipa: "/ˈsɪt.iz/", vn: "các thành phố" },
+          { en: "perspectives", pos: "n", ipa: "/pəˈspek.tɪvz/", vn: "các góc nhìn" },
+          { en: "heritage", pos: "n", ipa: "/ˈher.ɪ.tɪdʒ/", vn: "di sản" },
+          { en: "friction", pos: "n", ipa: "/ˈfrɪk.ʃən/", vn: "sự cọ xát, mâu thuẫn" },
+          { en: "childhood", pos: "n", ipa: "/ˈtʃaɪld.hʊd/", vn: "thời thơ ấu" },
+          { en: "world", pos: "n", ipa: "/wɜːld/", vn: "thế giới" },
+          { en: "interconnected", pos: "adj", ipa: "/ˌɪn.tə.kəˈnek.tɪd/", vn: "kết nối với nhau" },
+          { en: "cosmopolitan", pos: "adj", ipa: "/ˌkɒz.məˈpɒl.ɪ.tən/", vn: "thuộc toàn thế giới, quốc tế" },
+          { en: "assimilation", pos: "n", ipa: "/əˌsɪm.ɪˈleɪ.ʃən/", vn: "sự đồng hóa" },
+          { en: "intercultural", pos: "adj", ipa: "/ˌɪn.təˈkʌl.tʃər.əl/", vn: "liên văn hóa" },
+          { en: "competence", pos: "n", ipa: "/ˈkɒm.pɪ.təns/", vn: "năng lực, trình độ" },
+          { en: "inclusive", pos: "adj", ipa: "/ɪnˈkluː.sɪv/", vn: "bao quát, không phân biệt" },
+          { en: "cuisines", pos: "n", ipa: "/kwɪˈziːnz/", vn: "nền ẩm thực" },
+          { en: "cultivate", pos: "v", ipa: "/ˈkʌl.tɪ.veɪt/", vn: "trau dồi, nuôi dưỡng" },
+          { en: "thriving", pos: "v / adj", ipa: "/ˈθraɪ.vɪŋ/", vn: "phát triển thịnh vượng" }
+        ]
+      },
+      {
+        id: "2-2",
+        title: "2. The Challenges of Cross-Cultural Communication",
+        bilingualSentences: [
+          {
+            en: "Effective communication across distinct cultures requires understanding <mark>non-verbal</mark> <mark>cues</mark> and subtle linguistic <mark>nuances</mark>.",
+            vn: "Giao tiếp hiệu quả giữa các nền văn hóa khác nhau đòi hỏi sự hiểu biết về các tín hiệu phi ngôn ngữ và các sắc thái ngôn ngữ tinh tế."
+          },
+          {
+            en: "Direct communication styles common in Western nations may appear aggressive in <mark>high-context</mark> Asian <mark>cultures</mark>.",
+            vn: "Phong cách giao tiếp trực tiếp phổ biến ở các quốc gia phương Tây có thể trông hung hăng trong các nền văn hóa châu Á giàu ngữ cảnh."
+          },
+          {
+            en: "<mark>Misinterpreting</mark> gestures or body language often leads to unintentional <mark>offense</mark> during international business <mark>negotiations</mark>.",
+            vn: "Giải thích sai cử chỉ hoặc ngôn ngữ cơ thể thường dẫn đến va chạm vô ý trong các cuộc đàm phán kinh doanh quốc tế."
+          },
+          {
+            en: "Cultural <mark>sensitivity</mark> training enables global <mark>executives</mark> to navigate complex multinational corporate <mark>environments</mark>.",
+            vn: "Đào tạo độ nhạy cảm văn hóa cho phép các nhà quản lý toàn cầu điều hướng trong môi trường doanh nghiệp đa quốc gia phức tạp."
+          },
+          {
+            en: "Active listening and open-minded <mark>flexibility</mark> bridge communication gaps between diverse team <mark>members</mark>.",
+            vn: "Lắng nghe tích cực và sự linh hoạt cởi mở rút ngắn khoảng cách giao tiếp giữa các thành viên nhóm đa dạng."
+          },
+          {
+            en: "Overcoming cultural barriers fosters <mark>collaborative</mark> innovation and strengthens global partnerships in every <mark>industry</mark>.",
+            vn: "Vượt qua rào cản văn hóa thúc đẩy sự đổi mới hợp tác và củng cố mối quan hệ đối tác toàn cầu trong mọi ngành công nghiệp."
+          }
+        ],
+        vocab: [
+          { en: "nuances", pos: "n", ipa: "/ˈnjuː.ɑːnsɪz/", vn: "các sắc thái tinh tế" },
+          { en: "cultures", pos: "n", ipa: "/ˈkʌl.tʃəz/", vn: "các nền văn hóa" },
+          { en: "negotiations", pos: "n", ipa: "/nəˌɡəʊ.ʃiˈeɪ.ʃənz/", vn: "các cuộc đàm phán" },
+          { en: "environments", pos: "n", ipa: "/ɪnˈvaɪ.rən.mənts/", vn: "các môi trường" },
+          { en: "members", pos: "n", ipa: "/ˈmem.bəz/", vn: "các thành viên" },
+          { en: "industry", pos: "n", ipa: "/ˈɪn.də.stri/", vn: "ngành công nghiệp" },
+          { en: "non-verbal", pos: "adj", ipa: "/ˌnɒnˈvɜː.bəl/", vn: "phi ngôn ngữ" },
+          { en: "cues", pos: "n", ipa: "/kjuːz/", vn: "tín hiệu, gợi ý" },
+          { en: "high-context", pos: "adj", ipa: "/haɪ ˈkɒn.tekst/", vn: "giàu ngữ cảnh" },
+          { en: "misinterpreting", pos: "v", ipa: "/ˌmɪs.ɪnˈtɜː.prə.tɪŋ/", vn: "hiểu sai, giải thích sai" },
+          { en: "offense", pos: "n", ipa: "/əˈfens/", vn: "sự va chạm, mất lòng" },
+          { en: "sensitivity", pos: "n", ipa: "/ˌsen.səˈtɪv.ə.ti/", vn: "độ nhạy cảm" },
+          { en: "collaborative", pos: "adj", ipa: "/kəˈlæb.ər.ə.tɪv/", vn: "mang tính hợp tác" },
+          { en: "executives", pos: "n", ipa: "/ɪɡˈzek.jə.tɪvz/", vn: "nhà quản lý, điều hành" },
+          { en: "flexibility", pos: "n", ipa: "/ˌflek.səˈbɪl.ə.ti/", vn: "sự linh hoạt" }
+        ]
+      },
+      {
+        id: "2-3",
+        title: "3. Preserving Indigenous Festivals in the Modern Era",
+        bilingualSentences: [
+          {
+            en: "<mark>Indigenous</mark> festivals serve as vital cultural <mark>repositories</mark> preserving <mark>ancestral</mark> traditions, folk music, and sacred <mark>rituals</mark>.",
+            vn: "Các lễ hội bản địa đóng vai trò như những kho tàng văn hóa thiết yếu gìn giữ truyền thống tổ tiên, âm nhạc dân gian và nghi lễ thiêng liêng."
+          },
+          {
+            en: "Modern entertainment choices and busy work routines threaten youth <mark>engagement</mark> in traditional festival <mark>preparations</mark>.",
+            vn: "Các lựa chọn giải trí hiện đại và thói quen làm việc bận rộn đe dọa sự tham gia của giới trẻ vào việc chuẩn bị lễ hội truyền thống."
+          },
+          {
+            en: "Commercializing cultural festivals for quick tourism profits risks <mark>diluting</mark> authentic spiritual practices and community <mark>values</mark>.",
+            vn: "Thương mại hóa lễ hội văn hóa vì lợi nhuận du lịch nhanh chóng có nguy cơ làm nhạt nhòa thực hành tâm linh chân thực và giá trị cộng đồng."
+          },
+          {
+            en: "Documenting traditional <mark>folklore</mark> digitally ensures that oral heritage survives rapid <mark>urbanization</mark> and cultural <mark>shifts</mark>.",
+            vn: "Ghi chép văn học dân gian truyền thống bằng kỹ thuật số đảm bảo di sản truyền miệng sống sót qua đô thị hóa nhanh chóng và các dịch chuyển văn hóa."
+          },
+          {
+            en: "Community-led festival management <mark>empowers</mark> local residents to preserve their living heritage on their own <mark>terms</mark>.",
+            vn: "Quản lý lễ hội do cộng đồng dẫn dắt trao quyền cho cư dân địa phương bảo tồn di sản sống theo cách riêng của họ."
+          },
+          {
+            en: "Celebrating cultural heritage promotes pride among native populations and enhances global <mark>appreciation</mark> for ethnic <mark>traditions</mark>.",
+            vn: "Tôn vinh di sản văn hóa thúc đẩy lòng tự hào trong các quần thể bản địa và nâng cao sự trân trọng toàn cầu đối với các truyền thống dân tộc."
+          }
+        ],
+        vocab: [
+          { en: "rituals", pos: "n", ipa: "/ˈrɪtʃ.u.əlz/", vn: "các nghi lễ" },
+          { en: "preparations", pos: "n", ipa: "/ˌprep.ərˈeɪ.ʃənz/", vn: "sự chuẩn bị" },
+          { en: "values", pos: "n", ipa: "/ˈvæl.juːz/", vn: "các giá trị" },
+          { en: "shifts", pos: "n", ipa: "/ʃɪfts/", vn: "các sự dịch chuyển" },
+          { en: "terms", pos: "n", ipa: "/tɜːmz/", vn: "điều kiện, phương diện" },
+          { en: "traditions", pos: "n", ipa: "/trəˈdɪʃ.ənz/", vn: "các truyền thống" },
+          { en: "repositories", pos: "n", ipa: "/rɪˈpɒz.ɪ.tər.iz/", vn: "các kho tàng" },
+          { en: "ancestral", pos: "adj", ipa: "/ænˈses.trəl/", vn: "thuộc tổ tiên" },
+          { en: "diluting", pos: "v", ipa: "/daɪˈluːt.ɪŋ/", vn: "làm pha loãng, nhạt nhòa" },
+          { en: "folklore", pos: "n", ipa: "/ˈfəʊk.lɔːr/", vn: "văn học dân gian" },
+          { en: "empowers", pos: "v", ipa: "/ɪmˈpaʊəz/", vn: "trao quyền" },
+          { en: "appreciation", pos: "n", ipa: "/əˌpriː.ʃiˈeɪ.ʃən/", vn: "sự trân trọng" },
+          { en: "indigenous", pos: "adj", ipa: "/ɪnˈdɪdʒ.ɪ.nəs/", vn: "bản địa" },
+          { en: "urbanization", pos: "n", ipa: "/ˌɜː.bən.aɪˈzeɪ.ʃən/", vn: "sự đô thị hóa" },
+          { en: "engagement", pos: "n", ipa: "/ɪnˈɡeɪdʒ.mənt/", vn: "sự tham gia" }
+        ]
+      }
+    ]
+  },
+
+{
+    id: 3,
+    name: "Unit 3: Green Living",
+    articles: [
+      {
+        id: "3-1",
+        title: "1. Sustainable Consumption and Waste Reduction",
+        bilingualSentences: [
+          {
+            en: "Adopting a sustainable lifestyle involves reducing single-use <mark>plastics</mark> and choosing <mark>biodegradable</mark> packaging <mark>alternatives</mark>.",
+            vn: "Áp dụng lối sống bền vững bao gồm việc giảm thiểu nhựa dùng một lần và lựa chọn các giải pháp thay thế đóng gói có thể phân hủy sinh học."
+          },
+          {
+            en: "Improper <mark>disposal</mark> of household waste causes toxic <mark>contamination</mark> in local soil and water <mark>ecosystems</mark>.",
+            vn: "Việc vứt bỏ rác thải sinh hoạt không đúng cách gây ra sự ô nhiễm độc hại trong hệ sinh thái đất và nước tại địa phương."
+          },
+          {
+            en: "<mark>Composting</mark> organic waste converts food scraps into nutrient-rich fertilizer for agricultural <mark>use</mark>.",
+            vn: "Ủ phân hữu cơ từ rác thải thực phẩm chuyển đổi các mảnh thức ăn thừa thành phân bón giàu dinh dưỡng cho sử dụng nông nghiệp."
+          },
+          {
+            en: "Consumer demand for <mark>eco-friendly</mark> products motivates manufacturers to adopt green supply chain <mark>practices</mark>.",
+            vn: "Nhu cầu tiêu dùng đối với các sản phẩm thân thiện với môi trường thúc đẩy các nhà sản xuất áp dụng các thực hành chuỗi cung ứng xanh."
+          },
+          {
+            en: "Implementing comprehensive recycling systems conserves valuable raw resources and reduces landfill <mark>volume</mark>.",
+            vn: "Thực hiện hệ thống tái chế toàn diện giúp tiết kiệm tài nguyên thô giá trị và giảm thể tích bãi rác."
+          },
+          {
+            en: "Minimizing material consumption contributes to long-term environmental <mark>sustainability</mark> and ecological balance for future <mark>generations</mark>.",
+            vn: "Giảm thiểu việc tiêu thụ vật liệu đóng góp vào sự bền vững môi trường lâu dài và cân bằng sinh thái cho các thế hệ tương lai."
+          }
+        ],
+        vocab: [
+          { en: "plastics", pos: "n", ipa: "/ˈplæs.tɪks/", vn: "các vật liệu nhựa" },
+          { en: "use", pos: "n", ipa: "/juːs/", vn: "việc sử dụng" },
+          { en: "volume", pos: "n", ipa: "/ˈvɒl.juːm/", vn: "thể tích, khối lượng" },
+          { en: "generations", pos: "n", ipa: "/ˌdʒen.əˈreɪ.ʃənz/", vn: "các thế hệ" },
+          { en: "biodegradable", pos: "adj", ipa: "/ˌbaɪ.əʊ.dɪˈɡreɪ.də.bəl/", vn: "có thể phân hủy sinh học" },
+          { en: "alternatives", pos: "n", ipa: "/ɒlˈtɜː.nə.tɪvz/", vn: "các giải pháp thay thế" },
+          { en: "disposal", pos: "n", ipa: "/dɪˈspəʊ.zəl/", vn: "sự vứt bỏ, xử lý" },
+          { en: "contamination", pos: "n", ipa: "/kənˌtæm.ɪˈneɪ.ʃən/", vn: "sự ô nhiễm" },
+          { en: "ecosystems", pos: "n", ipa: "/ˈiː.kəʊˌsɪs.təmz/", vn: "các hệ sinh thái" },
+          { en: "composting", pos: "n", ipa: "/ˈkɒm.pɒst.ɪŋ/", vn: "việc ủ phân hữu cơ" },
+          { en: "eco-friendly", pos: "adj", ipa: "/ˌiː.kəʊˈfrend.li/", vn: "thân thiện với môi trường" },
+          { en: "practices", pos: "n", ipa: "/ˈpræk.tɪ.sɪz/", vn: "thực hành, thói quen" },
+          { en: "sustainability", pos: "n", ipa: "/səˌsteɪ.nəˈbɪl.ə.ti/", vn: "sự bền vững" }
+        ]
+      },
+      {
+        id: "3-2",
+        title: "2. Renewable Energy Solutions for a Clean Future",
+        bilingualSentences: [
+          {
+            en: "Transitioning from fossil fuels to renewable energy sources is vital for mitigating global <mark>climate change</mark>.",
+            vn: "Chuyển dịch từ nhiên liệu hóa thạch sang các nguồn năng lượng tái tạo là thiết yếu để giảm nhẹ biến đổi khí hậu toàn cầu."
+          },
+          {
+            en: "Solar panels and wind turbines provide clean electricity without releasing harmful greenhouse gas <mark>emissions</mark>.",
+            vn: "Tấm pin mặt trời và tuabin gió cung cấp điện sạch mà không phát thải khí nhà kính độc hại."
+          },
+          {
+            en: "Advancements in energy storage technology ensure stable power supply during cloudy or windless <mark>periods</mark>.",
+            vn: "Những tiến bộ trong công nghệ lưu trữ năng lượng đảm bảo nguồn cung cấp điện ổn định trong các khoảng thời gian nhiều mây hoặc không có gió."
+          },
+          {
+            en: "Government subsidies for clean energy projects encourage private investment in green infrastructure <mark>development</mark>.",
+            vn: "Trợ cấp phủ cho các dự án năng lượng sạch khuyến khích đầu tư tư nhân vào phát triển cơ sở hạ tầng xanh."
+          },
+          {
+            en: "Decentralized energy grids allow local communities to generate and trade their own solar power <mark>locally</mark>.",
+            vn: "Lưới điện phân tán cho phép các cộng đồng địa phương tự sản xuất và trao đổi năng lượng mặt trời tại địa phương."
+          },
+          {
+            en: "Embracing renewable energy safeguards energy security while protecting public health from air <mark>pollution</mark>.",
+            vn: "Đón nhận năng lượng tái tạo bảo vệ an ninh năng lượng đồng thời bảo vệ sức khỏe cộng đồng khỏi ô nhiễm không khí."
+          }
+        ],
+        vocab: [
+          { en: "climate change", pos: "n.phr", ipa: "/ˈklaɪ.mət tʃeɪndʒ/", vn: "biến đổi khí hậu" },
+          { en: "emissions", pos: "n", ipa: "/iˈmɪʃ.ənz/", vn: "các lượng khí thải" },
+          { en: "periods", pos: "n", ipa: "/ˈpɪə.ri.ədz/", vn: "các khoảng thời gian" },
+          { en: "development", pos: "n", ipa: "/dɪˈvel.əp.mənt/", vn: "sự phát triển" },
+          { en: "locally", pos: "adv", ipa: "/ˈləʊ.kəl.i/", vn: "tại địa phương" },
+          { en: "pollution", pos: "n", ipa: "/pəˈluː.ʃən/", vn: "sự ô nhiễm" }
+        ]
+      },
+      {
+        id: "3-3",
+        title: "3. Reforestation and Biodiversity Conservation",
+        bilingualSentences: [
+          {
+            en: "Deforestation destroys vital natural habitats, driving countless plant and animal species toward <mark>extinction</mark>.",
+            vn: "Nạn phá rừng phá hủy các môi trường sống tự nhiên thiết yếu, đẩy vô số loài động thực vật đến bờ vực tuyệt chủng."
+          },
+          {
+            en: "Large-scale reforestation programs restore degraded forest land and absorb excess atmospheric <mark>carbon dioxide</mark>.",
+            vn: "Các chương trình trồng lại rừng quy mô lớn phục hồi đất rừng bị suy thoái và hấp thụ khí carbon dioxide dư thừa trong khí quyển."
+          },
+          {
+            en: "Conserving native wildlife species preserves complex ecological food webs and protects environmental <mark>resilience</mark>.",
+            vn: "Bảo tồn các loài động vật hoang dã bản địa gìn giữ các lưới thức ăn sinh thái phức tạp và bảo vệ khả năng phục hồi của môi trường."
+          },
+          {
+            en: "Community-managed nature reserves prevent illegal logging and wildlife poaching in protected <mark>forests</mark>.",
+            vn: "Các khu bảo tồn thiên nhiên do cộng đồng quản lý ngăn chặn việc khai thác gỗ trái phép và săn bắt động vật hoang dã trong rừng được bảo vệ."
+          },
+          {
+            en: "Eco-tourism initiatives provide alternative income for indigenous populations while preserving natural <mark>landscapes</mark>.",
+            vn: "Các sáng kiến du lịch sinh thái cung cấp thu nhập thay thế cho người dân bản địa trong khi bảo tồn cảnh quan tự nhiên."
+          },
+          {
+            en: "Protecting biodiversity guarantees natural ecosystem services essential for clean water, soil fertility, and crop <mark>pollination</mark>.",
+            vn: "Bảo vệ sự đa dạng sinh học đảm bảo các dịch vụ hệ sinh thái tự nhiên thiết yếu cho nước sạch, độ phì nhiêu của đất và sự thụ phấn cho cây trồng."
+          }
+        ],
+        vocab: [
+          { en: "extinction", pos: "n", ipa: "/ɪkˈstɪŋk.ʃən/", vn: "sự tuyệt chủng" },
+          { en: "carbon dioxide", pos: "n.phr", ipa: "/ˌkɑː.bən daɪˈɒk.saɪd/", vn: "khí carbon dioxide (CO2)" },
+          { en: "resilience", pos: "n", ipa: "/rɪˈzɪl.i.əns/", vn: "khả năng phục hồi, chống chịu" },
+          { en: "forests", pos: "n", ipa: "/ˈfɒr.ɪsts/", vn: "các khu rừng" },
+          { en: "landscapes", pos: "n", ipa: "/ˈlænd.skeɪps/", vn: "các cảnh quan" },
+          { en: "pollination", pos: "n", ipa: "/ˌpɒl.əˈneɪ.ʃən/", vn: "sự thụ phấn" }
+        ]
+      }
+    ]
+  },
+{
+    id: 4,
+    name: "Unit 4: Urbanisation",
+    articles: [
+      {
+        id: "4-1",
+        title: "1. The Rapid Pace of Global Urbanisation",
+        bilingualSentences: [
+          {
+            en: "Unprecedented population migration from rural areas to major cities is accelerating global <mark>urbanisation</mark>.",
+            vn: "Sự di cư dân số chưa từng có từ các vùng nông thôn đến các thành phố lớn đang đẩy nhanh quá trình đô thị hóa toàn cầu."
+          },
+          {
+            en: "Rapid industrial growth attracts job seekers, expanding <mark>metropolitan</mark> regions and creating vast <mark>megacities</mark>.",
+            vn: "Tăng trưởng công nghiệp nhanh chóng thu hút người tìm việc, mở rộng các vùng đô thị lớn và tạo ra các siêu đô thị rộng lớn."
+          },
+          {
+            en: "However, uncontrolled urban growth leads to housing shortages, traffic congestion, and severe <mark>infrastructure</mark> strains.",
+            vn: "Tuy nhiên, sự tăng trưởng đô thị không kiểm soát dẫn đến tình trạng thiếu hụt nhà ở, ùn tắc giao thông và áp lực cơ sở hạ tầng nghiêm trọng."
+          },
+          {
+            en: "Local governments struggle to provide adequate public services, clean water, and proper <mark>sanitation</mark>.",
+            vn: "Chính quyền địa phương chật vật cung cấp đủ các dịch vụ công, nước sạch và hệ thống vệ sinh phù hợp."
+          },
+          {
+            en: "Sustainable urban planning is necessary to prevent environmental <mark>degradation</mark> and social inequality.",
+            vn: "Quy hoạch đô thị bền vững là cần thiết để ngăn ngừa sự suy thoái môi trường và bất bình đẳng xã hội."
+          },
+          {
+            en: "Balancing economic development with livable urban design remains a vital challenge for modern <mark>policymakers</mark>.",
+            vn: "Cân bằng giữa phát triển kinh tế với thiết kế đô thị đáng sống vẫn là một thách thức thiết yếu đối với các nhà hoạch định chính sách hiện đại."
+          }
+        ],
+        vocab: [
+          { en: "urbanisation", pos: "n", ipa: "/ˌɜː.bən.aɪˈzeɪ.ʃən/", vn: "sự đô thị hóa" },
+          { en: "metropolitan", pos: "adj", ipa: "/ˌmet.rəˈpɒl.ɪ.tən/", vn: "thuộc thủ phủ, đô thị lớn" },
+          { en: "megacities", pos: "n", ipa: "/ˈmeɡ.ə.sɪt.iz/", vn: "các siêu đô thị" },
+          { en: "infrastructure", pos: "n", ipa: "/ˈɪn.frəˌstrʌk.tʃər/", vn: "cơ sở hạ tầng" },
+          { en: "sanitation", pos: "n", ipa: "/ˌsæn.ɪˈteɪ.ʃən/", vn: "hệ thống vệ sinh" },
+          { en: "degradation", pos: "n", ipa: "/ˌdeɡ.rəˈdeɪ.ʃən/", vn: "sự suy thoái" },
+          { en: "policymakers", pos: "n", ipa: "/ˈpɒl.ə.siˌmeɪ.kəz/", vn: "các nhà hoạch định chính sách" }
+        ]
+      },
+      {
+        id: "4-2",
+        title: "2. Smart Cities and Sustainable Urban Infrastructure",
+        bilingualSentences: [
+          {
+            en: "Modern smart cities incorporate cutting-edge digital technology to optimize energy consumption and waste <mark>management</mark>.",
+            vn: "Các thành phố thông minh hiện đại tích hợp công nghệ số tiên tiến để tối ưu hóa việc tiêu thụ năng lượng và quản lý chất thải."
+          },
+          {
+            en: "IoT sensors monitor traffic flow in real time, reducing congestion and lower carbon <mark>emissions</mark>.",
+            vn: "Cảm biến IoT giám sát luồng giao thông theo thời gian thực, giảm ùn tắc và hạ thấp lượng khí thải carbon."
+          },
+          {
+            en: "Green building designs utilize renewable solar power and eco-friendly construction <mark>materials</mark>.",
+            vn: "Thiết kế tòa nhà xanh sử dụng năng lượng mặt trời tái tạo và các vật liệu xây dựng thân thiện với môi trường."
+          },
+          {
+            en: "Expanding pedestrian zones and bicycle lanes encourages healthy, active <mark>commuting</mark>.",
+            vn: "Mở rộng các khu vực dành cho người đi bộ và làn đường cho xe đạp khuyến khích việc đi lại tích cực và lành mạnh."
+          },
+          {
+            en: "Investing in efficient public transit reduces reliance on private fossil-fuel <mark>vehicles</mark>.",
+            vn: "Đầu tư vào giao thông công cộng hiệu quả giúp giảm bớt sự phụ thuộc vào các phương tiện chạy bằng nhiên liệu hóa thạch tư nhân."
+          },
+          {
+            en: "Innovations in urban design enhance the quality of life while protecting finite environmental <mark>resources</mark>.",
+            vn: "Những đổi mới trong thiết kế đô thị nâng cao chất lượng cuộc sống trong khi bảo vệ tài nguyên môi trường có hạn."
+          }
+        ],
+        vocab: [
+          { en: "management", pos: "n", ipa: "/ˈmæn.ɪdʒ.mənt/", vn: "sự quản lý" },
+          { en: "emissions", pos: "n", ipa: "/iˈmɪʃ.ənz/", vn: "các lượng khí thải" },
+          { en: "materials", pos: "n", ipa: "/məˈtɪə.ri.əlz/", vn: "các vật liệu" },
+          { en: "commuting", pos: "n", ipa: "/kəˈmjuːt.ɪŋ/", vn: "việc đi lại đi làm" },
+          { en: "vehicles", pos: "n", ipa: "/ˈvɪə.kəlz/", vn: "các phương tiện" },
+          { en: "resources", pos: "n", ipa: "/rɪˈzɔː.sɪz/", vn: "các tài nguyên" }
+        ]
+      },
+      {
+        id: "4-3",
+        title: "3. Social and Environmental Challenges of Urban Sprawl",
+        bilingualSentences: [
+          {
+            en: "Unchecked urban sprawl leads to the loss of fertile agricultural land and natural wildlife <mark>habitats</mark>.",
+            vn: "Sự đô thị hóa tràn lan không kiểm soát dẫn đến việc mất đất nông nghiệp phì nhiêu và môi trường sống tự nhiên của động vật hoang dã."
+          },
+          {
+            en: "Increased vehicle reliance in suburban areas significantly contributes to air pollution and global <mark>warming</mark>.",
+            vn: "Sự phụ thuộc tăng cao vào xe cơ giới ở các khu vực ngoại ô đóng góp đáng kể vào ô nhiễm không khí và sự nóng lên toàn cầu."
+          },
+          {
+            en: "Social isolation and long daily commutes negatively affect mental health and community <mark>cohesion</mark>.",
+            vn: "Sự cô lập xã hội và quãng đường đi lại hàng ngày dài gây ảnh hưởng tiêu cực đến sức khỏe tinh thần và sự gắn kết cộng đồng."
+          },
+          {
+            en: "High infrastructure maintenance costs place severe financial burdens on municipal <mark>budgets</mark>.",
+            vn: "Chi phí bảo trì cơ sở hạ tầng cao đặt ra gánh nặng tài chính nghiêm trọng lên ngân sách thành phố."
+          },
+          {
+            en: "High-density development strategies promote efficient land use and preserve surrounding natural <mark>ecosystems</mark>.",
+            vn: "Các chiến lược phát triển mật độ cao thúc đẩy việc sử dụng đất hiệu quả và bảo tồn các hệ sinh thái tự nhiên xung quanh."
+          },
+          {
+            en: "Revitalizing inner-city neighborhoods provides sustainable housing options without encroaching on nature <mark>reserves</mark>.",
+            vn: "Tái thiết các khu phố nội thành cung cấp các lựa chọn nhà ở bền vững mà không xâm phạm vào các khu bảo tồn thiên nhiên."
+          }
+        ],
+        vocab: [
+          { en: "habitats", pos: "n", ipa: "/ˈhæb.ɪ.tæts/", vn: "môi trường sống" },
+          { en: "warming", pos: "n", ipa: "/ˈwɔː.mɪŋ/", vn: "sự nóng lên" },
+          { en: "cohesion", pos: "n", ipa: "/kəʊˈhiː.ʒən/", vn: "sự gắn kết" },
+          { en: "budgets", pos: "n", ipa: "/ˈbʌdʒ.ɪts/", vn: "các ngân sách" },
+          { en: "ecosystems", pos: "n", ipa: "/ˈiː.kəʊˌsɪs.təmz/", vn: "các hệ sinh thái" },
+          { en: "reserves", pos: "n", ipa: "/rɪˈzɜːvz/", vn: "các khu bảo tồn" }
+        ]
+      }
+    ]
+  },
+{
+    id: 5,
+    name: "Unit 5: The World of Work",
+    articles: [
+      {
+        id: "5-1",
+        title: "1. Adaptability in the Modern Labor Market",
+        bilingualSentences: [
+          {
+            en: "Rapid technological advancements and <mark>automation</mark> are reshaping job markets, making workplace <mark>adaptability</mark> an essential <mark>skill</mark>.",
+            vn: "Sự tiến bộ công nghệ nhanh chóng và tự động hóa đang định hình lại thị trường việc làm, khiến khả năng thích ứng tại nơi làm việc trở thành kỹ năng thiết yếu."
+          },
+          {
+            en: "Traditional lifelong career paths are giving way to dynamic <mark>gig economies</mark> and remote <mark>freelance</mark> <mark>contracts</mark>.",
+            vn: "Các con đường sự nghiệp suốt đời truyền thống đang nhường chỗ cho nền kinh tế gig năng động và hợp đồng tự do từ xa."
+          },
+          {
+            en: "Workers must continuously <mark>upskill</mark> and <mark>reskill</mark> to maintain market <mark>competitiveness</mark> in emerging digital <mark>fields</mark>.",
+            vn: "Người lao động phải liên tục nâng cao và đào tạo lại kỹ năng để duy trì tính cạnh tranh thị trường trong các lĩnh vực số mới nổi."
+          },
+          {
+            en: "Soft skills like critical thinking, emotional intelligence, and cross-cultural communication cannot easily be automated by <mark>AI</mark>.",
+            vn: "Kỹ năng mềm như tư duy phản biện, trí tuệ cảm xúc và giao tiếp liên văn hóa không dễ dàng bị tự động hóa bởi trí tuệ nhân tạo."
+          },
+          {
+            en: "Employers value <mark>proactive</mark> self-learners who embrace technological innovation and solve complex workplace <mark>challenges</mark>.",
+            vn: "Các nhà tuyển dụng coi trọng người tự học chủ động, những người đón nhận đổi mới công nghệ và giải quyết thách thức công việc phức tạp."
+          },
+          {
+            en: "Cultivating career flexibility ensures professional <mark>longevity</mark> and resilience amidst global economic <mark>shifts</mark>.",
+            vn: "Trau dồi sự linh hoạt nghề nghiệp đảm bảo sự trường tồn chuyên môn và sự kiên cường giữa những chuyển biến kinh tế toàn cầu."
+          }
+        ],
+        vocab: [
+          { en: "skill", pos: "n", ipa: "/skɪl/", vn: "kỹ năng" },
+          { en: "contracts", pos: "n", ipa: "/ˈkɒn.trækts/", vn: "các hợp đồng" },
+          { en: "fields", pos: "n", ipa: "/fiːldz/", vn: "các lĩnh vực" },
+          { en: "AI", pos: "n", ipa: "/ˌeɪˈaɪ/", vn: "trí tuệ nhân tạo" },
+          { en: "challenges", pos: "n", ipa: "/ˈtʃæl.ɪn.dʒɪz/", vn: "các thách thức" },
+          { en: "shifts", pos: "n", ipa: "/ʃɪfts/", vn: "các chuyển biến" },
+          { en: "adaptability", pos: "n", ipa: "/əˌdæp.təˈbɪl.ə.ti/", vn: "khả năng thích ứng" },
+          { en: "gig economy", pos: "n.phr", ipa: "/ˈɡɪɡ iˌkɒn.ə.mi/", vn: "nền kinh tế gig (việc làm ngắn hạn)" },
+          { en: "upskill", pos: "v", ipa: "/ˈʌp.skɪl/", vn: "nâng cao kỹ năng" },
+          { en: "reskill", pos: "v", ipa: "/ˌriːˈskɪl/", vn: "đào tạo lại kỹ năng" },
+          { en: "proactive", pos: "adj", ipa: "/prəʊˈæk.tɪv/", vn: "chủ động" },
+          { en: "longevity", pos: "n", ipa: "/lɒnˈdʒev.ə.ti/", vn: "sự trường tồn, lâu dài" },
+          { en: "automation", pos: "n", ipa: "/ˌɔː.təˈmeɪ.ʃən/", vn: "sự tự động hóa" },
+          { en: "freelance", pos: "adj / n", ipa: "/ˈfriː.lɑːns/", vn: "làm nghề tự do" },
+          { en: "competitiveness", pos: "n", ipa: "/kəmˈpet.ə.tɪv.nəs/", vn: "tính cạnh tranh" }
+        ]
+      },
+      {
+        id: "5-2",
+        title: "2. The Impact of Remote Work and Digital Nomadism",
+        bilingualSentences: [
+          {
+            en: "The global rise of high-speed internet enables millions of <mark>knowledge workers</mark> to perform job duties <mark>remotely</mark>.",
+            vn: "Sự bùng nổ toàn cầu của internet tốc độ cao cho phép hàng triệu lao động tri thức thực hiện nhiệm vụ công việc từ xa."
+          },
+          {
+            en: "Flexible remote work policies eliminate daily <mark>commuting</mark> stress and improve work-life balance for many <mark>employees</mark>.",
+            vn: "Chính sách làm việc từ xa linh hoạt loại bỏ áp lực đi lại hàng ngày và cải thiện sự cân bằng giữa công việc và cuộc sống cho nhiều nhân viên."
+          },
+          {
+            en: "Digital <mark>nomads</mark> <mark>leverage</mark> location <mark>independence</mark> to work for global corporations while traveling across different <mark>countries</mark>.",
+            vn: "Các du mục kỹ thuật số tận dụng sự độc lập vị trí để làm việc cho các tập đoàn toàn cầu trong khi du lịch qua các quốc gia khác nhau."
+          },
+          {
+            en: "However, remote working creates challenges regarding social <mark>isolation</mark>, team <mark>cohesion</mark>, and digital employee <mark>surveillance</mark>.",
+            vn: "Tuy nhiên, làm việc từ xa tạo ra thách thức về sự cô lập xã hội, sự gắn kết nhóm và sự giám sát nhân viên kỹ thuật số."
+          },
+          {
+            en: "Companies rely on cloud project tools to maintain <mark>asynchronous</mark> collaboration across multiple time <mark>zones</mark>.",
+            vn: "Các công ty dựa vào công cụ dự án đám mây để duy trì sự hợp tác không đồng bộ qua nhiều múi giờ."
+          },
+          {
+            en: "<span><mark>Hybrid</mark></span> workplace models combining office attendance with remote flexibility represent the future of modern <mark>employment</mark>.",
+            vn: "Mô hình làm việc kết hợp kết hợp có mặt tại văn phòng với sự linh hoạt từ xa đại diện cho tương lai của việc làm hiện đại."
+          }
+        ],
+        vocab: [
+          { en: "remotely", pos: "adv", ipa: "/rɪˈməʊt.li/", vn: "từ xa" },
+          { en: "employees", pos: "n", ipa: "/ɪmˈplɔɪ.iːz/", vn: "các nhân viên" },
+          { en: "countries", pos: "n", ipa: "/ˈkʌn.triz/", vn: "các quốc gia" },
+          { en: "surveillance", pos: "n", ipa: "/səˈveɪ.ləns/", vn: "sự giám sát" },
+          { en: "zones", pos: "n", ipa: "/zəʊnz/", vn: "múi giờ" },
+          { en: "employment", pos: "n", ipa: "/ɪmˈplɔɪ.mənt/", vn: "việc làm" },
+          { en: "nomads", pos: "n", ipa: "/ˈnəʊ.mædz/", vn: "những người du mục" },
+          { en: "leverage", pos: "v", ipa: "/ˈliː.vər.ɪdʒ/", vn: "tận dụng" },
+          { en: "isolation", pos: "n", ipa: "/ˌaɪ.səlˈeɪ.ʃən/", vn: "sự cô lập" },
+          { en: "cohesion", pos: "n", ipa: "/kəʊˈhiː.ʒən/", vn: "sự gắn kết" },
+          { en: "asynchronous", pos: "adj", ipa: "/eɪˈsɪŋ.krə.nəs/", vn: "không đồng bộ" },
+          { en: "hybrid", pos: "adj / n", ipa: "/ˈhaɪ.brɪd/", vn: "kết hợp (trực tiếp & từ xa)" },
+          { en: "knowledge workers", pos: "n.phr", ipa: "/ˈnɒl.ɪdʒ ˌwɜː.kəz/", vn: "lao động tri thức" },
+          { en: "commuting", pos: "n", ipa: "/kəˈmjuːt.ɪŋ/", vn: "việc đi lại đi làm" },
+          { en: "independence", pos: "n", ipa: "/ˌɪn.dɪˈpen.dəns/", vn: "sự độc lập" }
+        ]
+      },
+      {
+        id: "5-3",
+        title: "3. Gender Equality and Diversity in the Workplace",
+        bilingualSentences: [
+          {
+            en: "Promoting gender equality in executive <mark>boardrooms</mark> enhances corporate <mark>governance</mark> and improves overall decision-making <mark>quality</mark>.",
+            vn: "Thúc đẩy bình đẳng giới trong ban điều hành nâng cao quản trị doanh nghiệp và cải thiện chất lượng ra quyết định tổng thể."
+          },
+          {
+            en: "Addressing gender wage gaps guarantees equal <mark>remuneration</mark> for equal work responsibilities across all <mark>industries</mark>.",
+            vn: "Giải quyết khoảng cách thù lao theo giới đảm bảo sự thù lao bình đẳng cho các trách nhiệm công việc bình đẳng trong mọi ngành."
+          },
+          {
+            en: "Diverse <mark>workforce</mark> environments foster innovative problem-solving by incorporating varied cultural and gender <mark>perspectives</mark>.",
+            vn: "Môi trường lực lượng lao động đa dạng thúc đẩy sự giải quyết vấn đề đổi mới bằng cách kết hợp các góc nhìn văn hóa và giới tính khác nhau."
+          },
+          {
+            en: "Eliminating <mark>glass ceilings</mark> allows qualified female professionals to advance into top-tier leadership <mark>positions</mark>.",
+            vn: "Loại bỏ rào cản vô hình cho phép các nữ chuyên gia đủ năng lực thăng tiến vào các vị trí lãnh đạo hàng đầu."
+          },
+          {
+            en: "Workplace <mark>mentorship</mark> programs support <mark>underrepresented</mark> minority groups in navigating career development <mark>hurdles</mark>.",
+            vn: "Chương trình cố vấn tại nơi làm việc hỗ trợ nhóm yếu thế vượt qua các rào cản phát triển sự nghiệp."
+          },
+          {
+            en: "Fostering <mark>inclusive</mark> corporate culture builds employee <mark>loyalty</mark> and elevates company global market <mark>reputation</mark>.",
+            vn: "Nuôi dưỡng văn hóa doanh nghiệp bao quát xây dựng lòng trung thành của nhân viên và nâng cao danh tiếng thị trường toàn cầu của công ty."
+          }
+        ],
+        vocab: [
+          { en: "quality", pos: "n", ipa: "/ˈkwɒl.ə.ti/", vn: "chất lượng" },
+          { en: "industries", pos: "n", ipa: "/ˈɪn.də.striz/", vn: "các ngành công nghiệp" },
+          { en: "perspectives", pos: "n", ipa: "/pəˈspek.tɪvz/", vn: "các góc nhìn" },
+          { en: "positions", pos: "n", ipa: "/pəˈzɪʃ.ənz/", vn: "các vị trí" },
+          { en: "hurdles", pos: "n", ipa: "/ˈhɜː.dəlz/", vn: "các rào cản, trở ngại" },
+          { en: "reputation", pos: "n", ipa: "/ˌrep.jəˈteɪ.ʃən/", vn: "danh tiếng" },
+          { en: "boardrooms", pos: "n", ipa: "/ˈbɔːd.ruːmz/", vn: "phòng họp ban điều hành" },
+          { en: "remuneration", pos: "n", ipa: "/rɪˌmjuː.nəˈreɪ.ʃən/", vn: "sự thù lao, trả lương" },
+          { en: "glass ceilings", pos: "n.phr", ipa: "/ˌɡlɑːs ˈsiː.lɪŋz/", vn: "rào cản vô hình" },
+          { en: "underrepresented", pos: "adj", ipa: "/ˌʌn.dəˌrep.rɪˈzen.tɪd/", vn: "chưa được đại diện xứng đáng" },
+          { en: "mentorship", pos: "n", ipa: "/ˈmen.tɔː.ʃɪp/", vn: "sự cố vấn" },
+          { en: "governance", pos: "n", ipa: "/ˈɡʌv.ə.nəns/", vn: "sự quản trị" },
+          { en: "workforce", pos: "n", ipa: "/ˈwɜːk.fɔːs/", vn: "lực lượng lao động" },
+          { en: "loyalty", pos: "n", ipa: "/ˈlɔɪ.əl.ti/", vn: "lòng trung thành" },
+          { en: "inclusive", pos: "adj", ipa: "/ɪnˈkluː.sɪv/", vn: "bao quát, không phân biệt" }
+        ]
+      }
+    ]
+  },
+{
+    id: 6,
+    name: "Unit 6: Artificial Intelligence",
+    articles: [
+      {
+        id: "6-1",
+        title: "1. The Rise of Artificial Intelligence in Everyday Life",
+        bilingualSentences: [
+          {
+            en: "<mark>Artificial intelligence</mark> is rapidly transforming daily routines through <mark>smart home devices</mark> and virtual assistants.",
+            vn: "Trí tuệ nhân tạo đang nhanh chóng biến đổi thói quen hàng ngày thông qua các thiết bị nhà thông minh và trợ lý ảo."
+          },
+          {
+            en: "Machine learning <mark>algorithms</mark> analyze user preferences to provide highly customized content <mark>recommendations</mark>.",
+            vn: "Các thuật toán học máy phân tích sở thích người dùng để cung cấp các gợi ý nội dung tùy chỉnh cao."
+          },
+          {
+            en: "Automated customer support systems utilize <mark>natural language processing</mark> to resolve user inquiries instantly.",
+            vn: "Hệ thống hỗ trợ khách hàng tự động sử dụng xử lý ngôn ngữ tự nhiên để giải quyết thắc mắc của người dùng ngay lập tức."
+          },
+          {
+            en: "While AI enhances daily convenience, concerns regarding data <mark>privacy</mark> and personal surveillance continue to <mark>grow</mark>.",
+            vn: "Mặc dù AI nâng cao sự tiện lợi hàng ngày, những lo ngại về quyền riêng tư dữ liệu và sự giám sát cá nhân vẫn tiếp tục tăng lên."
+          },
+          {
+            en: "Tech companies must implement transparent data practices to maintain public <mark>trust</mark> in AI applications.",
+            vn: "Các công ty công nghệ phải thực hiện các thực hành dữ liệu minh bạch để duy trì niềm tin của công chúng vào ứng dụng AI."
+          },
+          {
+            en: "Balancing technological convenience with ethical standards remains a major challenge for modern digital <mark>societies</mark>.",
+            vn: "Cân bằng sự tiện lợi công nghệ với các tiêu chuẩn đạo đức vẫn là thách thức lớn đối với xã hội số hiện đại."
+          }
+        ],
+        vocab: [
+          { en: "Artificial intelligence", pos: "n.phr", ipa: "/ˌɑː.tɪˈfɪʃ.əl ɪnˈtel.ɪ.dʒəns/", vn: "trí tuệ nhân tạo" },
+          { en: "smart home devices", pos: "n.phr", ipa: "/smɑːt həʊm dɪˈvaɪ.sɪz/", vn: "các thiết bị nhà thông minh" },
+          { en: "algorithms", pos: "n", ipa: "/ˈæl.ɡə.rɪ.ðəmz/", vn: "các thuật toán" },
+          { en: "recommendations", pos: "n", ipa: "/ˌrek.ə.menˈdeɪ.ʃənz/", vn: "các sự gợi ý, đề xuất" },
+          { en: "natural language processing", pos: "n.phr", ipa: "/ˈnætʃ.ər.əl ˈlæŋ.ɡwɪdʒ ˈprəʊ.ses.ɪŋ/", vn: "xử lý ngôn ngữ tự nhiên" },
+          { en: "privacy", pos: "n", ipa: "/ˈprɪv.ə.si/", vn: "quyền riêng tư" },
+          { en: "grow", pos: "v", ipa: "/ɡrəʊ/", vn: "phát triển, tăng lên" },
+          { en: "trust", pos: "n", ipa: "/trʌst/", vn: "lòng tin, sự tin tưởng" },
+          { en: "societies", pos: "n", ipa: "/səˈsaɪ.ə.tiz/", vn: "các xã hội" }
+        ]
+      },
+      {
+        id: "6-2",
+        title: "2. Ethics and Regulation in Autonomous Systems",
+        bilingualSentences: [
+          {
+            en: "The deployment of <mark>autonomous vehicles</mark> requires robust ethical guidelines to ensure road user <mark>safety</mark>.",
+            vn: "Việc triển khai phương tiện tự hành đòi hỏi các hướng dẫn đạo đức vững chắc để đảm bảo an toàn cho người tham gia giao thông."
+          },
+          {
+            en: "Engineers face moral dilemmas when programming autonomous systems to respond to unavoidable accident <mark>scenarios</mark>.",
+            vn: "Các kỹ sư đối mặt với tình huống tiến thoái lưỡng nan về đạo đức khi lập trình hệ thống tự hành ứng phó với viễn cảnh tai nạn không thể tránh khỏi."
+          },
+          {
+            en: "<mark>Algorithmic bias</mark> in AI decision-making can inadvertently perpetuate gender and racial discrimination in job <mark>recruitment</mark>.",
+            vn: "Định kiến thuật toán trong ra quyết định AI có thể vô tình duy trì sự phân biệt đối xử theo giới tính và chủng tộc trong tuyển dụng công việc."
+          },
+          {
+            en: "Governments worldwide are drafting strict regulations to enforce fairness, transparency, and accountability in AI <mark>development</mark>.",
+            vn: "Chính phủ trên toàn thế giới đang soạn thảo quy định nghiêm ngặt để thực thi sự công bằng, minh bạch và trách nhiệm giải trình trong phát triển AI."
+          },
+          {
+            en: "Independent oversight committees verify that complex algorithms operate without discriminatory <mark>patterns</mark>.",
+            vn: "Các ủy ban giám sát độc lập xác minh rằng thuật toán phức tạp hoạt động mà không có các mô hình phân biệt đối xử."
+          },
+          {
+            en: "Establishing ethical boundaries safeguards human dignity while fostering responsible technological <mark>innovation</mark>.",
+            vn: "Thiết lập các ranh giới đạo đức bảo vệ nhân phẩm con người đồng thời thúc đẩy sự đổi mới công nghệ có trách nhiệm."
+          }
+        ],
+        vocab: [
+          { en: "autonomous vehicles", pos: "n.phr", ipa: "/ɔːˈtɒn.ə.məs ˈvɪə.kəlz/", vn: "các phương tiện tự hành" },
+          { en: "safety", pos: "n", ipa: "/ˈseɪf.ti/", vn: "sự an toàn" },
+          { en: "scenarios", pos: "n", ipa: "/səˈnɑː.ri.əʊz/", vn: "các kịch bản, viễn cảnh" },
+          { en: "Algorithmic bias", pos: "n.phr", ipa: "/ˌæl.ɡəˈrɪð.mɪk ˈbaɪ.əs/", vn: "định kiến thuật toán" },
+          { en: "recruitment", pos: "n", ipa: "/rɪˈkruːt.mənt/", vn: "sự tuyển dụng" },
+          { en: "development", pos: "n", ipa: "/dɪˈvel.əp.mənt/", vn: "sự phát triển" },
+          { en: "patterns", pos: "n", ipa: "/ˈpæt.ənz/", vn: "các khuôn mẫu, mô hình" },
+          { en: "innovation", pos: "n", ipa: "/ˌɪn.əˈveɪ.ʃən/", vn: "sự đổi mới, sáng tạo" }
+        ]
+      },
+      {
+        id: "6-3",
+        title: "3. Future Job Markets in the Age of Automation",
+        bilingualSentences: [
+          {
+            en: "Routine physical and cognitive tasks are increasingly being replaced by industrial robots and specialized <mark>software</mark>.",
+            vn: "Các nhiệm vụ thể chất và trí óc lặp đi lặp lại đang ngày càng bị thay thế bởi robot công nghiệp và phần mềm chuyên dụng."
+          },
+          {
+            en: "While traditional roles decline, emerging fields like data science and AI maintenance demand skilled <mark>professionals</mark>.",
+            vn: "Trong khi các vai trò truyền thống sụt giảm, các lĩnh vực mới nổi như khoa học dữ liệu và bảo trì AI lại đòi hỏi chuyên gia có kỹ năng."
+          },
+          {
+            en: "Educational curricula must prioritize creative problem-solving, critical analysis, and digital literacy for future <mark>workers</mark>.",
+            vn: "Chương trình giảng dạy giáo dục phải ưu tiên giải quyết vấn đề sáng tạo, phân tích phản biện và năng lực số cho lao động tương lai."
+          },
+          {
+            en: "Continuous learning and adaptability are critical for workforce retention amidst rapid technological <mark>disruption</mark>.",
+            vn: "Học tập liên tục và khả năng thích ứng là then chốt để giữ chân lực lượng lao động giữa sự đứt gãy công nghệ nhanh chóng."
+          },
+          {
+            en: "Collaboration between human expertise and machine processing power defines the most effective modern workplace <mark>strategies</mark>.",
+            vn: "Sự hợp tác giữa chuyên môn con người và năng lực xử lý máy móc định hình nên các chiến lược nơi làm việc hiện đại hiệu quả nhất."
+          },
+          {
+            en: "Proactive career planning enables workers to transition smoothly into high-demand technological <mark>sectors</mark>.",
+            vn: "Lập kế hoạch sự nghiệp chủ động cho phép người lao động chuyển đổi mượt mà sang các ngành công nghệ có nhu cầu cao."
+          }
+        ],
+        vocab: [
+          { en: "software", pos: "n", ipa: "/ˈsɒft.weər/", vn: "phần mềm" },
+          { en: "professionals", pos: "n", ipa: "/prəˈfeʃ.ən.əlz/", vn: "các chuyên gia" },
+          { en: "workers", pos: "n", ipa: "/ˈwɜː.kəz/", vn: "các công nhân, người lao động" },
+          { en: "disruption", pos: "n", ipa: "/dɪsˈrʌp.ʃən/", vn: "sự đứt gãy, gián đoạn" },
+          { en: "strategies", pos: "n", ipa: "/ˈstræt.ə.dʒiz/", vn: "các chiến lược" },
+          { en: "sectors", pos: "n", ipa: "/ˈsek.təz/", vn: "các mảng, lĩnh vực" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 7,
+    name: "Unit 7: The World of Mass Media",
+    articles: [
+      {
+        id: "7-1",
+        title: "1. The Transformation of News Consumption",
+        bilingualSentences: [
+          {
+            en: "Digital media platforms have largely replaced traditional printed newspapers as the primary source of daily <mark>news</mark>.",
+            vn: "Các nền tảng truyền thông số phần lớn đã thay thế báo in truyền thống để trở thành nguồn tin tức hàng ngày chính yếu."
+          },
+          {
+            en: "Social media networks facilitate instantaneous sharing of breaking news stories across global <mark>audiences</mark>.",
+            vn: "Mạng xã hội tạo điều kiện cho việc chia sẻ tức thì các tin tức nóng hổi đến khán giả toàn cầu."
+          },
+          {
+            en: "However, the rapid spread of unverified information increases the risk of misleading online <mark>misinformation</mark>.",
+            vn: "Tuy nhiên, sự lan truyền nhanh chóng của thông tin chưa kiểm chứng làm tăng nguy cơ thông tin sai lệch trên mạng."
+          },
+          {
+            en: "<mark>Media literacy</mark> skills are essential for readers to distinguish objective reporting from biased <mark>propaganda</mark>.",
+            vn: "Kỹ năng hiểu biết truyền thông là thiết yếu để người đọc phân biệt báo cáo khách quan với tuyên truyền phiến diện."
+          },
+          {
+            en: "Independent fact-checking organizations work to verify online content and restore public journaliastic <mark>credibility</mark>.",
+            vn: "Các tổ chức kiểm chứng độc lập làm việc để xác minh nội dung trực tuyến và khôi phục uy tín báo chí công cộng."
+          },
+          {
+            en: "Cultivating critical reading habits protects citizens from digital manipulation in an era of information <mark>overload</mark>.",
+            vn: "Nuôi dưỡng thói quen đọc phản biện bảo vệ công dân khỏi sự thao túng kỹ thuật số trong kỷ nguyên quá tải thông tin."
+          }
+        ],
+        vocab: [
+          { en: "news", pos: "n", ipa: "/njuːz/", vn: "tin tức" },
+          { en: "audiences", pos: "n", ipa: "/ˈɔː.di.ən.sɪz/", vn: "các khán thính giả" },
+          { en: "misinformation", pos: "n", ipa: "/ˌmɪs.ɪn.fəˈmeɪ.ʃən/", vn: "thông tin sai lệch" },
+          { en: "Media literacy", pos: "n.phr", ipa: "/ˈmiː.di.ə ˈlɪt.ər.ə.si/", vn: "năng lực hiểu biết truyền thông" },
+          { en: "propaganda", pos: "n", ipa: "/ˌprɒp.əˈɡæn.də/", vn: "sự tuyên truyền" },
+          { en: "credibility", pos: "n", ipa: "/ˌkred.əˈbɪl.ə.ti/", vn: "sự uy tín, độ tin cậy" },
+          { en: "overload", pos: "n", ipa: "/ˈəʊ.və.ləʊd/", vn: "sự quá tải" }
+        ]
+      },
+      {
+        id: "7-2",
+        title: "2. The Power of Targeted Advertising",
+        bilingualSentences: [
+          {
+            en: "Online advertising algorithms collect user behavioral data to deliver personalized product <mark>advertisements</mark>.",
+            vn: "Các thuật toán quảng cáo trực tuyến thu thập dữ liệu hành vi người dùng để phân phối quảng cáo sản phẩm cá nhân hóa."
+          },
+          {
+            en: "<mark>Targeted marketing</mark> significantly improves conversion rates for businesses by reaching interested consumer <mark>demographics</mark>.",
+            vn: "Tiếp thị mục tiêu cải thiện đáng kể tỷ lệ chuyển đổi cho doanh nghiệp bằng cách tiếp cận đúng nhóm nhân khẩu học người tiêu dùng quan tâm."
+          },
+          {
+            en: "Critics argue that persistent tracking invades personal privacy and creates commercial echo <mark>chambers</mark>.",
+            vn: "Các nhà phê bình tranh luận rằng việc theo dõi dai dẳng xâm phạm quyền riêng tư cá nhân và tạo ra các phòng lặp thương mại."
+          },
+          {
+            en: "Regulatory bodies enforce stricter data protection laws to restrict unauthorized personal data <mark>harvesting</mark>.",
+            vn: "Các cơ quan quản lý thực thi luật bảo vệ dữ liệu nghiêm ngặt hơn để hạn chế thu thập dữ liệu cá nhân trái phép."
+          },
+          {
+            en: "Consumers gain greater control by adjusting privacy settings and opting out of targeted tracking <mark>cookies</mark>.",
+            vn: "Người tiêu dùng có quyền kiểm soát lớn hơn bằng cách điều chỉnh cài đặt riêng tư và hủy tham gia cookie theo dõi mục tiêu."
+          },
+          {
+            en: "Balancing commercial advertising needs with individual privacy rights remains crucial for ethical digital <mark>commerce</mark>.",
+            vn: "Cân bằng nhu cầu quảng cáo thương mại với quyền riêng tư cá nhân vẫn là điều cốt yếu cho thương mại số có đạo đức."
+          }
+        ],
+        vocab: [
+          { en: "advertisements", pos: "n", ipa: "/ədˈvɜː.tɪs.mənts/", vn: "các mục quảng cáo" },
+          { en: "Targeted marketing", pos: "n.phr", ipa: "/ˈtɑː.ɡɪ.tɪd ˈmɑː.kɪ.tɪŋ/", vn: "tiếp thị mục tiêu" },
+          { en: "demographics", pos: "n", ipa: "/ˌdem.əˈɡræf.ɪks/", vn: "các nhóm nhân khẩu học" },
+          { en: "chambers", pos: "n", ipa: "/ˈtʃeɪm.bəz/", vn: "phòng, không gian" },
+          { en: "harvesting", pos: "n", ipa: "/ˈhɑː.vɪst.ɪŋ/", vn: "sự thu thập" },
+          { en: "cookies", pos: "n", ipa: "/ˈkʊk.iz/", vn: "cookie (dữ liệu theo dõi)" },
+          { en: "commerce", pos: "n", ipa: "/ˈkɒm.ɜːs/", vn: "thương mại" }
+        ]
+      },
+      {
+        id: "7-3",
+        title: "3. Social Media and Youth Mental Health",
+        bilingualSentences: [
+          {
+            en: "Excessive social media consumption among teenagers is linked to higher levels of anxiety and lower self-esteem <mark>scores</mark>.",
+            vn: "Việc tiêu thụ mạng xã hội quá mức ở tuổi thiếu niên có liên quan đến mức độ lo âu cao hơn và điểm tự trọng thấp hơn."
+          },
+          {
+            en: "Unrealistic portrayals of lifestyles online foster unhealthy social comparison and personal <mark>dissatisfaction</mark>.",
+            vn: "Những phác họa không thực tế về lối sống trên mạng nuôi dưỡng sự so sánh xã hội không lành mạnh và sự bất mãn cá nhân."
+          },
+          {
+            en: "<mark>Cyberbullying</mark> incidents on social platforms pose severe psychological threats to vulnerable young <mark>users</mark>.",
+            vn: "Các sự cố bắt nạt trên mạng trên nền tảng xã hội đặt ra mối đe dọa tâm lý nghiêm trọng cho những người dùng trẻ dễ bị tổn thương."
+          },
+          {
+            en: "Schools and parents promote digital wellness programs to encourage healthy offline social <mark>interactions</mark>.",
+            vn: "Trường học và phụ huynh thúc đẩy các chương trình sống khỏe kỹ thuật số để khuyến khích tương tác xã hội trực tiếp lành mạnh."
+          },
+          {
+            en: "Platform developers are urged to implement usage time limits and stronger anti-harassment protective <mark>features</mark>.",
+            vn: "Các nhà phát triển nền tảng được thúc giục thực thi giới hạn thời gian sử dụng và các tính năng bảo vệ chống quấy rối mạnh mẽ hơn."
+          },
+          {
+            en: "Fostering balanced screen-time habits ensures digital connectivity enhances rather than undermines mental <mark>wellbeing</mark>.",
+            vn: "Nuôi dưỡng thói quen thời gian sử dụng màn hình cân bằng đảm bảo kết nối số nâng cao thay vì làm tổn hại đến sức khỏe tinh thần."
+          }
+        ],
+        vocab: [
+          { en: "scores", pos: "n", ipa: "/skɔːz/", vn: "các điểm số" },
+          { en: "dissatisfaction", pos: "n", ipa: "/dɪsˌsæt.ɪsˈfæk.ʃən/", vn: "sự bất mãn" },
+          { en: "Cyberbullying", pos: "n", ipa: "/ˈsaɪ.bəˌbʊl.i.ɪŋ/", vn: "sự bắt nạt trên mạng" },
+          { en: "users", pos: "n", ipa: "/ˈjuː.zəz/", vn: "người dùng" },
+          { en: "interactions", pos: "n", ipa: "/ˌɪn.təˈræk.ʃənz/", vn: "các sự tương tác" },
+          { en: "features", pos: "n", ipa: "/ˈfiː.tʃəz/", vn: "các tính năng" },
+          { en: "wellbeing", pos: "n", ipa: "/ˌwelˈbiː.ɪŋ/", vn: "sự khỏe mạnh, hạnh phúc" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 8,
+    name: "Unit 8: Wildlife Conservation",
+    articles: [
+      {
+        id: "8-1",
+        title: "1. Protecting Endangered Species from Extinction",
+        bilingualSentences: [
+          {
+            en: "Poaching and illegal wildlife trade continue to drive endangered animal populations toward critical <mark>decline</mark>.",
+            vn: "Săn bắn trái phép và thương mại động vật hoang dã bất hợp pháp tiếp tục đẩy các quần thể động vật nguy cấp đến sự sụt giảm nghiêm trọng."
+          },
+          {
+            en: "Conservation organizations establish protected <mark>wildlife reserves</mark> to safeguard fragile animal <mark>habitats</mark>.",
+            vn: "Các tổ chức bảo tồn thiết lập các khu bảo tồn động vật hoang dã được bảo vệ để bảo vệ môi trường sống mong manh của động vật."
+          },
+          {
+            en: "Anti-poaching patrols equipped with modern tracking technology actively deter armed illegal hunting <mark>groups</mark>.",
+            vn: "Các đội tuần tra chống săn bắt trái phép được trang bị công nghệ theo dõi hiện đại chủ động ngăn chặn các nhóm rình bắt vũ trang bất hợp pháp."
+          },
+          {
+            en: "<mark>Captive breeding</mark> programs in certified zoos aim to reintroduce endangered species back into native wild <mark>environments</mark>.",
+            vn: "Các chương trình nhân giống nuôi nhốt tại sở thú được chứng nhận nhằm mục đích đưa các loài nguy cấp trở lại môi trường tự nhiên bản địa."
+          },
+          {
+            en: "International treaties restrict cross-border trade of endangered animals and ivory <mark>products</mark>.",
+            vn: "Các hiệp ước quốc tế hạn chế thương mại xuyên biên giới đối với động vật nguy cấp và các sản phẩm từ ngà."
+          },
+          {
+            en: "Sustained global cooperation is essential to prevent permanent loss of irreplaceable biological <mark>diversity</mark>.",
+            vn: "Sự hợp tác toàn cầu bền vững là thiết yếu để ngăn ngừa sự mất mát vĩnh viễn của đa dạng sinh học không thể thay thế."
+          }
+        ],
+        vocab: [
+          { en: "decline", pos: "n", ipa: "/dɪˈklaɪn/", vn: "sự sụt giảm" },
+          { en: "wildlife reserves", pos: "n.phr", ipa: "/ˈwaɪld.laɪf rɪˈzɜːvz/", vn: "các khu bảo tồn động vật hoang dã" },
+          { en: "habitats", pos: "n", ipa: "/ˈhæb.ɪ.tæts/", vn: "các môi trường sống" },
+          { en: "groups", pos: "n", ipa: "/ɡruːps/", vn: "các nhóm" },
+          { en: "Captive breeding", pos: "n.phr", ipa: "/ˈkæp.tɪv ˈbriː.dɪŋ/", vn: "sự nhân giống nuôi nhốt" },
+          { en: "environments", pos: "n", ipa: "/ɪnˈvaɪ.rən.mənts/", vn: "các môi trường" },
+          { en: "products", pos: "n", ipa: "/ˈprɒd.ʌkts/", vn: "các sản phẩm" },
+          { en: "diversity", pos: "n", ipa: "/daɪˈvɜː.sə.ti/", vn: "sự đa dạng" }
+        ]
+      },
+      {
+        id: "8-2",
+        title: "2. Preserving Ocean Ecosystems and Marine Life",
+        bilingualSentences: [
+          {
+            en: "Marine plastic pollution and industrial runoff pose severe threats to delicate coral reef <mark>ecosystems</mark>.",
+            vn: "Ô nhiễm nhựa đại dương và rác thải công nghiệp đặt ra mối đe dọa nghiêm trọng cho hệ sinh thái rạn san hô mỏng manh."
+          },
+          {
+            en: "Overfishing depletes fish stocks and disrupts complex marine ecological food <mark>chains</mark>.",
+            vn: "Đánh bắt quá mức làm cạn kiệt nguồn cá và làm gián đoạn chuỗi thức ăn sinh thái biển phức tạp."
+          },
+          {
+            en: "<mark>Marine protected areas</mark> restrict commercial fishing to allow aquatic habitats to naturally <mark>recover</mark>.",
+            vn: "Các khu bảo tồn biển hạn chế đánh bắt thương mại để cho phép môi trường sống dưới nước phục hồi tự nhiên."
+          },
+          {
+            en: "Ocean acidification driven by climate change threatens shellfish shell formation and coral growth <mark>rates</mark>.",
+            vn: "Sự axit hóa đại dương do biến đổi khí hậu đe dọa sự hình thành vỏ động vật thân mềm và tốc độ phát triển của san hô."
+          },
+          {
+            en: "Community-led coastal cleanup drives reduce plastic debris entering ocean waters <mark>locally</mark>.",
+            vn: "Các chiến dịch làm sạch bờ biển do cộng đồng dẫn dắt giảm rác thải nhựa đi vào vùng biển địa phương."
+          },
+          {
+            en: "Protecting ocean health safeguards global climate regulation and food security for coastal <mark>communities</mark>.",
+            vn: "Bảo vệ sức khỏe đại dương bảo vệ sự điều hòa khí hậu toàn cầu và an ninh lương thực cho các cộng đồng ven biển."
+          }
+        ],
+        vocab: [
+          { en: "ecosystems", pos: "n", ipa: "/ˈiː.kəʊˌsɪs.təmz/", vn: "các hệ sinh thái" },
+          { en: "chains", pos: "n", ipa: "/tʃeɪnz/", vn: "các chuỗi" },
+          { en: "Marine protected areas", pos: "n.phr", ipa: "/məˈriːn prəˈtek.tɪd ˈeə.ri.əz/", vn: "các khu bảo tồn biển" },
+          { en: "recover", pos: "v", ipa: "/rɪˈkʌv.ər/", vn: "phục hồi" },
+          { en: "rates", pos: "n", ipa: "/reɪts/", vn: "tốc độ, tỷ lệ" },
+          { en: "locally", pos: "adv", ipa: "/ˈləʊ.kəl.i/", vn: "tại địa phương" },
+          { en: "communities", pos: "n", ipa: "/kəˈmjuː.nə.tiz/", vn: "các cộng đồng" }
+        ]
+      },
+      {
+        id: "8-3",
+        title: "3. Community-Based Conservation Initiatives",
+        bilingualSentences: [
+          {
+            en: "Involving local communities in wildlife management ensures sustainable conservation outcomes and economic <mark>benefits</mark>.",
+            vn: "Sự tham gia của các cộng đồng địa phương vào quản lý động vật hoang dã đảm bảo kết quả bảo tồn bền vững và lợi ích kinh tế."
+          },
+          {
+            en: "<mark>Ecotourism</mark> ventures provide alternative livelihoods for residents previously dependent on illegal <mark>poaching</mark>.",
+            vn: "Các dự án du lịch sinh thái cung cấp sinh kế thay thế cho cư dân trước đây phụ thuộc vào săn bắt trái phép."
+          },
+          {
+            en: "Indigenous knowledge plays a vital role in identifying ecological changes and monitoring species <mark>behavior</mark>.",
+            vn: "Tri thức bản địa đóng vai trò thiết yếu trong việc nhận biết thay đổi sinh thái và giám sát hành vi các loài."
+          },
+          {
+            en: "Human-wildlife conflict resolution programs build protective fences to prevent crop destruction by elephant <mark>herds</mark>.",
+            vn: "Các chương trình giải quyết xung đột giữa người và động vật hoang dã xây dựng hàng rào bảo vệ để ngăn phá hoại hoa màu do đàn voi."
+          },
+          {
+            en: "Educational workshops in rural schools foster environmental stewardship among younger community <mark>members</mark>.",
+            vn: "Hội thảo giáo dục tại các trường học nông thôn nuôi dưỡng ý thức quản lý môi trường trong các thành viên cộng đồng trẻ tuổi."
+          },
+          {
+            en: "Empowering local leadership creates durable conservation strategies rooted in mutual community <mark>respect</mark>.",
+            vn: "Trao quyền cho lãnh đạo địa phương tạo ra chiến lược bảo tồn bền vững bắt nguồn từ sự tôn trọng cộng đồng lẫn nhau."
+          }
+        ],
+        vocab: [
+          { en: "benefits", pos: "n", ipa: "/ˈben.ɪ.fɪts/", vn: "các lợi ích" },
+          { en: "Ecotourism", pos: "n", ipa: "/ˈiː.kəʊˌtʊə.rɪz.əm/", vn: "du lịch sinh thái" },
+          { en: "poaching", pos: "n", ipa: "/ˈpəʊ.tʃɪŋ/", vn: "sự săn bắt trái phép" },
+          { en: "behavior", pos: "n", ipa: "/bɪˈheɪ.vjər/", vn: "hành vi, ứng xử" },
+          { en: "herds", pos: "n", ipa: "/hɜːdz/", vn: "các đàn (súc vật, động vật)" },
+          { en: "members", pos: "n", ipa: "/ˈmem.bəz/", vn: "các thành viên" },
+          { en: "respect", pos: "n", ipa: "/rɪˈspekt/", vn: "sự tôn trọng" }
+        ]
+      }
+    ]
+  },
+{
+    id: 9,
+    name: "Unit 9: Career Paths",
+    articles: [
+      {
+        id: "9-1",
+        title: "1. Navigating Vocational and Academic Paths",
+        bilingualSentences: [
+          {
+            en: "High school graduates must evaluate whether <mark>vocational training</mark> or academic degrees best align with their career <mark>aspirations</mark>.",
+            vn: "Học sinh tốt nghiệp trung học phổ thông phải đánh giá xem đào tạo nghề hay bằng cấp học thuật phù hợp nhất với nguyện vọng nghề nghiệp của họ."
+          },
+          {
+            en: "Practical <mark>apprenticeships</mark> equip students with hands-on technical skills highly valued in specialized <mark>industries</mark>.",
+            vn: "Các chương trình học nghề thực hành trang bị cho học sinh các kỹ năng kỹ thuật thực tế được đánh giá cao trong các ngành chuyên môn."
+          },
+          {
+            en: "University education offers theoretical knowledge and fosters analytical thinking required for research <mark>professions</mark>.",
+            vn: "Giáo dục đại học cung cấp kiến thức lý thuyết và nuôi dưỡng tư duy phân tích cần thiết cho các nghề nghiệp nghiên cứu."
+          },
+          {
+            en: "Career guidance advisors help students identify personal strengths and navigate evolving job market <mark>demands</mark>.",
+            vn: "Các cố vấn hướng nghiệp giúp học sinh xác định điểm mạnh cá nhân và điều hướng các yêu cầu thị trường lao động đang thay đổi."
+          },
+          {
+            en: "Combining technical qualifications with soft skills enhances long-term employment <mark>prospects</mark>.",
+            vn: "Kết hợp bằng cấp kỹ thuật với các kỹ năng mềm nâng cao triển vọng việc làm lâu dài."
+          },
+          {
+            en: "Making informed educational choices lays a solid foundation for personal fulfillment and professional <mark>success</mark>.",
+            vn: "Đưa ra các lựa chọn giáo dục sáng suốt tạo nền tảng vững chắc cho sự tự hào cá nhân và thành công chuyên môn."
+          }
+        ],
+        vocab: [
+          { en: "vocational training", pos: "n.phr", ipa: "/vəʊˈkeɪ.ʃən.əl ˈtreɪ.nɪŋ/", vn: "sự đào tạo nghề" },
+          { en: "aspirations", pos: "n", ipa: "/ˌæs.pɪˈreɪ.ʃənz/", vn: "các nguyện vọng, khát vọng" },
+          { en: "apprenticeships", pos: "n", ipa: "/əˈpren.tɪs.ʃɪps/", vn: "các chương trình học nghề" },
+          { en: "industries", pos: "n", ipa: "/ˈɪn.də.striz/", vn: "các ngành công nghiệp" },
+          { en: "professions", pos: "n", ipa: "/prəˈfeʃ.ənz/", vn: "các nghề nghiệp" },
+          { en: "demands", pos: "n", ipa: "/dɪˈmɑːndz/", vn: "các yêu cầu, nhu cầu" },
+          { en: "prospects", pos: "n", ipa: "/ˈprɒs.pekts/", vn: "các triển vọng" },
+          { en: "success", pos: "n", ipa: "/səkˈses/", vn: "sự thành công" }
+        ]
+      },
+      {
+        id: "9-2",
+        title: "2. The Role of Internships in Professional Growth",
+        bilingualSentences: [
+          {
+            en: "Securing an <mark>internship</mark> allows students to gain valuable workplace experience before university <mark>graduation</mark>.",
+            vn: "Đạt được một vị trí thực tập cho phép sinh viên tích lũy kinh nghiệm làm việc giá trị trước khi tốt nghiệp đại học."
+          },
+          {
+            en: "Interns work under experienced <mark>mentors</mark> who provide constructive feedback and professional <mark>guidance</mark>.",
+            vn: "Thực tập sinh làm việc dưới sự hướng dẫn của các cố vấn giàu kinh nghiệm, những người cung cấp phản hồi mang tính xây dựng và sự định hướng chuyên môn."
+          },
+          {
+            en: "Building a strong professional network during internships opens doors to full-time job <mark>offers</mark>.",
+            vn: "Xây dựng một mạng lưới chuyên môn mạnh mẽ trong quá trình thực tập mở ra cơ hội nhận được lời đề nghị làm việc chính thức."
+          },
+          {
+            en: "Internships help young adults bridge the gap between classroom theory and industry <mark>expectations</mark>.",
+            vn: "Các kỳ thực tập giúp những người trẻ tuổi rút ngắn khoảng cách giữa lý thuyết trên lớp và kỳ vọng của ngành."
+          },
+          {
+            en: "Developing work ethic and adaptability through real-world projects prepares candidates for future leadership <mark>roles</mark>.",
+            vn: "Phát triển đạo đức nghề nghiệp và khả năng thích ứng thông qua các dự án thực tế chuẩn bị cho ứng viên các vai trò lãnh đạo trong tương lai."
+          },
+          {
+            en: "Gaining early industry exposure builds confidence and clarifies long-term career <mark>goals</mark>.",
+            vn: "Tích lũy sự tiếp xúc sớm với ngành xây dựng sự tự tin và làm rõ các mục tiêu nghề nghiệp lâu dài."
+          }
+        ],
+        vocab: [
+          { en: "internship", pos: "n", ipa: "/ˈɪn.tɜːn.ʃɪp/", vn: "kỳ thực tập" },
+          { en: "graduation", pos: "n", ipa: "/ˌɡrædʒ.uˈeɪ.ʃən/", vn: "sự tốt nghiệp" },
+          { en: "mentors", pos: "n", ipa: "/ˈmen.tɔːz/", vn: "các người cố vấn" },
+          { en: "guidance", pos: "n", ipa: "/ˈɡaɪ.dəns/", vn: "sự định hướng, hướng dẫn" },
+          { en: "offers", pos: "n", ipa: "/ˈɒf.əz/", vn: "các lời đề nghị" },
+          { en: "expectations", pos: "n", ipa: "/ˌek.spekˈteɪ.ʃənz/", vn: "các kỳ vọng" },
+          { en: "roles", pos: "n", ipa: "/rəʊlz/", vn: "các vai trò" },
+          { en: "goals", pos: "n", ipa: "/ɡəʊlz/", vn: "các mục tiêu" }
+        ]
+      },
+      {
+        id: "9-3",
+        title: "3. Essential Skills for the Modern Workplace",
+        bilingualSentences: [
+          {
+            en: "Employers increasingly value <mark>transferable skills</mark> like critical thinking, communication, and team <mark>collaboration</mark>.",
+            vn: "Các nhà tuyển dụng ngày càng coi trọng các kỹ năng có thể chuyển đổi như tư duy phản biện, giao tiếp và sự hợp tác nhóm."
+          },
+          {
+            en: "Adaptability allows workers to thrive in fast-paced workplace environments undergoing technological <mark>transformation</mark>.",
+            vn: "Khả năng thích ứng cho phép người lao động phát triển mạnh mẽ trong môi trường làm việc nhịp độ nhanh đang trải qua sự chuyển đổi công nghệ."
+          },
+          {
+            en: "Problem-solving capabilities enable employees to resolve unforeseen operational challenges <mark>efficiently</mark>.",
+            vn: "Năng lực giải quyết vấn đề cho phép nhân viên xử lý các thách thức vận hành không lường trước một cách hiệu quả."
+          },
+          {
+            en: "Strong time management habits ensure consistent productivity and work-life <mark>balance</mark>.",
+            vn: "Thói quen quản lý thời gian tốt đảm bảo năng suất ổn định và sự cân bằng giữa công việc và cuộc sống."
+          },
+          {
+            en: "Mastering digital tools and remote collaboration software boosts personal career <mark>competitiveness</mark>.",
+            vn: "Thành thạo các công cụ số và phần mềm hợp tác từ xa thúc đẩy tính cạnh tranh sự nghiệp cá nhân."
+          },
+          {
+            en: "Cultivating a proactive mindset drives continuous performance improvement and professional <mark>advancement</mark>.",
+            vn: "Nuôi dưỡng tư duy chủ động thúc đẩy sự cải thiện hiệu suất liên tục và sự thăng tiến chuyên môn."
+          }
+        ],
+        vocab: [
+          { en: "transferable skills", pos: "n.phr", ipa: "/trænˈsfɜː.rə.bəl skɪlz/", vn: "các kỹ năng có thể chuyển đổi" },
+          { en: "collaboration", pos: "n", ipa: "/kəˌlæb.əˈreɪ.ʃən/", vn: "sự hợp tác" },
+          { en: "transformation", pos: "n", ipa: "/ˌtræns.fəˈmeɪ.ʃən/", vn: "sự chuyển đổi" },
+          { en: "efficiently", pos: "adv", ipa: "/ɪˈfɪʃ.ənt.li/", vn: "một cách hiệu quả" },
+          { en: "balance", pos: "n", ipa: "/ˈbæl.əns/", vn: "sự cân bằng" },
+          { en: "competitiveness", pos: "n", ipa: "/kəmˈpet.ə.tɪv.nəs/", vn: "tính cạnh tranh" },
+          { en: "advancement", pos: "n", ipa: "/ədˈvɑːns.mənt/", vn: "sự thăng tiến" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 10,
+    name: "Unit 10: Lifelong Learning",
+    articles: [
+      {
+        id: "10-1",
+        title: "1. The Importance of Lifelong Education",
+        bilingualSentences: [
+          {
+            en: "In a rapidly evolving global economy, <mark>lifelong learning</mark> is essential for maintaining professional <mark>relevance</mark>.",
+            vn: "Trong một nền kinh tế toàn cầu phát triển nhanh chóng, học tập suốt đời là thiết yếu để duy trì sự phù hợp chuyên môn."
+          },
+          {
+            en: "Continuous education enables individuals to acquire new skills and adapt to changing job market <mark>requirements</mark>.",
+            vn: "Giáo dục liên tục cho phép các cá nhân tiếp thu kỹ năng mới và thích ứng với các yêu cầu thị trường việc làm đang thay đổi."
+          },
+          {
+            en: "Online learning platforms provide accessible courses for working professionals seeking skill <mark>upgrading</mark>.",
+            vn: "Các nền tảng học trực tuyến cung cấp các khóa học dễ tiếp cận cho người đi làm tìm kiếm sự nâng cao kỹ năng."
+          },
+          {
+            en: "Pursuing personal intellectual interests fosters mental agility and enriches overall quality of <mark>life</mark>.",
+            vn: "Theo đuổi các sở thích trí tuệ cá nhân nuôi dưỡng sự linh hoạt tinh thần và làm giàu chất lượng cuộc sống tổng thể."
+          },
+          {
+            en: "Self-directed learning instills personal responsibility for ongoing professional <mark>development</mark>.",
+            vn: "Học tập tự định hướng làm thấm nhuần trách nhiệm cá nhân đối với sự phát triển chuyên môn liên tục."
+          },
+          {
+            en: "Embracing a growth mindset empowers individuals to turn workplace challenges into learning <mark>opportunities</mark>.",
+            vn: "Đón nhận tư duy phát triển trao quyền cho các cá nhân biến thách thức tại nơi làm việc thành cơ hội học tập."
+          }
+        ],
+        vocab: [
+          { en: "lifelong learning", pos: "n.phr", ipa: "/ˈlaɪf.lɒŋ ˈlɜː.nɪŋ/", vn: "việc học tập suốt đời" },
+          { en: "relevance", pos: "n", ipa: "/ˈrel.ə.vəns/", vn: "sự phù hợp, thích ứng" },
+          { en: "requirements", pos: "n", ipa: "/rɪˈkwaɪə.mənts/", vn: "các yêu cầu" },
+          { en: "upgrading", pos: "n", ipa: "/ʌpˈɡreɪd.ɪŋ/", vn: "sự nâng cấp" },
+          { en: "life", pos: "n", ipa: "/laɪf/", vn: "cuộc sống" },
+          { en: "development", pos: "n", ipa: "/dɪˈvel.əp.mənt/", vn: "sự phát triển" },
+          { en: "opportunities", pos: "n", ipa: "/ˌɒp.əˈtʃuː.nə.tiz/", vn: "các cơ hội" }
+        ]
+      },
+      {
+        id: "10-2",
+        title: "2. Digital Platforms and Open Education",
+        bilingualSentences: [
+          {
+            en: "Massive Open Online Courses (MOOCs) have <mark>democratized education</mark> by making university-level courses globally <mark>accessible</mark>.",
+            vn: "Các khóa học trực tuyến mở diện rộng (MOOCs) đã bình dân hóa giáo dục bằng cách làm cho các khóa học cấp đại học có thể tiếp cận trên toàn cầu."
+          },
+          {
+            en: "Learners from remote regions can study subjects taught by top-tier global university <mark>professors</mark>.",
+            vn: "Người học từ các vùng sâu vùng xa có thể học các môn học được giảng dạy bởi giáo sư từ các trường đại học hàng đầu thế giới."
+          },
+          {
+            en: "Flexible online schedules allow students to balance studies with personal and professional <mark>commitments</mark>.",
+            vn: "Lịch trình trực tuyến linh hoạt cho phép học sinh cân bằng việc học với các cam kết cá nhân và công việc."
+          },
+          {
+            en: "Digital micro-credentials provide verifiable evidence of specialized skills to potential <mark>employers</mark>.",
+            vn: "Chứng chỉ nhỏ kỹ thuật số cung cấp bằng chứng có thể xác minh về các kỹ năng chuyên môn cho các nhà tuyển dụng tiềm năng."
+          },
+          {
+            en: "Interactive online forums foster global peer discussion and collaborative problem <mark>solving</mark>.",
+            vn: "Diễn đàn trực tuyến tương tác thúc đẩy thảo luận nhóm toàn cầu và giải quyết vấn đề hợp tác."
+          },
+          {
+            en: "Leveraging digital educational tools accelerates knowledge acquisition and career <mark>mobility</mark>.",
+            vn: "Tận dụng các công cụ giáo dục số đẩy nhanh việc tiếp thu kiến thức và sự linh hoạt nghề nghiệp."
+          }
+        ],
+        vocab: [
+          { en: "democratized education", pos: "v.phr", ipa: "/dɪˈmɒk.rə.taɪzd ˌedʒ.ʊˈkeɪ.ʃən/", vn: "bình dân hóa giáo dục" },
+          { en: "accessible", pos: "adj", ipa: "/əkˈses.ə.bəl/", vn: "có thể tiếp cận" },
+          { en: "professors", pos: "n", ipa: "/prəˈfes.əz/", vn: "các giáo sư" },
+          { en: "commitments", pos: "n", ipa: "/kəˈmɪt.mənts/", vn: "các cam kết" },
+          { en: "employers", pos: "n", ipa: "/ɪmˈplɔɪ.əz/", vn: "các nhà tuyển dụng" },
+          { en: "solving", pos: "n", ipa: "/ˈsɒlv.ɪŋ/", vn: "việc giải quyết" },
+          { en: "mobility", pos: "n", ipa: "/məʊˈbɪl.ə.ti/", vn: "sự di động, linh hoạt" }
+        ]
+      },
+      {
+        id: "10-3",
+        title: "3. Overcoming Barriers to Adult Education",
+        bilingualSentences: [
+          {
+            en: "Adult learners often face time constraints, financial limitations, and family <mark>responsibilities</mark>.",
+            vn: "Người học lớn tuổi thường đối mặt với sự hạn chế về thời gian, giới hạn tài chính và trách nhiệm gia đình."
+          },
+          {
+            en: "Employer-sponsored tuition assistance programs encourage staff members to pursue further <mark>qualifications</mark>.",
+            vn: "Các chương trình hỗ trợ học phí do nhà tuyển dụng tài trợ khuyến khích nhân viên theo đuổi thêm các bằng cấp."
+          },
+          {
+            en: "Community centers offer affordable evening classes tailored to non-traditional student <mark>schedules</mark>.",
+            vn: "Các trung tâm cộng đồng cung cấp các lớp học buổi tối giá rẻ được thiết kế riêng cho lịch trình của học sinh không truyền thống."
+          },
+          {
+            en: "Overcoming self-doubt and fear of academic failure requires personal determination and supportive <mark>environments</mark>.",
+            vn: "Vượt qua sự nghi ngờ bản thân và sợ thất bại học tập đòi hỏi quyết tâm cá nhân và môi trường hỗ trợ."
+          },
+          {
+            en: "Flexible blended learning models combine online modules with optional weekend in-person <mark>workshops</mark>.",
+            vn: "Các mô hình học tập kết hợp linh hoạt kết hợp học trực tuyến với các buổi hội thảo trực tiếp cuối tuần tùy chọn."
+          },
+          {
+            en: "Empowering adult learners strengthens community resilience and drives inclusive economic <mark>growth</mark>.",
+            vn: "Trao quyền cho người học lớn tuổi củng cố sự kiên cường của cộng đồng và thúc đẩy tăng trưởng kinh tế bao quát."
+          }
+        ],
+        vocab: [
+          { en: "responsibilities", pos: "n", ipa: "/rɪˌspɒn.səˈbɪl.ə.tiz/", vn: "các trách nhiệm" },
+          { en: "qualifications", pos: "n", ipa: "/ˌkwɒl.ɪ.fɪˈkeɪ.ʃənz/", vn: "các bằng cấp, trình độ" },
+          { en: "schedules", pos: "n", ipa: "/ˈʃed.juːlz/", vn: "các lịch trình" },
+          { en: "environments", pos: "n", ipa: "/ɪnˈvaɪ.rən.mənts/", vn: "các môi trường" },
+          { en: "workshops", pos: "n", ipa: "/ˈwɜːk.ʃɒps/", vn: "các buổi hội thảo, xưởng thực hành" },
+          { en: "growth", pos: "n", ipa: "/ɡrəʊθ/", vn: "sự tăng trưởng" }
+        ]
+      }
+    ]
+  },
+
+
 ];
 
 /*************************************************************
@@ -620,7 +1941,7 @@ let currentReflectionIndex = 0;
 
 /*************************************************************
  * INITIALIZATION
- *********************************----------------************/
+ *************************************************************/
 window.onload = function() {
   populateTopicDropdown();
   loadTopicData(0);
@@ -751,7 +2072,7 @@ function loadTopicData(topicIdx) {
 }
 
 /*************************************************************
- * ACCORDION TOGGLE (Cuộn màn hình lên đầu bài đọc khi mở)
+ * ACCORDION TOGGLE
  *************************************************************/
 function toggleAccordion(targetId) {
   const targetBody = document.getElementById(`body-${targetId}`);
